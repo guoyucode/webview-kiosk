@@ -12,6 +12,7 @@ import uk.nktnet.webviewkiosk.config.mqtt.MqttQosOption
 import uk.nktnet.webviewkiosk.config.mqtt.MqttRetainHandlingOption
 import uk.nktnet.webviewkiosk.config.mqtt.MqttVariableName
 import uk.nktnet.webviewkiosk.config.option.AddressBarModeOption
+import uk.nktnet.webviewkiosk.config.option.AppLanguageOption
 import uk.nktnet.webviewkiosk.config.option.AddressBarPositionOption
 import uk.nktnet.webviewkiosk.config.option.AddressBarSizeOption
 import uk.nktnet.webviewkiosk.config.option.BackButtonHoldActionOption
@@ -384,6 +385,13 @@ class UserSettings(val context: Context) {
     )
 
     // Appearance
+    var appLanguage by stringEnumPref(
+        getRestrictions,
+        prefs,
+        UserSettingsKeys.Appearance.APP_LANGUAGE,
+        AppLanguageOption.ENGLISH.name,
+        fromString = AppLanguageOption::fromString
+    )
     var theme by stringEnumPref(
         getRestrictions,
         prefs,

@@ -67,6 +67,7 @@ object UserSettingsKeys {
     }
 
     object Appearance {
+        const val APP_LANGUAGE = "appearance.app_language"
         const val THEME = "appearance.theme"
         const val FLOATING_TOOLBAR_MODE = "appearance.floating_toolbar_mode"
         const val WEBVIEW_INSET = "appearance.webview_inset"

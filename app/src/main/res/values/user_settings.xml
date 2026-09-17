@@ -159,6 +159,10 @@
     <string name="web_lifecycle_refresh_on_loading_error_interval_seconds_description">https://webviewkiosk.nktnet.uk/docs/settings/web-lifecycle/</string>
 
     <!-- Appearance -->
+    <string name="appearance_app_language_title">Language</string>
+    <string name="appearance_app_language_info">Display language for the settings interface. Default is English; select 中文 to switch all setting names and descriptions to Chinese. Applies immediately and persists across restarts.</string>
+    <string name="appearance_app_language_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
     <string name="appearance_theme_title">Theme</string>
     <string name="appearance_theme_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
 

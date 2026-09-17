@@ -57,6 +57,7 @@ import uk.nktnet.webviewkiosk.states.LockStateSingleton
 import uk.nktnet.webviewkiosk.states.ThemeStateSingleton
 import uk.nktnet.webviewkiosk.states.UserInteractionStateSingleton
 import uk.nktnet.webviewkiosk.states.WaitingForUnlockStateSingleton
+import uk.nktnet.webviewkiosk.utils.applyAppLanguage
 import uk.nktnet.webviewkiosk.ui.components.auth.CustomAuthPasswordDialog
 import uk.nktnet.webviewkiosk.ui.components.webview.KeepScreenOnOption
 import uk.nktnet.webviewkiosk.ui.placeholders.UploadFileProgress
@@ -115,6 +116,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         CustomNotificationManager.init(applicationContext)
         userSettings = UserSettings(this)
+        // 兜底应用用户保存的语言（autoStoreLocales 失效路径）；locale 相同则内部 no-op
+        applyAppLanguage(userSettings.appLanguage)
         systemSettings = SystemSettings(this)
         DeviceOwnerManager.init(this)
         // https://github.com/nktnet1/webview-kiosk/pull/195
