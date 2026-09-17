@@ -10,6 +10,7 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.net.http.SslError
 import android.os.Build
+import android.os.Message
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
@@ -262,6 +263,11 @@ fun createCustomWebview(
 
                 mixedContentMode = userSettings.mixedContentMode.mode
                 overScrollMode = userSettings.overScrollMode.mode
+
+                // 让 window.open / target=_blank 触发 onCreateWindow（弹窗 URL 会被
+                // 劫持回当前 WebView，见 webChromeClient.onCreateWindow），
+                // 修复依赖弹窗跳转的登录流程（如登录成功页自动跳控制页）
+                setSupportMultipleWindows(true)
             }
 
             if (userSettings.enableBatteryApi) {
@@ -594,6 +600,74 @@ fun createCustomWebview(
 
                 override fun onProgressChanged(view: WebView?, newProgress: Int) {
                     config.onProgressChanged(newProgress)
+                }
+
+                /**
+                 * 弹窗授权流程（主页 window.open 授权页 → 授权页 window.opener.postMessage
+                 * 通知主页 → 授权页 window.close 自关 → 主页自动获得登录态）要求真正的
+                 * 多窗口支持。这里把 window.open / target=_blank 实现为盖在主页上的浮层
+                 * WebView：主页保持不动以维持 opener 关系；子窗口 CookieManager 全应用
+                 * 共享，授权 Cookie 天然互通；子窗口 window.close() 触发其自身的
+                 * onCloseWindow，在该回调里摘除浮层。
+                 */
+                override fun onCreateWindow(
+                    view: WebView,
+                    isDialog: Boolean,
+                    isUserGesture: Boolean,
+                    resultMsg: Message
+                ): Boolean {
+                    val activity = context as? Activity ?: return false
+                    val popupWebView = WebView(activity)
+                    popupWebView.settings.javaScriptEnabled = true
+                    popupWebView.settings.domStorageEnabled = true
+                    // 不设 WebViewClient 时重定向可能跳到外部浏览器
+                    popupWebView.webViewClient = WebViewClient()
+
+                    val container = FrameLayout(activity)
+                    container.addView(
+                        popupWebView,
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT
+                    )
+
+                    fun closePopup() {
+                        (container.parent as? ViewGroup)?.removeView(container)
+                        popupWebView.destroy()
+                    }
+
+                    // 授权页正常会 window.close() 自关（走下面 onCloseWindow）；
+                    // 万一它不自关，留个手动关闭入口，否则 kiosk 模式下没法退出浮层
+                    val closeButton = android.widget.Button(activity).apply {
+                        text = "✕"
+                        setOnClickListener { closePopup() }
+                    }
+                    container.addView(
+                        closeButton,
+                        FrameLayout.LayoutParams(
+                            ViewGroup.LayoutParams.WRAP_CONTENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT,
+                            android.view.Gravity.TOP or android.view.Gravity.END
+                        )
+                    )
+
+                    popupWebView.webChromeClient = object : WebChromeClient() {
+                        override fun onCloseWindow(w: WebView) {
+                            closePopup()
+                        }
+                    }
+
+                    activity.addContentView(
+                        container,
+                        ViewGroup.LayoutParams(
+                            ViewGroup.LayoutParams.MATCH_PARENT,
+                            ViewGroup.LayoutParams.MATCH_PARENT
+                        )
+                    )
+
+                    val transport = resultMsg.obj as WebView.WebViewTransport
+                    transport.webView = popupWebView
+                    resultMsg.sendToTarget()
+                    return true
                 }
 
                 override fun onPermissionRequest(request: PermissionRequest) {
