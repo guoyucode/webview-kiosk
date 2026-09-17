@@ -21,6 +21,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
@@ -41,15 +42,15 @@ fun BasicAuthDialog(authHandler: HttpAuthHandler?, host: String?, realm: String?
                 username = ""
                 password = ""
             },
-            title = { Text("Authentication Required") },
+            title = { Text(stringResource(R.string.setting_common_auth_required)) },
             text = {
                 Column {
-                    Text("Host: ${host ?: ""}")
-                    Text("Realm: ${realm ?: ""}")
+                    Text(stringResource(R.string.setting_common_auth_host, host ?: ""))
+                    Text(stringResource(R.string.setting_common_auth_realm, realm ?: ""))
                     OutlinedTextField(
                         value = username,
                         onValueChange = { username = it },
-                        label = { Text("Username") },
+                        label = { Text(stringResource(R.string.setting_common_username)) },
                         singleLine = true,
                         keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Next),
                         keyboardActions = KeyboardActions(),
@@ -58,7 +59,7 @@ fun BasicAuthDialog(authHandler: HttpAuthHandler?, host: String?, realm: String?
                     OutlinedTextField(
                         value = password,
                         onValueChange = { password = it },
-                        label = { Text("Password") },
+                        label = { Text(stringResource(R.string.setting_common_password)) },
                         visualTransformation = if (showPassword) VisualTransformation.None else PasswordVisualTransformation(),
                         singleLine = true,
                         trailingIcon = {
@@ -90,7 +91,7 @@ fun BasicAuthDialog(authHandler: HttpAuthHandler?, host: String?, realm: String?
                         password = ""
                     },
                     modifier = Modifier.width(95.dp)
-                ) { Text("Login") }
+                ) { Text(stringResource(R.string.setting_common_login)) }
             },
             dismissButton = {
                 Button(
@@ -105,7 +106,7 @@ fun BasicAuthDialog(authHandler: HttpAuthHandler?, host: String?, realm: String?
                         contentColor = MaterialTheme.colorScheme.onError
                     ),
                     modifier = Modifier.width(95.dp)
-                ) { Text("Cancel") }
+                ) { Text(stringResource(R.string.setting_common_cancel)) }
             }
 
         )

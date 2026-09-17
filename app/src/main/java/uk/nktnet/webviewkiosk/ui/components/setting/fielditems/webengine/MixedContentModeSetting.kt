@@ -18,20 +18,12 @@ fun MixedContentModeSetting() {
 
     DropdownSettingFieldItem(
         label = stringResource(R.string.web_engine_mixed_content_mode_title),
-        infoText = """
-            Configures the WebView's behavior when a secure origin attempts to load
-            a resource from an insecure origin.
-
-            The preferred and most secure mode of operation is "Never Allow".
-
-            The use of "Always Allow" is strongly discouraged and could compromise
-            your security. With "Compatibility Mode", use it with caution.
-        """.trimIndent(),
+        infoText = stringResource(R.string.webengine_mixed_content_mode_info),
         options = MixedContentModeOption.entries,
         initialValue = userSettings.mixedContentMode,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         onSave = { userSettings.mixedContentMode = it },
-        itemText = { it.label },
+        itemText = { context.getString(it.labelRes) },
     )
 }

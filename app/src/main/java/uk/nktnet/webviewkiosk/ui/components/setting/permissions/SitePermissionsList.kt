@@ -29,6 +29,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -57,7 +58,7 @@ fun SitePermissionsList(
                 .padding(16.dp),
         ) {
             Text(
-                text = "No site permissions have been granted.",
+                text = stringResource(R.string.setting_common_no_site_permissions),
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
@@ -108,11 +109,11 @@ fun SitePermissionsList(
                             expanded = menuExpanded && activeSite == origin,
                             onDismissRequest = { menuExpanded = false }
                         ) {
-                            DropdownMenuItem(text = { Text("Edit") }, onClick = {
+                            DropdownMenuItem(text = { Text(stringResource(R.string.setting_common_edit)) }, onClick = {
                                 showEditDialog = true
                                 menuExpanded = false
                             })
-                            DropdownMenuItem(text = { Text("Delete") }, onClick = {
+                            DropdownMenuItem(text = { Text(stringResource(R.string.setting_common_delete)) }, onClick = {
                                 showDeleteDialog = true
                                 menuExpanded = false
                             })
@@ -141,7 +142,7 @@ fun SitePermissionsList(
                 Column {
                     if (tempResources.isEmpty()) {
                         Text(
-                            text = "All permissions will be removed.",
+                            text = stringResource(R.string.setting_common_all_permissions_removed),
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             textAlign = TextAlign.Center,
                         )
@@ -177,9 +178,9 @@ fun SitePermissionsList(
                         sitePermissions = systemSettings.sitePermissionsMap
                     }
                     showEditDialog = false
-                }) { Text("Save") }
+                }) { Text(stringResource(R.string.setting_common_save)) }
             },
-            dismissButton = { TextButton(onClick = { showEditDialog = false }) { Text("Cancel") } }
+            dismissButton = { TextButton(onClick = { showEditDialog = false }) { Text(stringResource(R.string.setting_common_cancel)) } }
         )
     }
 
@@ -192,25 +193,25 @@ fun SitePermissionsList(
                     style = MaterialTheme.typography.titleMedium,
                 )
             },
-            text = { Text("Are you sure you want to remove ALL permissions for this site?") },
+            text = { Text(stringResource(R.string.setting_common_confirm_remove_all_permissions)) },
             confirmButton = {
                 TextButton(
                     onClick = {
                         activeSite?.let {
                             systemSettings.setSitePermissions(it, emptySet())
                             sitePermissions = systemSettings.sitePermissionsMap
-                            ToastManager.show(context, "Deleted $it")
+                            ToastManager.show(context, context.getString(R.string.setting_common_deleted, it))
                         }
                         showDeleteDialog = false
                     },
                 ) {
                     Text(
-                        text = "Delete",
+                        text = stringResource(R.string.setting_common_delete),
                         color = MaterialTheme.colorScheme.error
                     )
                 }
             },
-            dismissButton = { TextButton(onClick = { showDeleteDialog = false }) { Text("Cancel") } }
+            dismissButton = { TextButton(onClick = { showDeleteDialog = false }) { Text(stringResource(R.string.setting_common_cancel)) } }
         )
     }
 }

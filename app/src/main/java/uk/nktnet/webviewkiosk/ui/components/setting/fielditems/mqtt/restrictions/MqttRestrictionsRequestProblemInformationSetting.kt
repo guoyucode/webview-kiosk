@@ -17,10 +17,7 @@ fun MqttRestrictionsRequestProblemInformationSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.mqtt_restrictions_request_problem_information_title),
-        infoText = """
-            When enabled, the client requests additional problem information
-            from the broker in MQTT responses.
-        """.trimIndent(),
+        infoText = stringResource(R.string.mqtt_restrictions_request_problem_information_info),
         initialValue = userSettings.mqttRestrictionsRequestProblemInformation,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

@@ -18,15 +18,12 @@ fun AddressBarSizeSetting() {
 
     DropdownSettingFieldItem(
         label = stringResource(R.string.appearance_address_bar_size_title),
-        infoText = """
-            Customise the size of the address bar, which will determine the
-            height, font size, padding and icon size.
-        """.trimIndent(),
+        infoText = stringResource(R.string.appearance_address_bar_size_info),
         options = AddressBarSizeOption.entries,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         initialValue = userSettings.addressBarSize,
         onSave = { userSettings.addressBarSize = it },
-        itemText = { it.label },
+        itemText = { context.getString(it.labelRes) },
     )
 }

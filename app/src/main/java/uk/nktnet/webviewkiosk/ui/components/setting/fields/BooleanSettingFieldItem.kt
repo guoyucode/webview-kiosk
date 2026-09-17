@@ -1,6 +1,8 @@
 package uk.nktnet.webviewkiosk.ui.components.setting.fields
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
+import uk.nktnet.webviewkiosk.R
 
 @Composable
 fun BooleanSettingFieldItem(
@@ -10,7 +12,7 @@ fun BooleanSettingFieldItem(
     settingKey: String,
     restricted: Boolean,
     onSave: (Boolean) -> Unit,
-    itemText: (Boolean) -> String = { if (it) "True" else "False" },
+    itemText: (Boolean) -> String = defaultBooleanItemText(),
     extraContent: (@Composable ((setValue: (Boolean) -> Unit) -> Unit))? = null,
 ) {
     DropdownSettingFieldItem(
@@ -24,4 +26,14 @@ fun BooleanSettingFieldItem(
         itemText = itemText,
         extraContent = extraContent,
     )
+}
+
+@Composable
+private fun defaultBooleanItemText(): (Boolean) -> String {
+    val context = LocalContext.current
+    return { value ->
+        context.getString(
+            if (value) R.string.setting_common_true else R.string.setting_common_false
+        )
+    }
 }

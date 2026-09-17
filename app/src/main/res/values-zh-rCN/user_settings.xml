@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Web Content -->
+    <string name="web_content_home_url_title">主页 URL</string>
+    <string name="web_content_home_url_description">https://webviewkiosk.nktnet.uk/docs/settings/web-content/</string>
+
+    <string name="web_content_website_blacklist_title">网站黑名单</string>
+    <string name="web_content_website_blacklist_description">https://webviewkiosk.nktnet.uk/docs/settings/web-content/</string>
+
+    <string name="web_content_website_whitelist_title">网站白名单</string>
+    <string name="web_content_website_whitelist_description">https://webviewkiosk.nktnet.uk/docs/settings/web-content/</string>
+
+    <string name="web_content_website_bookmarks_title">网站书签</string>
+    <string name="web_content_website_bookmarks_description">https://webviewkiosk.nktnet.uk/docs/settings/web-content/</string>
+
+    <string name="web_content_support_pdf_rendering_title">支持 PDF 渲染</string>
+    <string name="web_content_support_pdf_rendering_description">https://webviewkiosk.nktnet.uk/docs/settings/web-content/</string>
+
+    <string name="web_content_allow_local_files_title">允许访问本地文件</string>
+    <string name="web_content_allow_local_files_description">https://webviewkiosk.nktnet.uk/docs/settings/web-content/</string>
+
+    <!-- Web Browsing -->
+    <string name="web_browsing_allow_refresh_title">允许刷新</string>
+    <string name="web_browsing_allow_refresh_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_allow_pull_to_refresh_title">允许下拉刷新</string>
+    <string name="web_browsing_allow_pull_to_refresh_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_allow_backwards_navigation_title">允许后退导航</string>
+    <string name="web_browsing_allow_backwards_navigation_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_allow_go_home_title">允许返回主页</string>
+    <string name="web_browsing_allow_go_home_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_clear_history_on_home_title">返回主页时清除历史记录</string>
+    <string name="web_browsing_clear_history_on_home_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_replace_history_url_on_redirect_title">重定向时替换历史记录 URL</string>
+    <string name="web_browsing_replace_history_url_on_redirect_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_allow_history_access_title">允许访问历史记录</string>
+    <string name="web_browsing_allow_history_access_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_allow_bookmark_access_title">允许访问书签</string>
+    <string name="web_browsing_allow_bookmark_access_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_allow_other_url_schemes_title">允许其他 URL Scheme</string>
+    <string name="web_browsing_allow_other_url_schemes_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_allow_default_long_press_title">允许默认长按操作</string>
+    <string name="web_browsing_allow_default_long_press_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_allow_link_long_press_context_menu_title">允许链接长按上下文菜单</string>
+    <string name="web_browsing_allow_link_long_press_context_menu_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_override_url_loading_block_action_title">覆盖 URL 加载拦截行为</string>
+    <string name="web_browsing_override_url_loading_block_action_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_address_bar_actions_title">地址栏操作</string>
+    <string name="web_browsing_address_bar_actions_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_kiosk_control_panel_region_title">Kiosk 控制面板区域</string>
+    <string name="web_browsing_kiosk_control_panel_region_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_kiosk_control_panel_actions_title">Kiosk 控制面板操作</string>
+    <string name="web_browsing_kiosk_control_panel_actions_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_search_provider_url_title">搜索引擎 URL</string>
+    <string name="web_browsing_search_provider_url_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <string name="web_browsing_search_suggestion_engine_title">搜索建议引擎</string>
+    <string name="web_browsing_search_suggestion_engine_description">https://webviewkiosk.nktnet.uk/docs/settings/web-browsing/</string>
+
+    <!-- Web Engine -->
+    <string name="web_engine_enable_javascript_title">启用 JavaScript</string>
+    <string name="web_engine_enable_javascript_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_enable_dom_storage_title">启用 DOM 存储</string>
+    <string name="web_engine_enable_dom_storage_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_cache_mode_title">缓存模式</string>
+    <string name="web_engine_cache_mode_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_layout_algorithm_title">布局算法</string>
+    <string name="web_engine_layout_algorithm_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_accept_cookies_title">接受 Cookie</string>
+    <string name="web_engine_accept_cookies_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_accept_third_party_cookies_title">接受第三方 Cookie</string>
+    <string name="web_engine_accept_third_party_cookies_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_user_agent_title">User Agent</string>
+    <string name="web_engine_user_agent_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_use_wide_viewport_title">使用宽视口</string>
+    <string name="web_engine_use_wide_viewport_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_load_with_overview_mode_title">以概览模式加载页面</string>
+    <string name="web_engine_load_with_overview_mode_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_support_zoom_title">支持缩放</string>
+    <string name="web_engine_support_zoom_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_built_in_zoom_controls_title">内置缩放控件</string>
+    <string name="web_engine_built_in_zoom_controls_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_display_zoom_controls_title">显示缩放控件</string>
+    <string name="web_engine_display_zoom_controls_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_initial_scale_title">初始缩放比例</string>
+    <string name="web_engine_initial_scale_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_allow_file_access_from_file_urls_title">允许从 file URL 访问本地文件</string>
+    <string name="web_engine_allow_file_access_from_file_urls_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_allow_universal_access_from_file_urls_title">允许从 file URL 进行全局访问</string>
+    <string name="web_engine_allow_universal_access_from_file_urls_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_allow_file_picker_title">允许文件选择器</string>
+    <string name="web_engine_allow_file_picker_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_allow_file_download_title">允许文件下载</string>
+    <string name="web_engine_allow_file_download_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_media_playback_requires_user_gesture_title">媒体播放需要用户手势</string>
+    <string name="web_engine_media_playback_requires_user_gesture_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_ssl_error_mode_title">SSL 错误处理模式</string>
+    <string name="web_engine_ssl_error_mode_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_mixed_content_mode_title">混合内容模式</string>
+    <string name="web_engine_mixed_content_mode_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_over_scroll_mode_title">过度滚动模式</string>
+    <string name="web_engine_over_scroll_mode_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <string name="web_engine_request_focus_on_page_start_title">页面开始加载时请求焦点</string>
+    <string name="web_engine_request_focus_on_page_start_description">https://webviewkiosk.nktnet.uk/docs/settings/web-engine/</string>
+
+    <!-- Web Lifecycle -->
+    <string name="web_lifecycle_lock_on_launch_title">启动时锁定</string>
+    <string name="web_lifecycle_lock_on_launch_description">https://webviewkiosk.nktnet.uk/docs/settings/web-lifecycle/</string>
+
+    <string name="web_lifecycle_reset_on_launch_title">启动时重置</string>
+    <string name="web_lifecycle_reset_on_launch_description">https://webviewkiosk.nktnet.uk/docs/settings/web-lifecycle/</string>
+
+    <string name="web_lifecycle_reset_on_inactivity_seconds_title">无操作时重置（秒）</string>
+    <string name="web_lifecycle_reset_on_inactivity_seconds_description">https://webviewkiosk.nktnet.uk/docs/settings/web-lifecycle/</string>
+
+    <string name="web_lifecycle_dim_screen_on_inactivity_seconds_title">无操作时降低屏幕亮度（秒）</string>
+    <string name="web_lifecycle_dim_screen_on_inactivity_seconds_description">https://webviewkiosk.nktnet.uk/docs/settings/web-lifecycle/</string>
+
+    <string name="web_lifecycle_refresh_on_network_available_title">网络恢复时刷新</string>
+    <string name="web_lifecycle_refresh_on_network_available_description">https://webviewkiosk.nktnet.uk/docs/settings/web-lifecycle/</string>
+
+    <string name="web_lifecycle_refresh_on_loading_error_interval_seconds_title">加载出错时按间隔刷新（秒）</string>
+    <string name="web_lifecycle_refresh_on_loading_error_interval_seconds_description">https://webviewkiosk.nktnet.uk/docs/settings/web-lifecycle/</string>
+
+    <!-- Appearance -->
+    <string name="appearance_app_language_title">语言</string>
+    <string name="appearance_app_language_info">设置界面的显示语言。默认为英文；选择「中文」可将所有设置名称和描述切换为中文。立即生效，并在重启后保持。</string>
+    <string name="appearance_app_language_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
+    <string name="appearance_theme_title">主题</string>
+    <string name="appearance_theme_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
+    <string name="appearance_floating_toolbar_mode_title">浮动工具栏模式</string>
+    <string name="appearance_floating_toolbar_mode_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
+    <string name="appearance_webview_inset_title">WebView 内边距</string>
+    <string name="appearance_webview_inset_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
+    <string name="appearance_immersive_mode_title">沉浸式模式</string>
+    <string name="appearance_immersive_mode_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
+    <string name="appearance_blocked_message_title">拦截提示消息</string>
+    <string name="appearance_blocked_message_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
+    <string name="appearance_custom_block_page_html_title">自定义拦截页面 HTML</string>
+    <string name="appearance_custom_block_page_html_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
+    <string name="appearance_address_bar_mode_title">地址栏模式</string>
+    <string name="appearance_address_bar_mode_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
+    <string name="appearance_address_bar_position_title">地址栏位置</string>
+    <string name="appearance_address_bar_position_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
+    <string name="appearance_address_bar_size_title">地址栏大小</string>
+    <string name="appearance_address_bar_size_description">https://webviewkiosk.nktnet.uk/docs/settings/appearance/</string>
+
+    <!-- Device -->
+    <string name="device_keep_screen_on_title">保持屏幕常亮</string>
+    <string name="device_keep_screen_on_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_rotation_title">屏幕方向</string>
+    <string name="device_rotation_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_brightness_title">屏幕亮度</string>
+    <string name="device_brightness_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_allow_camera_title">允许使用相机</string>
+    <string name="device_allow_camera_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_allow_microphone_title">允许使用麦克风</string>
+    <string name="device_allow_microphone_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_allow_location_title">允许定位</string>
+    <string name="device_allow_location_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_allow_nfc_title">允许 NFC</string>
+    <string name="device_allow_nfc_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_allow_notifications_title">允许通知</string>
+    <string name="device_allow_notifications_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_back_button_hold_action_title">长按返回键动作</string>
+    <string name="device_back_button_hold_action_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_custom_unlock_shortcut_title">自定义解锁快捷方式</string>
+    <string name="device_custom_unlock_shortcut_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_custom_auth_password_title">自定义验证密码</string>
+    <string name="device_custom_auth_password_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_unlock_auth_requirement_title">解锁验证要求</string>
+    <string name="device_unlock_auth_requirement_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_block_screen_capture_title">禁止屏幕截图</string>
+    <string name="device_block_screen_capture_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_block_volume_keys_title">屏蔽音量键</string>
+    <string name="device_block_volume_keys_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <!-- Device Owner -->
+    <string name="device_owner_lock_task_feature_home_title">显示主屏幕按钮</string>
+    <string name="device_owner_lock_task_feature_home_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_owner_lock_task_feature_overview_title">显示概览按钮</string>
+    <string name="device_owner_lock_task_feature_overview_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_owner_lock_task_feature_global_actions_title">启用全局操作</string>
+    <string name="device_owner_lock_task_feature_global_actions_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_owner_lock_task_feature_notifications_title">启用通知</string>
+    <string name="device_owner_lock_task_feature_notifications_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_owner_lock_task_feature_system_info_title">显示系统信息</string>
+    <string name="device_owner_lock_task_feature_system_info_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_owner_lock_task_feature_keyguard_title">启用锁屏界面</string>
+    <string name="device_owner_lock_task_feature_keyguard_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_owner_lock_task_feature_block_activity_start_in_task_title">阻止任务内启动 Activity</string>
+    <string name="device_owner_lock_task_feature_block_activity_start_in_task_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <string name="device_owner_dhizuku_request_permission_on_launch_title">启动时通过 Dhizuku 请求权限</string>
+    <string name="device_owner_dhizuku_request_permission_on_launch_description">https://webviewkiosk.nktnet.uk/docs/settings/device/</string>
+
+    <!-- JS Scripts -->
+    <string name="js_scripts_apply_app_theme_title">应用 App 主题</string>
+    <string name="js_scripts_apply_app_theme_description">https://webviewkiosk.nktnet.uk/docs/settings/js-scripts/</string>
+
+    <string name="js_scripts_apply_desktop_viewport_width_title">应用桌面视口宽度（px）</string>
+    <string name="js_scripts_apply_desktop_viewport_width_description">https://webviewkiosk.nktnet.uk/docs/settings/js-scripts/</string>
+
+    <string name="js_scripts_enable_battery_api_title">启用 Battery API</string>
+    <string name="js_scripts_enable_battery_api_description">https://webviewkiosk.nktnet.uk/docs/settings/js-scripts/</string>
+
+    <string name="js_scripts_enable_brightness_api_title">启用 Brightness API</string>
+    <string name="js_scripts_enable_brightness_api_description">https://webviewkiosk.nktnet.uk/docs/settings/js-scripts/</string>
+
+    <string name="js_scripts_enable_dark_reader_title">启用 Dark Reader</string>
+    <string name="js_scripts_enable_dark_reader_description">https://webviewkiosk.nktnet.uk/docs/settings/js-scripts/</string>
+
+    <string name="js_scripts_enable_eruda_console_title">启用 Eruda 控制台</string>
+    <string name="js_scripts_enable_eruda_console_description">https://webviewkiosk.nktnet.uk/docs/settings/js-scripts/</string>
+
+    <string name="js_scripts_custom_script_on_page_start_title">页面开始加载时执行（自定义脚本）</string>
+    <string name="js_scripts_custom_script_on_page_start_description">https://webviewkiosk.nktnet.uk/docs/settings/js-scripts/</string>
+
+    <string name="js_scripts_custom_script_on_page_finish_title">页面加载完成时执行（自定义脚本）</string>
+    <string name="js_scripts_custom_script_on_page_finish_description">https://webviewkiosk.nktnet.uk/docs/settings/js-scripts/</string>
+
+    <!-- MQTT -->
+    <string name="mqtt_enabled_title">启用</string>
+    <string name="mqtt_enabled_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/</string>
+
+    <string name="mqtt_use_foreground_service_title">使用前台服务</string>
+    <string name="mqtt_use_foreground_service_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/</string>
+
+    <!-- MQTT Connection -->
+    <string name="mqtt_connection_server_host_title">服务器主机</string>
+    <string name="mqtt_connection_server_host_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_server_port_title">服务器端口</string>
+    <string name="mqtt_connection_server_port_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_client_id_title">客户端 ID</string>
+    <string name="mqtt_connection_client_id_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_use_tls_title">使用 TLS</string>
+    <string name="mqtt_connection_use_tls_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_username_title">用户名</string>
+    <string name="mqtt_connection_username_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_password_title">密码</string>
+    <string name="mqtt_connection_password_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_clean_start_title">全新开始（Clean Start）</string>
+    <string name="mqtt_connection_clean_start_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_keep_alive_title">保活时间（秒）</string>
+    <string name="mqtt_connection_keep_alive_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_connect_timeout_title">连接超时（秒）</string>
+    <string name="mqtt_connection_connect_timeout_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_socket_connect_timeout_title">Socket 连接超时（秒）</string>
+    <string name="mqtt_connection_socket_connect_timeout_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_automatic_reconnect_title">自动重连</string>
+    <string name="mqtt_connection_automatic_reconnect_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_session_expiry_interval_title">会话过期时间（秒）</string>
+    <string name="mqtt_connection_session_expiry_interval_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_use_websocket_title">使用 WebSocket</string>
+    <string name="mqtt_connection_use_websocket_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <string name="mqtt_connection_websocket_server_path_title">WebSocket 服务器路径</string>
+    <string name="mqtt_connection_websocket_server_path_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/connection/</string>
+
+    <!-- MQTT Will -->
+    <string name="mqtt_will_topic_title">遗嘱主题</string>
+    <string name="mqtt_will_topic_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/will/</string>
+
+    <string name="mqtt_will_qos_title">遗嘱 QoS</string>
+    <string name="mqtt_will_qos_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/will/</string>
+
+    <string name="mqtt_will_payload_title">遗嘱载荷</string>
+    <string name="mqtt_will_payload_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/will/</string>
+
+    <string name="mqtt_will_retain_title">遗嘱保留</string>
+    <string name="mqtt_will_retain_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/will/</string>
+
+    <string name="mqtt_will_message_expiry_interval_title">遗嘱消息过期时间（秒）</string>
+    <string name="mqtt_will_message_expiry_interval_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/will/</string>
+
+    <string name="mqtt_will_delay_interval_title">遗嘱延迟时间（秒）</string>
+    <string name="mqtt_will_delay_interval_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/will/</string>
+
+    <!-- MQTT Restrictions -->
+    <string name="mqtt_restrictions_receive_maximum_title">最大接收数</string>
+    <string name="mqtt_restrictions_receive_maximum_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/restrictions/</string>
+
+    <string name="mqtt_restrictions_send_maximum_title">最大发送数</string>
+    <string name="mqtt_restrictions_send_maximum_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/restrictions/</string>
+
+    <string name="mqtt_restrictions_maximum_packet_size_title">数据包大小上限</string>
+    <string name="mqtt_restrictions_maximum_packet_size_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/restrictions/</string>
+
+    <string name="mqtt_restrictions_send_maximum_packet_size_title">发送数据包大小上限</string>
+    <string name="mqtt_restrictions_send_maximum_packet_size_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/restrictions/</string>
+
+    <string name="mqtt_restrictions_topic_alias_maximum_title">主题别名上限</string>
+    <string name="mqtt_restrictions_topic_alias_maximum_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/restrictions/</string>
+
+    <string name="mqtt_restrictions_send_topic_alias_maximum_title">发送主题别名上限</string>
+    <string name="mqtt_restrictions_send_topic_alias_maximum_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/restrictions/</string>
+
+    <string name="mqtt_restrictions_request_problem_information_title">请求问题信息</string>
+    <string name="mqtt_restrictions_request_problem_information_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/restrictions/</string>
+
+    <string name="mqtt_restrictions_request_response_information_title">请求响应信息</string>
+    <string name="mqtt_restrictions_request_response_information_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/restrictions/</string>
+
+    <!-- MQTT Topics: Publish and Subscribe -->
+    <!-- Publish Event -->
+    <string name="mqtt_publish_event_topic_title">主题</string>
+    <string name="mqtt_publish_event_topic_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/event/</string>
+
+    <string name="mqtt_publish_event_qos_title">QoS</string>
+    <string name="mqtt_publish_event_qos_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/event/</string>
+
+    <string name="mqtt_publish_event_retain_title">保留</string>
+    <string name="mqtt_publish_event_retain_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/event/</string>
+
+    <!-- Publish Response -->
+    <string name="mqtt_publish_response_topic_title">主题</string>
+    <string name="mqtt_publish_response_topic_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/response/</string>
+
+    <string name="mqtt_publish_response_qos_title">QoS</string>
+    <string name="mqtt_publish_response_qos_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/response/</string>
+
+    <string name="mqtt_publish_response_retain_title">保留</string>
+    <string name="mqtt_publish_response_retain_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/response/</string>
+
+    <!-- Subscribe Command -->
+    <string name="mqtt_subscribe_command_topic_title">主题</string>
+    <string name="mqtt_subscribe_command_topic_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/command/</string>
+
+    <string name="mqtt_subscribe_command_qos_title">QoS</string>
+    <string name="mqtt_subscribe_command_qos_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/command/</string>
+
+    <string name="mqtt_subscribe_command_retain_handling_title">保留消息处理</string>
+    <string name="mqtt_subscribe_command_retain_handling_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/command/</string>
+
+    <string name="mqtt_subscribe_command_retain_as_published_title">按发布时的保留标志转发</string>
+    <string name="mqtt_subscribe_command_retain_as_published_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/command/</string>
+
+    <!-- Subscribe Settings -->
+    <string name="mqtt_subscribe_settings_topic_title">主题</string>
+    <string name="mqtt_subscribe_settings_topic_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/settings/</string>
+
+    <string name="mqtt_subscribe_settings_qos_title">QoS</string>
+    <string name="mqtt_subscribe_settings_qos_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/settings/</string>
+
+    <string name="mqtt_subscribe_settings_retain_handling_title">保留消息处理</string>
+    <string name="mqtt_subscribe_settings_retain_handling_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/settings/</string>
+
+    <string name="mqtt_subscribe_settings_retain_as_published_title">按发布时的保留标志转发</string>
+    <string name="mqtt_subscribe_settings_retain_as_published_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/settings/</string>
+
+    <!-- Subscribe Request -->
+    <string name="mqtt_subscribe_request_topic_title">主题</string>
+    <string name="mqtt_subscribe_request_topic_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/request/</string>
+
+    <string name="mqtt_subscribe_request_qos_title">QoS</string>
+    <string name="mqtt_subscribe_request_qos_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/request/</string>
+
+    <string name="mqtt_subscribe_request_retain_handling_title">保留消息处理</string>
+    <string name="mqtt_subscribe_request_retain_handling_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/request/</string>
+
+    <string name="mqtt_subscribe_request_retain_as_published_title">按发布时的保留标志转发</string>
+    <string name="mqtt_subscribe_request_retain_as_published_description">https://webviewkiosk.nktnet.uk/docs/settings/mqtt/topics/request/</string>
+
+    <!-- UnifiedPush -->
+    <string name="unifiedpush_enabled_title">启用</string>
+    <string name="unifiedpush_enabled_description">https://webviewkiosk.nktnet.uk/docs/settings/unifiedpush/</string>
+
+    <string name="unifiedpush_distributor_title">分发器</string>
+    <string name="unifiedpush_distributor_description">https://webviewkiosk.nktnet.uk/docs/settings/unifiedpush/</string>
+
+    <string name="unifiedpush_instance_title">实例</string>
+    <string name="unifiedpush_instance_description">https://webviewkiosk.nktnet.uk/docs/settings/unifiedpush/</string>
+
+    <string name="unifiedpush_message_for_distributor_title">发送给分发器的消息</string>
+    <string name="unifiedpush_message_for_distributor_description">https://webviewkiosk.nktnet.uk/docs/settings/unifiedpush/</string>
+
+    <string name="unifiedpush_vapid_public_key_title">VAPID 公钥</string>
+    <string name="unifiedpush_vapid_public_key_description">https://webviewkiosk.nktnet.uk/docs/settings/unifiedpush/</string>
+
+    <string name="unifiedpush_process_unencrypted_messages_title">处理未加密消息</string>
+    <string name="unifiedpush_process_unencrypted_messages_description">https://webviewkiosk.nktnet.uk/docs/settings/unifiedpush/</string>
+
+    <string name="unifiedpush_store_endpoint_credentials_title">保存终端节点凭据</string>
+    <string name="unifiedpush_store_endpoint_credentials_description">https://webviewkiosk.nktnet.uk/docs/settings/unifiedpush/</string>
+</resources>

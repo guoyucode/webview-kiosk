@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shared permission/status snippets (fielditems/device) -->
+    <string name="device_value_true">True %s</string>
+    <string name="device_value_false">False %s</string>
+    <string name="device_status_no_permission">(no permission)</string>
+    <string name="device_status_precise">(precise)</string>
+    <string name="device_status_approximate">(approximate)</string>
+    <string name="device_status_nfc_disabled">(NFC disabled)</string>
+    <string name="device_status_nfc_not_supported">(NFC not supported)</string>
+    <string name="device_button_disable_in_app_info">Disable in App Info</string>
+    <string name="device_button_enable_in_app_info">Enable in App Info</string>
+    <string name="device_button_request_camera_permission">Request Camera Permission</string>
+    <string name="device_button_request_microphone_permission">Request Microphone Permission</string>
+    <string name="device_button_request_fine_location_permission">Request Fine Location Permission</string>
+    <string name="device_button_request_coarse_location_permission">Request Coarse Location Permission</string>
+    <string name="device_button_request_notification_permission">Request Notification Permission</string>
+
+    <!-- AllowCameraSetting -->
+    <string name="device_allow_camera_info">Set to true to give WebView access to your device\'s camera.\n\nYou will need to grant the CAMERA permission, which is required for the WebView\'s RESOURCE_VIDEO_CAPTURE feature.</string>
+
+    <!-- AllowLocationSetting -->
+    <string name="device_allow_location_info">When enabled, websites can request the device\'s location.\n\nYou can choose to request precise location (FINE) or approximate location (COARSE).\n\nYou will need to grant either ACCESS_FINE_LOCATION or ACCESS_COARSE_LOCATION, required for the WebView\'s GeolocationPermissions.</string>
+    <string name="device_location_request_precise">Request precise location</string>
+
+    <!-- AllowMicrophoneSetting -->
+    <string name="device_allow_microphone_info">Set to true to give WebView access to your device\'s microphone.\n\nYou will need to grant the RECORD_AUDIO permission, which is required for the WebView\'s RESOURCE_AUDIO_CAPTURE feature.</string>
+
+    <!-- AllowNfcSetting -->
+    <string name="device_allow_nfc_info">Set to true to enable NFC support via a Web NFC compatibility bridge.\n\nThis allows websites to read and write NFC tags using the device\'s NFC hardware.\n\nPlease note that this does not use Web NFC directly, as Web NFC is not yet available in Android System WebView. Instead, a compatibility layer is provided between native NFC and JavaScript. As a result, it is not subject to the same security limitations as Web NFC:\n\n- https://developer.chrome.com/docs/capabilities/nfc#security-and-permissions\n\nand can also operate on insecure (non-HTTPS) websites.</string>
+    <string name="device_nfc_open_settings">Open NFC Settings</string>
+    <string name="device_nfc_unsupported_message">NFC is not supported on this device.</string>
+
+    <!-- AllowNotificationsSetting -->
+    <string name="device_allow_notifications_info">Set to true to allow %1$s to send notifications. For example, this will allow the MQTT notify command to create alerts.\n\nYou will need to grant the POST_NOTIFICATIONS android permission.\n\nPlease note that for foreground services, e.g. when using lock task mode kiosk-launch or MQTT, the notification will always be created irrespective of this setting. You can disable notifications at the device level if you do not want them.</string>
+
+    <!-- BackButtonHoldActionSetting -->
+    <string name="device_back_button_hold_action_info">Customise the behaviour when the back button is held down (long pressed).</string>
+
+    <!-- BlockScreenCaptureSetting -->
+    <string name="device_block_screen_capture_info">Prevent screenshots, screen recording and content previews in Recent Apps. This is done by setting the FLAG_SECURE window flag.</string>
+
+    <!-- BlockVolumeKeysSetting -->
+    <string name="device_block_volume_keys_info">Prevent users from changing the device volume using hardware keys while in the kiosk app.</string>
+
+    <!-- BrightnessSetting -->
+    <string name="device_brightness_info">Set the app window brightness from 0 (very dim) to 100 (very dark).\n\nUse -1 to disable (i.e. the system default brightness will be used).</string>
+    <string name="device_brightness_placeholder">e.g. 20</string>
+    <string name="device_brightness_system_default">-1 (system default)</string>
+    <string name="device_brightness_use_system_default">Use System Default (-1)</string>
+
+    <!-- CustomAuthPasswordSetting -->
+    <string name="device_custom_auth_password_info">Specify a custom password to protect your settings or when unlocking from the kiosk state.\n\nFor user-owned devices that utilises screen pinning, this will only work if you are using an unlock method provided by the app.\n\nDevice-level unpin methods (e.g. gestures/holding overview + back button simultaneously) will bypass this setting. To enhance security, please see: %1$s/security\n\nLeave this setting blank to use your device\'s biometrics or credentials.</string>
+    <string name="device_custom_auth_password_blank_hint">(blank = device credentials)</string>
+    <string name="device_custom_auth_password_too_long">Please enter fewer than %1$d characters.</string>
+    <string name="device_custom_auth_password_save">Next</string>
+    <string name="device_custom_auth_password_reenter_title">Re-enter password</string>
+    <string name="device_custom_auth_password_confirm_label">Confirm password</string>
+    <string name="device_custom_auth_password_show_password">Show password</string>
+    <string name="device_custom_auth_password_mismatch">Passwords do not match.</string>
+    <string name="device_custom_auth_password_remove_title">Remove Custom Password</string>
+    <string name="device_custom_auth_password_remove_message">Are you sure you want to remove your custom password?\n\nYour device credentials or biometrics will be used instead.</string>
+    <string name="device_action_confirm">Confirm</string>
+    <string name="device_action_cancel">Cancel</string>
+    <string name="device_action_remove">Remove</string>
+
+    <!-- CustomUnlockShortcutSetting -->
+    <string name="device_custom_unlock_shortcut_info">Provide a custom keyboard shortcut using a modifier key (CTRL/SHIFT/ALT/META) in combination with another standard key to unlock/unpin the application.\n\nFor example, CTRL+1.\n\nThis is useful for devices with no navigation buttons on screen and instead has a physical keyboard connected.</string>
+    <string name="device_shortcut_requires_modifier">Shortcut must use CTRL/SHIFT/ALT/META.</string>
+    <string name="device_shortcut_detected">Shortcut: %1$s</string>
+    <string name="device_shortcut_listening">Listening...</string>
+    <string name="device_shortcut_scan">Scan Keyboard Shortcut</string>
+
+    <!-- DeviceRotationSetting -->
+    <string name="device_rotation_info">Choose a fixed device rotation or select \'Auto\' to allow the system to rotate the screen automatically.</string>
+
+    <!-- KeepScreenOnSetting -->
+    <string name="device_keep_screen_on_info">Enable this option to keep your device awake (no screen timeout).</string>
+
+    <!-- UnlockAuthRequirementSetting -->
+    <string name="device_unlock_auth_requirement_info">This setting only applies to in-app unlock methods, e.g. when unlocking using Kiosk Control Panel or Custom Unlock Shortcut.\n\nAvailable options are:\n\n  - DEFAULT: require authentication for lock task mode (device owner, fully-managed/company-owned devices), off for screen pinning (user-owned devices)\n\n  - OFF: unlock without requiring authentication\n\n  - REQUIRE: Prompt for biometrics or device credentials when unlocking\n\nFor user-owned devices without lock task mode, the device will auto-lock when unpinning, which is outside the control of %1$s.</string>
+
+    <!-- DhizukuRequestPermissionOnLaunchSetting -->
+    <string name="device_owner_dhizuku_request_permission_on_launch_label">Request Permission on Launch</string>
+    <string name="device_owner_dhizuku_request_permission_on_launch_info">When enabled, if Dhizuku is installed and has not granted %1$s access to Device Owner privileges, prompt the user for permission.</string>
+
+    <!-- LockTaskFeature settings -->
+    <string name="device_owner_lock_task_feature_block_activity_start_in_task_info">Enable blocking of non-allowlisted activities from being started into a locked task.\n\nThis requires Android 11 (API Level 30).</string>
+    <string name="device_owner_lock_task_feature_global_actions_info">Enables the global actions dialog that shows when long-pressing the power button.\n\nThis is the only feature that\'s enabled when setLockTaskFeatures() hasn\'t been called. A user typically can\'t power off the device if you disable this dialog.</string>
+    <string name="device_owner_lock_task_feature_home_info">Shows the Home button.\n\nEnable for custom launchers - tapping an enabled Home button has no action unless you allowlist the default Android launcher.</string>
+    <string name="device_owner_lock_task_feature_keyguard_info">Enables any lock screen that might be set on the device. Typically not suitable for devices with public users such as kiosks or digital signage.</string>
+    <string name="device_owner_lock_task_feature_notifications_info">Enables notifications for all apps.\n\nThis shows notification icons in the status bar, heads-up notifications, and the expandable notification shade.\n\nIf you enable this button, you must also enable the Home button.\n\nTapping notification actions and buttons that open new panels doesn\'t work in lock task mode.</string>
+    <string name="device_owner_lock_task_feature_overview_info">Shows the Overview button (tapping this button opens the Recents screen).\n\nIf you enable this button, you must also enable the Home button.</string>
+    <string name="device_owner_lock_task_feature_system_info_info">Enables the status bar\'s system info area that contains indicators such as connectivity, battery, and sound/vibrate options.</string>
+
+    <!-- Accessibility content descriptions -->
+    <string name="device_content_description_clear">Clear</string>
+</resources>

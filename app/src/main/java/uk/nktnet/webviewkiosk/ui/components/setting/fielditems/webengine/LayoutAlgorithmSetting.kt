@@ -18,20 +18,12 @@ fun LayoutAlgorithmSetting() {
 
     DropdownSettingFieldItem(
         label = stringResource(R.string.web_engine_layout_algorithm_title),
-        infoText = """
-            - NORMAL: no rendering changes
-
-            - SINGLE_COLUMN: all content in one column the width of the view
-
-            - NARROW_COLUMNS: columns no wider than screen (pre-KitKat)
-
-            - TEXT_AUTOSIZING: boosts font size heuristically (API 19+)
-        """.trimIndent(),
+        infoText = stringResource(R.string.webengine_layout_algorithm_info),
         options = LayoutAlgorithmOption.entries,
         initialValue = userSettings.layoutAlgorithm,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         onSave = { userSettings.layoutAlgorithm = it },
-        itemText = { it.label }
+        itemText = { context.getString(it.labelRes) }
     )
 }

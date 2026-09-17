@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="webengine_accept_cookies_info">允许网站存储和读取 Cookie。</string>
+    <string name="webengine_accept_third_party_cookies_info">允许第三方网站在此 WebView 中设置 Cookie。</string>
+    <string name="webengine_allow_file_access_from_file_urls_info">此方法已在 API 30（Android 11）中弃用。\n\n设置在 file 协议 URL 的上下文中，是否允许跨源请求访问其他 file 协议 URL 的内容。请注意，某些访问（如图片 HTML 元素）不遵循同源规则，不受此设置影响。\n\n如果您会打开可能由外部来源创建或篡改的文件，请勿启用此设置。启用后，file:// 上下文中加载的恶意脚本可以访问任意本地文件，包括 WebView 的 Cookie 和应用私有数据。</string>
+    <string name="webengine_allow_file_download_info">允许将网站中的文件下载到：\n\n- %1$s\n\n对于 Android 9.0（SDK 28）及以下版本，需要 WRITE_EXTERNAL_STORAGE 权限。</string>
+    <string name="webengine_allow_file_picker_info">允许网站打开系统文件选择器，例如用于上传文件。</string>
+    <string name="webengine_allow_universal_access_from_file_urls_info">此方法已在 API 30（Android 11）中弃用。\n\n设置在 file 协议 URL 的上下文中，是否允许跨源请求访问任意来源的内容。这包括访问其他 file 协议 URL 或 Web 上下文中的内容。请注意，某些访问（如图片 HTML 元素）不遵循同源规则，不受此设置影响。\n\n如果您会打开可能由外部来源创建或篡改的文件，请勿启用此设置。启用后，file:// 上下文中加载的恶意脚本可以发起跨站脚本攻击，访问任意本地文件（包括 WebView 的 Cookie 和应用私有数据），甚至窃取任意网站上使用的凭据。</string>
+    <string name="webengine_built_in_zoom_controls_info">设置 WebView 是否使用其内置的缩放机制。\n\n内置缩放机制包括显示在 WebView 内容之上的屏幕缩放控件，以及使用双指捏合手势控制缩放。</string>
+    <string name="webengine_cache_mode_info">控制 WebView 在加载页面时如何使用缓存。</string>
+    <string name="webengine_display_zoom_controls_info">设置 WebView 在使用内置缩放机制时是否显示屏幕缩放控件。</string>
+    <string name="webengine_enable_dom_storage_info">允许网页使用 DOM 存储 API，如 local storage 和 session storage。</string>
+    <string name="webengine_enable_javascript_info">允许在网页中执行 JavaScript。</string>
+    <string name="webengine_initial_scale_info">以百分比形式设置此 WebView 的初始缩放比例。0 表示默认。\n\n默认缩放比例的行为取决于以下状态：\n- useWideViewPort\n- loadWithOverviewMode\n\n如果内容宽度能放入 WebView 控件，缩放比例将设为 100%。\n\n对于超宽内容，行为取决于 loadWithOverviewMode 的状态。如果其值为 true，内容将缩小到按宽度适配 WebView 控件；否则不会。\n\n如果初始缩放比例大于 0，WebView 将以此值作为初始缩放比例启动。请注意，与 viewport meta 标签中的 scale 属性不同，此方法不考虑屏幕密度。</string>
+    <string name="webengine_initial_scale_placeholder">例如 100</string>
+    <string name="webengine_layout_algorithm_info">- NORMAL：无渲染变更\n\n- SINGLE_COLUMN：所有内容排成与视图等宽的一列\n\n- NARROW_COLUMNS：列宽不超过屏幕（KitKat 之前）\n\n- TEXT_AUTOSIZING：启发式地放大字体（API 19+）</string>
+    <string name="webengine_load_with_overview_mode_info">加载 WebView 内容时完全缩小，以适配屏幕宽度。</string>
+    <string name="webengine_media_playback_requires_user_gesture_info">设置 WebView 播放媒体时是否需要用户手势（如点按）。</string>
+    <string name="webengine_mixed_content_mode_info">配置当安全来源尝试从不安全来源加载资源时 WebView 的行为。\n\n首选且最安全的运行模式是\"一律不允许\"。\n\n强烈不建议使用\"一律允许\"，否则会危及您的安全。使用\"兼容模式\"时请谨慎。</string>
+    <string name="webengine_over_scroll_mode_info">配置 WebView 的过度滚动（overscroll）行为。\n\n选项：\n- Always：内容滚动时始终显示过度滚动效果。\n- If Content Scrolls：仅当视图内容大于容器时才允许过度滚动。\n- Never：完全禁用过度滚动效果。</string>
+    <string name="webengine_request_focus_on_page_start_info">设置在页面开始加载时 WebView 是否请求焦点。</string>
+    <string name="webengine_ssl_error_mode_info">控制 WebView 在加载页面时如何处理 SSL 错误。\n\n- BLOCK：取消所有 SSL 请求失败（默认）。\n- PROMPT：弹出对话框由用户决定。\n- PROCEED：无视 SSL 错误继续访问（危险，不建议）。\n\n请谨慎使用此设置。在 SSL 错误下继续访问会危及安全。</string>
+    <string name="webengine_support_zoom_info">设置 WebView 是否支持通过屏幕缩放控件和手势进行缩放。</string>
+    <string name="webengine_use_wide_viewport_info">在 WebView 中为响应式页面启用宽视口支持。</string>
+    <string name="webengine_user_agent_info">User Agent 字符串控制 Web 引擎如何向网站标识自己。某些网站可能会根据该值表现出不同的行为。\n\n留空则使用系统默认的 User Agent。</string>
+    <string name="webengine_user_agent_placeholder">（留空使用系统默认值）</string>
+    <string name="webengine_use_desktop_agent">使用桌面版 Agent</string>
+    <string name="webengine_use_mobile_agent">使用移动版 Agent</string>
+</resources>

@@ -17,16 +17,14 @@ fun MqttPasswordSetting() {
 
     TextSettingFieldItem(
         label = stringResource(R.string.mqtt_connection_password_title),
-        infoText = """
-            The password used to authenticate with the MQTT broker.
-        """.trimIndent(),
-        placeholder = "e.g. **********",
+        infoText = stringResource(R.string.mqtt_connection_password_info),
+        placeholder = stringResource(R.string.mqtt_connection_password_placeholder),
         initialValue = userSettings.mqttPassword,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         isMultiline = false,
         isPassword = true,
-        descriptionFormatter = { v -> if (v.isNotBlank()) "*".repeat(20) else "(blank)" },
+        descriptionFormatter = { v -> if (v.isNotBlank()) "*".repeat(20) else context.getString(R.string.mqtt_blank) },
         onSave = { userSettings.mqttPassword = it }
     )
 }

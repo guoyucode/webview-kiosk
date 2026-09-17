@@ -39,21 +39,13 @@ fun MqttServerPortSetting() {
 
     NumberSettingFieldItem(
         label = stringResource(R.string.mqtt_connection_server_port_title),
-        infoText = """
-            The TCP port of the MQTT broker the app should connect to.
-
-            Typically,
-            - 1883 - MQTT (TCP)
-            - 8883 - MQTTS (TCP with SSL/TLS)
-            - 80 - WS (WebSocket, same port as HTTP)
-            - 443 - WSS (WebSocket Secure, same port as HTTPS)
-        """.trimIndent(),
+        infoText = stringResource(R.string.mqtt_connection_server_port_info),
         initialValue = userSettings.mqttServerPort,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         min = 1,
         max = 65535,
-        placeholder = "e.g. 1883",
+        placeholder = stringResource(R.string.mqtt_connection_server_port_placeholder),
         onSave = { userSettings.mqttServerPort = it },
         extraContent = { v, setValue ->
             val tcpPorts = listOf(
@@ -117,7 +109,7 @@ fun MqttServerPortSetting() {
                             moreExpanded = true
                         },
                         label = {
-                            Text("More")
+                            Text(stringResource(R.string.mqtt_more))
                         },
                     )
 
@@ -166,12 +158,10 @@ fun MqttServerPortSetting() {
                     )
                     Text(
                         text = normaliseInfoText(
-                            """
-                                NOTE: if your broker accepts WebSocket connections on port $v,
-                                enable:
-
-                                 - MQTT > Connection > Use WebSocket
-                            """.trimIndent()
+                            stringResource(
+                                R.string.mqtt_connection_server_port_websocket_note,
+                                v
+                            )
                         ),
                         color = MaterialTheme.colorScheme.tertiary,
                         style = MaterialTheme.typography.bodySmall,

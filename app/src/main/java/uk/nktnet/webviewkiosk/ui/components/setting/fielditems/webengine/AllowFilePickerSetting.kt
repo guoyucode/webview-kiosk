@@ -17,9 +17,7 @@ fun AllowFilePickerSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_engine_allow_file_picker_title),
-        infoText = """
-            Allow websites to open the system file picker, e.g. for uploading files.
-        """.trimIndent(),
+        infoText = stringResource(R.string.webengine_allow_file_picker_info),
         initialValue = userSettings.allowFilePicker,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

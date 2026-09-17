@@ -47,22 +47,17 @@ fun UnifiedPushInstanceSetting() {
 
     TextSettingFieldItem(
         label = stringResource(R.string.unifiedpush_instance_title),
-        infoText = """
-            Registration instance. Can be used to create multiple registrations.
-
-            Supported variables:
-            - ${UnifiedPushVariableName.APP_INSTANCE_ID.name}
-
-            Example:
-            - $recommendedClientId
-
-            If left blank, $INSTANCE_DEFAULT will be used.
-        """.trimIndent(),
-        placeholder = "e.g. $recommendedClientId",
+        infoText = stringResource(
+            R.string.unifiedpush_instance_info,
+            UnifiedPushVariableName.APP_INSTANCE_ID.name,
+            recommendedClientId,
+            INSTANCE_DEFAULT
+        ),
+        placeholder = stringResource(R.string.unifiedpush_instance_placeholder, recommendedClientId),
         initialValue = userSettings.unifiedPushInstance,
         descriptionFormatter = {
             if (it.trim().isEmpty()) {
-                "(blank)"
+                context.getString(R.string.unifiedpush_instance_blank)
             } else {
                 replaceVariables(
                     it,
@@ -78,7 +73,7 @@ fun UnifiedPushInstanceSetting() {
         onLongClick = { v ->
             scope.launch {
                 val clipData = ClipData.newPlainText(
-                    "UnifiedPush Instance",
+                    context.getString(R.string.unifiedpush_instance_clipboard_label),
                     replaceVariables(
                         v,
                         mapOf(
@@ -103,7 +98,7 @@ fun UnifiedPushInstanceSetting() {
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
-                        text = "Use recommended:",
+                        text = stringResource(R.string.unifiedpush_instance_use_recommended),
                         style = MaterialTheme.typography.bodySmall,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onPrimary,

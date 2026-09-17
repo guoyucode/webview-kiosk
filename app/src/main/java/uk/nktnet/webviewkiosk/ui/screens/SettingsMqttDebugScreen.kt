@@ -150,7 +150,10 @@ fun SettingsMqttDebugScreen(navController: NavController) {
                             ) {
                                 if (searchQuery.text.isEmpty()) {
                                     Text(
-                                        text = "Search the last ${logs.size} logs",
+                                        text = stringResource(
+                                            R.string.debug_log_search_hint,
+                                            logs.size
+                                        ),
                                         style = LocalTextStyle.current.copy(
                                             color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f),
                                             fontSize = MaterialTheme.typography.bodySmall.fontSize,
@@ -169,7 +172,9 @@ fun SettingsMqttDebugScreen(navController: NavController) {
                             ) {
                                 Icon(
                                     painter = painterResource(R.drawable.baseline_clear_24),
-                                    contentDescription = "Clear",
+                                    contentDescription = stringResource(
+                                        R.string.debug_log_clear_icon_description
+                                    ),
                                     modifier = Modifier
                                         .size(24.dp)
                                         .padding(2.dp),
@@ -193,7 +198,9 @@ fun SettingsMqttDebugScreen(navController: NavController) {
                 ) {
                     Icon(
                         painter = painterResource(R.drawable.baseline_sort_24),
-                        contentDescription = "Sort Order",
+                        contentDescription = stringResource(
+                            R.string.debug_log_sort_icon_description
+                        ),
                         modifier = Modifier
                             .size(22.dp)
                             .graphicsLayer(scaleY = if (ascending) -1f else 1f, scaleX = -1f)
@@ -216,7 +223,7 @@ fun SettingsMqttDebugScreen(navController: NavController) {
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        text = "No logs yet.",
+                        text = stringResource(R.string.debug_log_empty),
                         style = MaterialTheme.typography.labelLarge,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -235,7 +242,7 @@ fun SettingsMqttDebugScreen(navController: NavController) {
                                     onClick = {
                                         ToastManager.show(
                                             context,
-                                            "Click and hold to copy message."
+                                            context.getString(R.string.debug_log_hold_to_copy)
                                         )
                                     },
                                     onLongClick = {
@@ -304,7 +311,10 @@ fun SettingsMqttDebugScreen(navController: NavController) {
                 modifier = Modifier.size(18.dp)
             )
             Spacer(Modifier.width(8.dp))
-            Text("Clear Logs", style = MaterialTheme.typography.labelLarge)
+            Text(
+                stringResource(R.string.debug_log_clear_logs),
+                style = MaterialTheme.typography.labelLarge
+            )
         }
     }
 }

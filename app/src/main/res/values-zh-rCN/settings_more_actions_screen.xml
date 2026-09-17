@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Section Titles -->
+    <string name="settings_more_action_section_quick_access">快速访问</string>
+    <string name="settings_more_action_section_manage">管理</string>
+    <string name="settings_more_action_section_clear">清除</string>
+
+    <!-- Quick Access Actions -->
+    <string name="settings_more_action_app_info">应用信息</string>
+    <string name="settings_more_action_device_settings">设备设置</string>
+    <string name="settings_more_action_default_launcher">默认启动器</string>
+    <string name="settings_more_action_default_apps">默认应用</string>
+    <string name="settings_more_action_wifi_settings">Wi-Fi 设置</string>
+    <string name="settings_more_action_data_usage">流量使用情况</string>
+
+    <!-- Tools Actions -->
+    <string name="settings_more_action_section_tools">工具</string>
+    <string name="settings_more_action_create_shortcut">创建快捷方式</string>
+    <string name="settings_more_action_app_launcher">应用启动器</string>
+
+    <!-- Manage Actions -->
+    <string name="settings_more_action_local_files">本地文件</string>
+    <string name="settings_more_action_site_permissions">网站权限</string>
+    <string name="settings_more_action_device_owner">设备所有者</string>
+
+    <!-- Clear Actions -->
+    <string name="settings_more_action_clear_cookies">Cookie</string>
+    <string name="settings_more_action_clear_cache">缓存</string>
+    <string name="settings_more_action_clear_form_data">表单数据</string>
+    <string name="settings_more_action_clear_history">历史记录</string>
+    <string name="settings_more_action_clear_ssl_preferences">SSL 偏好设置</string>
+    <string name="settings_more_action_clear_web_storage">Web 存储</string>
+
+    <!-- Toast Messages -->
+    <string name="settings_more_action_toast_cookies_cleared">Cookie 已清除。</string>
+    <string name="settings_more_action_toast_cache_cleared">缓存已清除。</string>
+    <string name="settings_more_action_toast_cache_clear_failed">缓存清除失败。</string>
+    <string name="settings_more_action_toast_form_data_cleared">表单数据已清除。</string>
+    <string name="settings_more_action_toast_history_cleared">历史记录已清除。</string>
+    <string name="settings_more_action_toast_ssl_preferences_cleared">SSL 偏好设置已清除。</string>
+    <string name="settings_more_action_toast_web_storage_cleared">Web 存储已清除。</string>
+    <string name="settings_more_action_toast_sdk_version_error">错误：需要 SDK %1$d（当前：%2$d）</string>
+
+</resources>

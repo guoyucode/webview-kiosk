@@ -56,11 +56,14 @@ fun handleUnlockShortcutKeyEvent(
     val shortcut = keyEventToShortcutString(event)
     if (shortcut == null) {
         if (event.keyCode !in modifierKeyCodes) {
-            ToastManager.show(context, "Shortcut must use CTRL/SHIFT/ALT/META.")
+            ToastManager.show(
+                context,
+                context.getString(R.string.device_shortcut_requires_modifier)
+            )
         }
         return draftValue to true
     }
-    ToastManager.show(context, "Shortcut: $shortcut")
+    ToastManager.show(context, context.getString(R.string.device_shortcut_detected, shortcut))
     return shortcut to false
 }
 
@@ -96,15 +99,7 @@ fun CustomUnlockShortcutSetting() {
 
     CustomSettingFieldItem(
         label = stringResource(R.string.device_custom_unlock_shortcut_title),
-        infoText = """
-            Provide a custom keyboard shortcut using a modifier key (CTRL/SHIFT/ALT/META)
-            in combination with another standard key to unlock/unpin the application.
-
-            For example, CTRL+1.
-
-            This is useful for devices with no navigation buttons on screen and instead
-            has a physical keyboard connected.
-        """.trimIndent(),
+        infoText = stringResource(R.string.device_custom_unlock_shortcut_info),
         value = currentValue,
         settingKey = settingKey,
         restricted = restricted,
@@ -134,7 +129,9 @@ fun CustomUnlockShortcutSetting() {
                         }) {
                             Icon(
                                 painter = painterResource(R.drawable.baseline_clear_24),
-                                contentDescription = "Clear"
+                                contentDescription = stringResource(
+                                    R.string.device_content_description_clear
+                                )
                             )
                         }
                     },
@@ -192,7 +189,13 @@ fun CustomUnlockShortcutSetting() {
                         .fillMaxWidth()
                         .padding(top = 8.dp)
                 ) {
-                    Text(if (isListening) "Listening..." else "Scan Keyboard Shortcut")
+                    Text(
+                        if (isListening) {
+                            stringResource(R.string.device_shortcut_listening)
+                        } else {
+                            stringResource(R.string.device_shortcut_scan)
+                        }
+                    )
                 }
             }
         }

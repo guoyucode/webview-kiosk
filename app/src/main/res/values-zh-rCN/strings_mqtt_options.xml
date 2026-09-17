@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- config/mqtt: MqttQosOption -->
+    <string name="mqtt_qos_option_at_most_once">至多一次</string>
+    <string name="mqtt_qos_option_at_least_once">至少一次</string>
+    <string name="mqtt_qos_option_exactly_once">恰好一次</string>
+
+    <!-- config/mqtt: MqttRetainHandlingOption -->
+    <string name="mqtt_retain_handling_option_send">发送</string>
+    <string name="mqtt_retain_handling_option_send_if_subscription_does_not_exist">订阅不存在时发送</string>
+    <string name="mqtt_retain_handling_option_do_not_send">不发送</string>
+</resources>

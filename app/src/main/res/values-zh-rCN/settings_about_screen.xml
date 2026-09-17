@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="about_open_app_info">打开应用信息</string>
+    <string name="about_section_app">应用</string>
+    <string name="about_section_device">设备</string>
+
+    <!-- App Info Labels -->
+    <string name="about_app_name">名称</string>
+    <string name="about_app_package">包名</string>
+    <string name="about_app_version">版本</string>
+    <string name="about_app_min_sdk">最低 SDK</string>
+    <string name="about_app_target_sdk">目标 SDK</string>
+    <string name="about_app_debug_build">调试构建</string>
+    <string name="about_app_installer">安装来源</string>
+    <string name="about_app_device_owner">设备所有者</string>
+    <string name="about_app_lock_task_permitted">允许锁定任务</string>
+    <string name="about_app_dhizuku_permission_granted">已授予 Dhizuku 权限</string>
+    <string name="about_app_instance_id">实例 ID</string>
+    <string name="about_source_code_url">源代码 URL</string>
+
+    <!-- Device Info Labels -->
+    <string name="about_device_android_version">Android 版本</string>
+    <string name="about_device_webview_version">WebView 版本</string>
+    <string name="about_device_screen_display">屏幕 / 显示屏</string>
+    <string name="about_device_managed_profile">托管配置文件</string>
+    <string name="about_device_time_zone">时区</string>
+    <string name="about_device_locale">语言区域</string>
+    <string name="about_device_total_ram">总内存（RAM）</string>
+    <string name="about_device_total_storage">总存储空间</string>
+    <string name="about_device_model">型号</string>
+    <string name="about_device_manufacturer">制造商</string>
+    <string name="about_device_brand">品牌</string>
+    <string name="about_device_device">设备</string>
+    <string name="about_device_product">产品</string>
+    <string name="about_device_hardware">硬件</string>
+    <string name="about_device_board">主板</string>
+    <string name="about_device_bootloader">Bootloader</string>
+    <string name="about_device_security_patch">安全补丁</string>
+    <string name="about_device_supported_abis">支持的 ABI</string>
+    <string name="about_device_supported_32bit_abis">支持的 32 位 ABI</string>
+    <string name="about_device_supported_64bit_abis">支持的 64 位 ABI</string>
+    <string name="about_device_build_fingerprint">构建指纹</string>
+
+</resources>

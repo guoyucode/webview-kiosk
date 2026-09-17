@@ -18,15 +18,15 @@ fun MqttSubscribeSettingsRetainHandlingSetting() {
 
     DropdownSettingFieldItem(
         label = stringResource(R.string.mqtt_subscribe_settings_retain_handling_title),
-        infoText = """
-            Control whether ${stringResource(R.string.app_name)} should receive existing
-            retained messages when subscribing.
-        """.trimIndent(),
+        infoText = stringResource(
+            R.string.mqtt_subscribe_retain_handling_info,
+            stringResource(R.string.app_name)
+        ),
         options = MqttRetainHandlingOption.entries,
         initialValue = userSettings.mqttSubscribeSettingsRetainHandling,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         onSave = { userSettings.mqttSubscribeSettingsRetainHandling = it },
-        itemText = { it.getSettingLabel() },
+        itemText = { context.getString(it.labelRes) + " (${it.code})" },
     )
 }

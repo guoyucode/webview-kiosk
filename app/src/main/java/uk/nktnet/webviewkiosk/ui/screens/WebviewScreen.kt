@@ -42,6 +42,7 @@ import kotlinx.coroutines.android.awaitFrame
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import uk.nktnet.webviewkiosk.R
 import uk.nktnet.webviewkiosk.config.Constants
 import uk.nktnet.webviewkiosk.config.SystemSettings
 import uk.nktnet.webviewkiosk.config.UserSettings
@@ -681,7 +682,7 @@ fun WebviewScreen(navController: NavController) {
                 is InboundErrorCommand -> {
                     ToastManager.show(
                         context,
-                        "Received invalid MQTT command. See debug logs in MQTT settings."
+                        context.getString(R.string.runtime_invalid_mqtt_command)
                     )
                 }
                 else -> Unit

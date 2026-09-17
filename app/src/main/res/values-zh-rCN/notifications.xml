@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_lock_task_title">锁定任务模式服务</string>
+    <string name="notification_lock_task_text">点按返回 %1$s</string>
+
+    <string name="notification_mqtt_service_title">MQTT 服务</string>
+    <string name="notification_remote_notify_command_title">远程通知命令</string>
+    <string name="notification_blob_download_title">Blob 下载</string>
+</resources>

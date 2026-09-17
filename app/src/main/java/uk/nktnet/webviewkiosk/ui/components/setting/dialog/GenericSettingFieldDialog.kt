@@ -26,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 import uk.nktnet.webviewkiosk.R
@@ -39,7 +40,7 @@ fun GenericSettingFieldDialog(
     onSave: () -> Unit,
     settingKey: String,
     restricted: Boolean,
-    saveText: String = "Save",
+    saveText: String = stringResource(R.string.setting_common_save),
     content: @Composable ColumnScope.() -> Unit
 ) {
     var showInfoDialog by remember { mutableStateOf(false) }
@@ -80,7 +81,7 @@ fun GenericSettingFieldDialog(
                 TextButton(
                     onClick = { showInfoDialog = false }
                 ) {
-                    Text("Close")
+                    Text(stringResource(R.string.setting_common_close))
                 }
             },
         )
@@ -115,7 +116,7 @@ fun GenericSettingFieldDialog(
             Column {
                 if (restricted) {
                     Text(
-                        text = "This setting is managed by your IT Admin.",
+                        text = stringResource(R.string.setting_common_managed_by_admin),
                         color = MaterialTheme.colorScheme.error,
                         style = MaterialTheme.typography.bodySmall,
                         modifier = Modifier.padding(top = 8.dp, bottom = 4.dp),
@@ -135,9 +136,9 @@ fun GenericSettingFieldDialog(
             TextButton(onClick = onDismiss) {
                 Text(
                     if (restricted) {
-                        "Close"
+                        stringResource(R.string.setting_common_close)
                     } else {
-                        "Cancel"
+                        stringResource(R.string.setting_common_cancel)
                     }
                 )
             }

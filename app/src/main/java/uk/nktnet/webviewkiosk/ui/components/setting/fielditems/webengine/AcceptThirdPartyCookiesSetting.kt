@@ -17,7 +17,7 @@ fun AcceptThirdPartyCookiesSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_engine_accept_third_party_cookies_title),
-        infoText = "Allow third-party websites to set cookies in this WebView.",
+        infoText = stringResource(R.string.webengine_accept_third_party_cookies_info),
         initialValue = userSettings.acceptThirdPartyCookies,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Appearance settings: info texts and placeholders extracted from fielditems/appearance/ -->
+    <string name="appearance_address_bar_mode_info">自定义地址栏的可见性。</string>
+    <string name="appearance_address_bar_position_info">自定义地址栏的位置——顶部或底部。</string>
+    <string name="appearance_address_bar_size_info">自定义地址栏的尺寸，它将决定\n高度、字号、内边距和图标大小。</string>
+
+    <string name="appearance_blocked_message_info">在已屏蔽页面上显示的自定义消息。</string>
+    <string name="appearance_blocked_message_placeholder">例如：此网站已被 &lt;公司名称&gt; 屏蔽</string>
+
+    <string name="appearance_custom_block_page_html_info">定义页面被屏蔽时要显示的自定义 HTML 内容。\n\n留空则使用默认屏蔽页面。</string>
+    <string name="appearance_custom_block_page_html_placeholder">例如：\n    &lt;div style=\"text-align:center; margin-top:10%;\"&gt;\n      &lt;h1 style=\"font-size:4rem;\"&gt;已屏蔽&lt;/h1&gt;\n      &lt;p style=\"font-size:3rem;\"&gt;无法访问此网站。&lt;/p&gt;\n    &lt;/div&gt;\n\n或作为重定向：\n    &lt;meta http-equiv=\"refresh\" content=\"0; url=%s\"&gt;</string>
+
+    <string name="appearance_floating_toolbar_mode_info">控制浮动工具栏菜单按钮的可见性和行为。\n\n设置为“隐藏”时，“设置”按钮将显示在\nKiosk 控制面板中。</string>
+    <string name="appearance_immersive_mode_info">沉浸模式下，系统栏（状态栏和导航栏）将被隐藏。\n\n您可以通过手势临时呼出系统栏，\n例如在系统栏隐藏一侧的屏幕边缘滑动。\n\n注意：进入全屏时（例如观看视频）会自动启用沉浸模式，\n与此设置无关。</string>
+    <string name="appearance_theme_info">选择应用主题：系统（默认）、深色或浅色。\n\n另请参阅：设置 -&gt; JS 脚本 -&gt; 应用 App 主题。</string>
+    <string name="appearance_webview_inset_info">选择 WebView 应遵循哪些 WindowInsets 作为内边距。</string>
+
+</resources>

@@ -16,9 +16,7 @@ fun RequestFocusOnPageStartSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_engine_request_focus_on_page_start_title),
-        infoText = """
-            Sets whether the WebView should request focus when a page starts loading.
-        """.trimIndent(),
+        infoText = stringResource(R.string.webengine_request_focus_on_page_start_info),
         initialValue = userSettings.requestFocusOnPageStart,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

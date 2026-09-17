@@ -17,9 +17,7 @@ fun MqttPublishEventRetainSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.mqtt_publish_event_retain_title),
-        infoText = """
-            Keep event topic messages retained for new subscribers.
-        """.trimIndent(),
+        infoText = stringResource(R.string.mqtt_publish_event_retain_info),
         initialValue = userSettings.mqttPublishEventRetain,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

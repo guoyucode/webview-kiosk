@@ -41,21 +41,17 @@ fun HomeUrlSetting() {
 
     TextSettingFieldItem(
         label = stringResource(R.string.web_content_home_url_title),
-        infoText = """
-            The URL that can be returned to by:
-              1. tapping the screen 10 times in quick succession
-              2. using the floating toolbar icon
-              3. using the address bar menu
-
-            This is also controlled by the "Allow Go Home" setting under web browsing.
-        """.trimIndent(),
-        placeholder = "e.g. ${Constants.WEBSITE_URL}",
+        infoText = stringResource(R.string.web_content_home_url_info),
+        placeholder = stringResource(
+            R.string.web_content_home_url_placeholder,
+            Constants.WEBSITE_URL
+        ),
         initialValue = userSettings.homeUrl,
         settingKey = settingKey,
         restricted = restricted,
         isMultiline = false,
         validator = { validateUrl(it) },
-        validationMessage = "Invalid Home URL provided.",
+        validationMessage = stringResource(R.string.web_content_home_url_invalid),
         onSave = { userSettings.homeUrl = it },
         extraContent = { _, setValue ->
             if (restricted) {
@@ -74,7 +70,7 @@ fun HomeUrlSetting() {
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
-                        text = "Use the current URL:",
+                        text = stringResource(R.string.web_content_home_url_use_current),
                         style = MaterialTheme.typography.bodySmall,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onPrimary,
@@ -101,7 +97,7 @@ fun HomeUrlSetting() {
                 colors = ButtonDefaults.buttonColors()
             ) {
                 Text(
-                    text = "Select from History",
+                    text = stringResource(R.string.web_content_select_from_history),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onPrimary,
                     textAlign = TextAlign.Center,

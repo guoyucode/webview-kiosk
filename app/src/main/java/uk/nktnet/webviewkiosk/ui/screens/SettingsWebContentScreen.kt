@@ -62,7 +62,7 @@ fun SettingsWebContentScreen(navController: NavController) {
                 onClick = { navController.navigate(Screen.SettingsWebContentFiles.route) },
                 modifier = Modifier.fillMaxWidth(),
             ) {
-                Text("Manage Local Files")
+                Text(stringResource(R.string.web_content_manage_local_files))
             }
 
             Spacer(modifier = Modifier.height(16.dp))

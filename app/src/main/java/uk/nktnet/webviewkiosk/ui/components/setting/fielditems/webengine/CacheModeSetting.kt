@@ -18,12 +18,12 @@ fun CacheModeSetting() {
 
     DropdownSettingFieldItem(
         label = stringResource(R.string.web_engine_cache_mode_title),
-        infoText = "Control how the WebView uses its cache when loading pages.",
+        infoText = stringResource(R.string.webengine_cache_mode_info),
         options = CacheModeOption.entries,
         initialValue = userSettings.cacheMode,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         onSave = { userSettings.cacheMode = it },
-        itemText = { it.label },
+        itemText = { context.getString(it.labelRes) },
     )
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="jsscript_apply_app_theme_info">此脚本会注入 JavaScript 代码，根据您在 %1$s「外观」设置中选择的主题来设置 prefers-color-scheme，从而使网页主题与 App 主题保持一致。\n\n此脚本会在「页面开始加载时」立即运行。\n\n如果主题设置为「跟随系统」，此脚本不执行任何操作。</string>
+    <string name="jsscript_apply_desktop_viewport_width_info">此脚本会注入 JavaScript 代码，将 document.meta.content 设置为 \'width=YOUR_WIDTH_VALUE\'，模拟在桌面设备上浏览网页。\n\n还会订阅 JS 历史状态变化（例如来自单页应用），并在需要时重新触发脚本。\n\n仅当设置 User Agent 不足以强制桌面模式时才应启用此选项，因为额外的 JS 会拖慢页面。\n\n您可能还需要在「设置 -&gt; Web 引擎」下启用以下选项：\n  - User Agent：桌面版（Desktop）\n  - Use Wide Viewport：开启\n  - Load With Overview Mode：开启\n\n最小可能值为 %1$d。\n\n要禁用，请将其设为 0。</string>
+    <string name="jsscript_apply_desktop_viewport_width_placeholder">例如 1024（或 0 表示禁用）</string>
+    <string name="jsscript_custom_script_on_page_finish_info">在页面完全加载后运行的 JavaScript。\n可用于 DOM 更新、样式调整或注入行为。\n\n为防止污染全局作用域并避免与其他脚本冲突，您的代码内容将被如下包裹：\n    (function() {\n        // &lt;YOUR CODE&gt;\n    })()</string>
+    <string name="jsscript_custom_script_on_page_start_info">在页面开始加载时立即运行的 JavaScript。\n可用于早期的 DOM 操作或覆写函数。\n\n为防止污染全局作用域并避免与其他脚本冲突，您的代码内容将被如下包裹：\n    (function() {\n        // &lt;YOUR CODE&gt;\n    })()</string>
+    <string name="jsscript_custom_script_placeholder">例如 document.body.style.backgroundColor = \'green\';</string>
+    <string name="jsscript_enable_battery_api_info">允许网页通过 JavaScript 接口访问设备电池状态。网页可以使用：\n\nJSON.parse(window.WebviewKioskBatteryInterface.getBatteryStatus())\n\n来获取电量、充电状态、温度及其他电池信息。</string>
+    <string name="jsscript_enable_brightness_api_info">允许网页使用：\n\n1. window.WebviewKioskBrightnessInterface.getBrightness(): number\n2. window.WebviewKioskBrightnessInterface.setBrightness(value: number)\n\n来读取或修改当前屏幕亮度百分比。\n\n取值为 0-100 之间的整数，其中\n   -1：使用系统亮度\n    0：非常暗\n  100：非常亮</string>
+    <string name="jsscript_enable_dark_reader_info">自动向网页注入 Dark Reader。\n\n- https://github.com/darkreader/darkreader\n\n通过动态 CSS 变换，强制为不原生支持深色模式的网站启用深色模式。\n\n注意：由于 CSS 覆盖，某些网站可能渲染异常。</string>
+    <string name="jsscript_enable_eruda_console_info">自动向网页注入 Eruda 控制台。\n\n- https://github.com/liriliri/eruda\n\n提供移动端浏览器开发者控制台，可检查：\n\n- JavaScript 错误\n- 控制台输出\n- 网络请求\n- DOM 元素\n- 存储与 Cookie\n\n便于在没有桌面开发者工具的 Android 设备上调试 Web 应用。</string>
+    <string name="unifiedpush_distributor_info">分发器（Distributor）的软件包名称，例如：\n\n- org.unifiedpush.distributor.sunup\n- io.heckel.ntfy\n\n分发器应用充当「中间人」，从推送服务器接收应用通知，并转发给 %1$s。</string>
+    <string name="unifiedpush_distributor_placeholder">例如 io.heckel.ntfy</string>
+    <string name="unifiedpush_distributor_not_installed">软件包未安装。</string>
+    <string name="unifiedpush_distributor_select_button">选择分发器</string>
+    <string name="unifiedpush_enabled_info">允许 %1$s 处理新的推送消息，或注册新的端点（endpoint）。</string>
+    <string name="unifiedpush_instance_info">注册实例，可用于创建多个注册。\n\n支持的变量：\n- %1$s\n\n示例：\n- %2$s\n\n如果留空，将使用 %3$s。</string>
+    <string name="unifiedpush_instance_placeholder">例如 %1$s</string>
+    <string name="unifiedpush_instance_blank">（留空）</string>
+    <string name="unifiedpush_instance_clipboard_label">UnifiedPush 实例</string>
+    <string name="unifiedpush_instance_use_recommended">使用推荐值：</string>
+    <string name="unifiedpush_message_for_distributor_info">一条自定义消息，可能由分发器界面显示，用于标识此注册。</string>
+    <string name="unifiedpush_message_for_distributor_placeholder">例如注册 %1$s</string>
+    <string name="unifiedpush_process_unencrypted_messages_info">启用后，%1$s 还会处理未能成功解密的 UnifiedPush 消息。\n\n一个合理的用例是：允许向 ntfy.sh 发送未加密的简单 curl 请求，方便测试或图省事，但这会降低安全性。</string>
+    <string name="unifiedpush_store_endpoint_credentials_info">启用后，%1$s 会在注册后持久保存以下值：\n\n- Endpoint URL\n- Endpoint 公钥（Public Key）\n- Endpoint 认证密钥（Auth Secret）\n\n理想情况下，这些值不应被保存，而应在注册时直接发送给应用服务器。\n\n但 %1$s 目前还没有应用服务器，因此这些值会保存在应用本地，以便复制。之后可通过设置界面选择将其隐藏。</string>
+    <string name="unifiedpush_vapid_public_key_info">VAPID 公钥（RFC8292），base64url 格式，未压缩形式（长度 87 个字符）。\n\n更多详情见：\n- https://www.rfc-editor.org/rfc/rfc8292</string>
+    <string name="unifiedpush_vapid_public_key_invalid">VAPID 公钥无效。</string>
+    <string name="unifiedpush_vapid_paste_button">粘贴剪贴板</string>
+</resources>

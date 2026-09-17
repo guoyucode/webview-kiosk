@@ -16,6 +16,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import uk.nktnet.webviewkiosk.R
@@ -74,7 +75,7 @@ fun NumberSettingFieldItem(
             text = if (descriptionFormatter != null) {
                 descriptionFormatter(v)
             } else if (v == "0") {
-                "0 (disabled)"
+                stringResource(R.string.setting_common_zero_disabled)
             } else {
                 v
             },
@@ -140,10 +141,20 @@ fun NumberSettingFieldItem(
                     Text(
                         text = validationMessage ?: run {
                             when {
-                                min != null && max != null -> "Enter a number between $min and $max"
-                                min != null -> "Enter a number ≥ $min (or 0 to disable)"
-                                max != null -> "Enter a number ≤ $max (or 0 to disable)"
-                                else -> "Invalid number"
+                                min != null && max != null -> stringResource(
+                                    R.string.setting_common_enter_number_between,
+                                    min,
+                                    max
+                                )
+                                min != null -> stringResource(
+                                    R.string.setting_common_enter_number_min,
+                                    min
+                                )
+                                max != null -> stringResource(
+                                    R.string.setting_common_enter_number_max,
+                                    max
+                                )
+                                else -> stringResource(R.string.setting_common_invalid_number)
                             }
                         },
                         color = MaterialTheme.colorScheme.error,

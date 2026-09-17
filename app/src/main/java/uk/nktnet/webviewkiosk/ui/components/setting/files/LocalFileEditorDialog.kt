@@ -26,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
@@ -74,7 +75,7 @@ fun LocalFileEditorDialog(
                     .padding(16.dp),
             ) {
                 Text(
-                    text = "Edit File",
+                    text = stringResource(R.string.setting_common_edit_file),
                     style = MaterialTheme.typography.headlineSmall,
                 )
                 Spacer(Modifier.height(4.dp))
@@ -153,7 +154,7 @@ fun LocalFileEditorDialog(
                         onClick = onDismiss,
                         enabled = !isSaving,
                     ) {
-                        Text("Cancel")
+                        Text(stringResource(R.string.setting_common_cancel))
                     }
                     TextButton(
                         onClick = {
@@ -167,16 +168,22 @@ fun LocalFileEditorDialog(
                                 }
                                 isSaving = false
                                 if (saved) {
-                                    ToastManager.show(context, "File saved")
+                                    ToastManager.show(context, context.getString(R.string.setting_common_file_saved))
                                     onSaved()
                                 } else {
-                                    ToastManager.show(context, "Failed to save file")
+                                    ToastManager.show(context, context.getString(R.string.setting_common_failed_save_file))
                                 }
                             }
                         },
                         enabled = !isSaving && text != initialText,
                     ) {
-                        Text(if (isSaving) "Saving..." else "Save")
+                        Text(
+                            if (isSaving) {
+                                stringResource(R.string.setting_common_saving)
+                            } else {
+                                stringResource(R.string.setting_common_save)
+                            }
+                        )
                     }
                 }
             }

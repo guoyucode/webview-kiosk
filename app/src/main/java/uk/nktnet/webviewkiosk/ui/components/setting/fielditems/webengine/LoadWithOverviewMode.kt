@@ -16,7 +16,7 @@ fun LoadWithOverviewModeSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_engine_load_with_overview_mode_title),
-        infoText = "Load the WebView content fully zoomed out to fit the screen width.",
+        infoText = stringResource(R.string.webengine_load_with_overview_mode_info),
         initialValue = userSettings.loadWithOverviewMode,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

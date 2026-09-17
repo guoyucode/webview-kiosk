@@ -20,7 +20,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import uk.nktnet.webviewkiosk.R
 import uk.nktnet.webviewkiosk.managers.ToastManager
 import uk.nktnet.webviewkiosk.utils.saveContentIntentToFile
 import java.io.File
@@ -43,7 +45,7 @@ fun UploadFileProgress(
             }
             onComplete(file)
         } catch (e: Exception) {
-            ToastManager.show(context,  "Upload failed: ${e.message}")
+            ToastManager.show(context, context.getString(R.string.runtime_upload_failed, e.message))
         }
     }
 
@@ -52,7 +54,10 @@ fun UploadFileProgress(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Uploading file...", style = MaterialTheme.typography.bodyMedium)
+        Text(
+            stringResource(R.string.runtime_uploading_file),
+            style = MaterialTheme.typography.bodyMedium
+        )
         Spacer(Modifier.height(16.dp))
         LinearProgressIndicator(
             progress = { progress },

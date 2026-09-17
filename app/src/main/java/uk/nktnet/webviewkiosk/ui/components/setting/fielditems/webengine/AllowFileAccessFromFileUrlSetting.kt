@@ -17,19 +17,7 @@ fun AllowFileAccessFromFileURLsSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_engine_allow_file_access_from_file_urls_title),
-        infoText = """
-            This method was deprecated in API level 30 (Android 11).
-
-            Sets whether cross-origin requests in the context of a file scheme URL
-            should be allowed to access content from other file scheme URLs. Note
-            that some accesses such as image HTML elements don't follow same-origin
-            rules and aren't affected by this setting.
-
-            Don't enable this setting if you open files that may be created or altered
-            by external sources. Enabling this setting allows malicious scripts loaded
-            in a file:// context to access arbitrary local files including WebView
-            cookies and app private data.
-        """.trimIndent(),
+        infoText = stringResource(R.string.webengine_allow_file_access_from_file_urls_info),
         initialValue = userSettings.allowFileAccessFromFileURLs,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

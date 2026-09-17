@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="admin_restrictions_changed_title">新配置</string>
+
+    <string name="settings_title">设置</string>
+    <string name="settings_device_owner_title">设备所有者</string>
+    <string name="settings_more_actions_title">更多操作</string>
+    <string name="settings_site_permissions_title">网站权限</string>
+    <string name="settings_files_title">文件</string>
+
+    <string name="settings_web_content_title">网页内容</string>
+    <string name="settings_web_content_description">主页 URL、黑名单、白名单、书签、文件</string>
+
+    <string name="settings_web_browsing_title">网页浏览</string>
+    <string name="settings_web_browsing_description">刷新、导航、历史记录、书签、搜索引擎</string>
+
+    <string name="settings_web_engine_title">浏览器引擎</string>
+    <string name="settings_web_engine_description">JavaScript、DOM 存储、Cookie、缓存、用户代理、缩放</string>
+
+    <string name="settings_web_lifecycle_title">网页生命周期</string>
+    <string name="settings_web_lifecycle_description">启动时锁定、启动时重置、闲置时重置</string>
+
+    <string name="settings_appearance_title">外观</string>
+    <string name="settings_appearance_description">主题、地址栏、边距（insets）、沉浸式、拦截提示信息</string>
+
+    <string name="settings_device_title">设备</string>
+    <string name="settings_device_description">超时、旋转、摄像头、麦克风、位置信息、解锁快捷方式</string>
+
+    <string name="settings_js_scripts_title">JS 脚本</string>
+    <string name="settings_js_scripts_description">应用主题、桌面视口、自定义脚本</string>
+
+    <string name="settings_mqtt_title">MQTT</string>
+    <string name="settings_mqtt_description">远程管理和监控你的 Kiosk 设备</string>
+
+    <string name="settings_mqtt_connection_title">连接</string>
+    <string name="settings_mqtt_connection_description">指定如何连接到代理（broker）服务器</string>
+
+    <string name="settings_mqtt_topics_title">主题</string>
+    <string name="settings_mqtt_topics_description">发布和订阅主题的配置</string>
+
+    <string name="settings_mqtt_will_title">遗嘱（LWT）</string>
+    <string name="settings_mqtt_will_description">意外断开连接时发送的自定义消息</string>
+
+    <string name="settings_mqtt_restrictions_title">限制</string>
+    <string name="settings_mqtt_restrictions_description">代理（broker）和客户端的限制与约束</string>
+
+    <string name="settings_mqtt_topics_publish_title">发布</string>
+    <string name="settings_mqtt_topics_subscribe_title">订阅</string>
+
+    <string name="settings_mqtt_topics_publish_event_title">事件</string>
+    <string name="settings_mqtt_topics_publish_event_description">发布设备和 WebView 状态变化</string>
+
+    <string name="settings_mqtt_topics_publish_response_title">响应</string>
+    <string name="settings_mqtt_topics_publish_response_description">发布信息请求的回复</string>
+
+    <string name="settings_mqtt_topics_subscribe_command_title">命令</string>
+    <string name="settings_mqtt_topics_subscribe_command_description">订阅控制命令（操作）</string>
+
+    <string name="settings_mqtt_topics_subscribe_settings_title">设置</string>
+    <string name="settings_mqtt_topics_subscribe_settings_description">订阅设置（配置）变更</string>
+
+    <string name="settings_mqtt_topics_subscribe_request_title">请求</string>
+    <string name="settings_mqtt_topics_subscribe_request_description">订阅信息请求</string>
+
+    <string name="settings_debug_log_title">调试日志</string>
+
+    <string name="settings_unifiedpush_title">UnifiedPush</string>
+    <string name="settings_unifiedpush_description">通过推送消息控制 Kiosk 设备</string>
+
+    <string name="settings_about_title">关于</string>
+    <string name="settings_about_description">包名、应用版本、调试构建、安装来源</string>
+</resources>

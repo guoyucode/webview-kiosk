@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Settings screens: hardcoded UI text extracted from ui/screens (Settings*Screen.kt, AdminRestrictionsChangedScreen.kt) -->
+    <string name="about_tap_hold_copy_value">Tap and hold to copy value.</string>
+    <string name="device_owner_not_set_warning">%s is not set as the device owner.\nThe settings below will not take effect.</string>
+    <string name="device_owner_deactivate_button">Deactivate Device Owner</string>
+    <string name="device_owner_transfer_ownership">Transfer Ownership</string>
+    <string name="device_owner_lock_task_features">Lock Task Features</string>
+    <string name="device_owner_manage_lock_task_packages">Manage Lock Task Packages</string>
+    <string name="device_owner_dhizuku_section">Dhizuku</string>
+    <string name="device_owner_request_dhizuku_permission">Request Dhizuku Permission</string>
+    <string name="device_owner_open_dhizuku">Open Dhizuku</string>
+    <string name="device_owner_deactivate_dialog_message">Are you sure you want to unset %s as the device owner?\n\nThis means Lock Task Mode will no longer be available, meaning the kiosk lock feature will utilise Screen Pinning instead.</string>
+    <string name="device_owner_deactivate_confirm">Deactivate</string>
+    <string name="device_owner_cancel">Cancel</string>
+    <string name="device_manage_device_owner">Manage Device Owner</string>
+    <string name="debug_log_search_hint">Search the last %d logs</string>
+    <string name="debug_log_clear_icon_description">Clear</string>
+    <string name="debug_log_sort_icon_description">Sort Order</string>
+    <string name="debug_log_empty">No logs yet.</string>
+    <string name="debug_log_hold_to_copy">Click and hold to copy message.</string>
+    <string name="debug_log_clear_logs">Clear Logs</string>
+    <string name="web_browsing_manage_site_permissions">Manage Site Permissions</string>
+    <string name="web_content_manage_local_files">Manage Local Files</string>
+    <string name="files_upload_success">File uploaded</string>
+    <string name="files_upload_failed">Upload failed: %s</string>
+    <string name="files_upload_error">Error: %s</string>
+    <string name="files_upload">Upload</string>
+    <string name="files_total_count">Total files: %d</string>
+    <string name="files_empty">No files uploaded yet.</string>
+    <string name="admin_restrictions_changed_message">Your IT Administrator has applied new configurations.\n\nSome settings may have been restricted.</string>
+    <string name="admin_restrictions_understand">I understand.</string>
+    <string name="admin_restrictions_countdown_prefix">Returning automatically in </string>
+    <string name="admin_restrictions_countdown_second"> second.</string>
+    <string name="admin_restrictions_countdown_seconds"> seconds.</string>
+</resources>

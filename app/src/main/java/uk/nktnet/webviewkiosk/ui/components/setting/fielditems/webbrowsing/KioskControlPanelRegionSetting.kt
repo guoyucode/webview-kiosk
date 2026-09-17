@@ -19,17 +19,7 @@ fun KioskControlPanelRegionSetting() {
 
     DropdownSettingFieldItem(
         label = stringResource(R.string.web_browsing_kiosk_control_panel_region_title),
-        infoText = """
-            Controls which part of the screen can be multi-tapped 10 times in quick
-            succession to show the Kiosk Control Panel.
-
-            The default is Top Left (upper-left quadrant of the screen).
-
-            If both of the following are true:
-              1. [Web Browsing -> Kiosk Control Panel Region] is disabled
-              2. [Device -> Back Button Hold Action] is not set to "Open Kiosk Control Panel"
-            Then this option cannot be disabled, and will default to Top Left.
-        """.trimIndent(),
+        infoText = stringResource(R.string.web_browsing_kiosk_control_panel_region_info),
         options = KioskControlPanelRegionOption.entries,
         initialValue = userSettings.kioskControlPanelRegion,
         settingKey = settingKey,
@@ -39,19 +29,15 @@ fun KioskControlPanelRegionSetting() {
             it != KioskControlPanelRegionOption.DISABLED
             || canDisableKioskControlPanelRegion(userSettings)
         },
-        validationMessage = """
-            You cannot disable this option because:
-              1. [Web Browsing -> Kiosk Control Panel Region] is disabled
-              2. [Device -> Back Button Hold Action] is not set to "Open Kiosk Control Panel"
-            """.trimIndent(),
+        validationMessage = stringResource(R.string.web_browsing_kiosk_control_panel_region_validation),
         itemText = {
             if (
                 it == KioskControlPanelRegionOption.DISABLED
                 && !canDisableKioskControlPanelRegion(userSettings)
             ) {
-                "Top Left (cannot disable)"
+                context.getString(R.string.web_browsing_kiosk_control_panel_region_disabled_item)
             } else {
-                it.label
+                context.getString(it.labelRes)
             }
         }
     )

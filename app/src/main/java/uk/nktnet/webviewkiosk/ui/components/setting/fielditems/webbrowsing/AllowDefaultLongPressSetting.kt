@@ -17,13 +17,7 @@ fun AllowDefaultLongPressSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_browsing_allow_default_long_press_title),
-        infoText = """
-            When enabled, long-pressing areas in the WebView will trigger the native
-            WebView behaviour, e.g. text selection.
-
-            Specifically for links, even if this is set to false, it can be overridden
-            by the "Allow Link Long Press Context Menu" setting.
-        """.trimIndent(),
+        infoText = stringResource(R.string.web_browsing_allow_default_long_press_info),
         initialValue = userSettings.allowDefaultLongPress,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

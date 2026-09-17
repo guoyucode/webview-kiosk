@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_tap_hold_copy_value">长按以复制该值。</string>
+    <string name="device_owner_not_set_warning">%s 尚未设置为设备所有者。\n以下设置将不会生效。</string>
+    <string name="device_owner_deactivate_button">停用设备所有者</string>
+    <string name="device_owner_transfer_ownership">转移所有权</string>
+    <string name="device_owner_lock_task_features">Lock Task 功能</string>
+    <string name="device_owner_manage_lock_task_packages">管理 Lock Task 软件包</string>
+    <string name="device_owner_dhizuku_section">Dhizuku</string>
+    <string name="device_owner_request_dhizuku_permission">请求 Dhizuku 权限</string>
+    <string name="device_owner_open_dhizuku">打开 Dhizuku</string>
+    <string name="device_owner_deactivate_dialog_message">确定要将 %s 从设备所有者中移除吗？\n\n这意味着 Lock Task 模式将不再可用，Kiosk 锁定功能将改用屏幕固定。</string>
+    <string name="device_owner_deactivate_confirm">停用</string>
+    <string name="device_owner_cancel">取消</string>
+    <string name="device_manage_device_owner">管理设备所有者</string>
+    <string name="debug_log_search_hint">搜索最近 %d 条日志</string>
+    <string name="debug_log_clear_icon_description">清除</string>
+    <string name="debug_log_sort_icon_description">排序方式</string>
+    <string name="debug_log_empty">暂无日志。</string>
+    <string name="debug_log_hold_to_copy">长按以复制消息。</string>
+    <string name="debug_log_clear_logs">清除日志</string>
+    <string name="web_browsing_manage_site_permissions">管理网站权限</string>
+    <string name="web_content_manage_local_files">管理本地文件</string>
+    <string name="files_upload_success">文件已上传</string>
+    <string name="files_upload_failed">上传失败：%s</string>
+    <string name="files_upload_error">错误：%s</string>
+    <string name="files_upload">上传</string>
+    <string name="files_total_count">文件总数：%d</string>
+    <string name="files_empty">尚未上传任何文件。</string>
+    <string name="admin_restrictions_changed_message">您的 IT 管理员已应用新的配置。\n\n部分设置可能已被限制。</string>
+    <string name="admin_restrictions_understand">我已了解</string>
+    <string name="admin_restrictions_countdown_prefix">将在 </string>
+    <string name="admin_restrictions_countdown_second"> 秒后自动返回。</string>
+    <string name="admin_restrictions_countdown_seconds"> 秒后自动返回。</string>
+</resources>

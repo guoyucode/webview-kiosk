@@ -44,21 +44,19 @@ fun MqttClientIdSetting() {
 
     TextSettingFieldItem(
         label = stringResource(R.string.mqtt_connection_client_id_title),
-        infoText = """
-            A unique identifier for this client when connecting to the MQTT broker.
-
-            Leave this field blank if you want the broker server to generate a
-            client ID for ${stringResource(R.string.app_name)}.
-
-            Supports global variables such as APP_INSTANCE_ID and USERNAME, which
-            you can use like:
-            - $recommendedClientId
-        """.trimIndent(),
-        placeholder = "e.g. $recommendedClientId",
+        infoText = stringResource(
+            R.string.mqtt_connection_client_id_info,
+            stringResource(R.string.app_name),
+            recommendedClientId
+        ),
+        placeholder = stringResource(
+            R.string.mqtt_connection_client_id_placeholder,
+            recommendedClientId
+        ),
         initialValue = userSettings.mqttClientId,
         descriptionFormatter = {
             if (it.trim().isEmpty()) {
-                "(blank)"
+                context.getString(R.string.mqtt_blank)
             } else {
                 MqttManager.mqttVariableReplacement(it)
             }
@@ -69,7 +67,7 @@ fun MqttClientIdSetting() {
         onLongClick = { v ->
             scope.launch {
                 val clipData = ClipData.newPlainText(
-                    "MQTT Client ID",
+                    context.getString(R.string.mqtt_connection_client_id_clipboard_label),
                     MqttManager.mqttVariableReplacement(v)
                 )
                 clipboard.setClipEntry(clipData.toClipEntry())
@@ -90,7 +88,7 @@ fun MqttClientIdSetting() {
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
-                        text = "Use recommended:",
+                        text = stringResource(R.string.mqtt_use_recommended),
                         style = MaterialTheme.typography.bodySmall,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onPrimary,

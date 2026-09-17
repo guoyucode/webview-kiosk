@@ -115,10 +115,10 @@ fun SettingsDeviceOwnerScreen(navController: NavController) {
         ) {
             if (!hasOwnerPermission) {
                 Text(
-                    text = """
-                        ${stringResource(R.string.app_name)} is not set as the device owner.
-                        The settings below will not take effect.
-                    """.trimIndent(),
+                    text = stringResource(
+                        R.string.device_owner_not_set_warning,
+                        stringResource(R.string.app_name)
+                    ),
                     color = MaterialTheme.colorScheme.error,
                     style = MaterialTheme.typography.titleSmall,
                     modifier = Modifier.padding(top = 6.dp)
@@ -141,7 +141,7 @@ fun SettingsDeviceOwnerScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(vertical = 1.dp),
                 ) {
-                    Text("Deactivate Device Owner")
+                    Text(stringResource(R.string.device_owner_deactivate_button))
                 }
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
@@ -151,7 +151,7 @@ fun SettingsDeviceOwnerScreen(navController: NavController) {
                             .fillMaxWidth()
                             .padding(vertical = 1.dp),
                     ) {
-                        Text("Transfer Ownership")
+                        Text(stringResource(R.string.device_owner_transfer_ownership))
                     }
                 }
             }
@@ -159,7 +159,7 @@ fun SettingsDeviceOwnerScreen(navController: NavController) {
             Spacer(modifier = Modifier.height(10.dp))
 
             Text(
-                text = "Lock Task Features",
+                text = stringResource(R.string.device_owner_lock_task_features),
                 style = MaterialTheme.typography.titleLarge,
                 color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.padding(bottom = 8.dp)
@@ -185,13 +185,13 @@ fun SettingsDeviceOwnerScreen(navController: NavController) {
                     .fillMaxWidth()
                     .padding(vertical = 1.dp),
             ) {
-                Text("Manage Lock Task Packages")
+                Text(stringResource(R.string.device_owner_manage_lock_task_packages))
             }
 
             Spacer(modifier = Modifier.height(32.dp))
 
             Text(
-                text = "Dhizuku",
+                text = stringResource(R.string.device_owner_dhizuku_section),
                 style = MaterialTheme.typography.titleLarge,
                 color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.padding(bottom = 8.dp)
@@ -221,7 +221,7 @@ fun SettingsDeviceOwnerScreen(navController: NavController) {
                             .fillMaxWidth()
                             .padding(vertical = 1.dp),
                     ) {
-                        Text("Request Dhizuku Permission")
+                        Text(stringResource(R.string.device_owner_request_dhizuku_permission))
                     }
                 }
 
@@ -236,7 +236,7 @@ fun SettingsDeviceOwnerScreen(navController: NavController) {
                         .fillMaxWidth()
                         .padding(vertical = 1.dp),
                 ) {
-                    Text("Open Dhizuku")
+                    Text(stringResource(R.string.device_owner_open_dhizuku))
                 }
             }
 
@@ -254,16 +254,15 @@ fun SettingsDeviceOwnerScreen(navController: NavController) {
     if (showDeviceOwnerRemovalDialog) {
         AlertDialog(
             onDismissRequest = { showDeviceOwnerRemovalDialog = false },
-            title = { Text("Deactivate Device Owner") },
+            title = { Text(stringResource(R.string.device_owner_deactivate_button)) },
             text = {
                 Text(
-                    normaliseInfoText("""
-                        Are you sure you want to unset ${stringResource(R.string.app_name)}
-                        as the device owner?
-
-                        This means Lock Task Mode will no longer be available, meaning
-                        the kiosk lock feature will utilise Screen Pinning instead.
-                    """.trimIndent())
+                    normaliseInfoText(
+                        stringResource(
+                            R.string.device_owner_deactivate_dialog_message,
+                            stringResource(R.string.app_name)
+                        )
+                    )
                 )
             },
             confirmButton = {
@@ -297,7 +296,7 @@ fun SettingsDeviceOwnerScreen(navController: NavController) {
                     }
                 ) {
                     Text(
-                        "Deactivate",
+                        stringResource(R.string.device_owner_deactivate_confirm),
                         color = MaterialTheme.colorScheme.error
                     )
                 }
@@ -308,7 +307,7 @@ fun SettingsDeviceOwnerScreen(navController: NavController) {
                         showDeviceOwnerRemovalDialog = false
                     }
                 ) {
-                    Text("Cancel")
+                    Text(stringResource(R.string.device_owner_cancel))
                 }
             }
         )

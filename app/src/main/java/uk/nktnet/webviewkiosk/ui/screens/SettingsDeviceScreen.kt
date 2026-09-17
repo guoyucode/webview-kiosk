@@ -78,7 +78,7 @@ fun SettingsDeviceScreen(navController: NavController) {
                 onClick = { navController.navigate(Screen.SettingsDeviceOwner.route) },
                 modifier = Modifier.fillMaxWidth(),
             ) {
-                Text("Manage Device Owner")
+                Text(stringResource(R.string.device_manage_device_owner))
             }
 
             Spacer(modifier = Modifier.height(16.dp))

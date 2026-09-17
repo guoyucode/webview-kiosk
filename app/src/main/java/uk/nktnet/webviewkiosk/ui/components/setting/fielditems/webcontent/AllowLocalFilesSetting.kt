@@ -17,11 +17,7 @@ fun AllowLocalFilesSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_content_allow_local_files_title),
-        infoText = """
-            Set to true to allow the user to load a local HTML file into the WebView.
-
-            This will be accessible using the 3-dot icon on the right of the address bar.
-        """.trimIndent(),
+        infoText = stringResource(R.string.web_content_allow_local_files_info),
         initialValue = userSettings.allowLocalFiles,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

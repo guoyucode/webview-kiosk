@@ -17,10 +17,7 @@ fun MqttUseTlsSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.mqtt_connection_use_tls_title),
-        infoText = """
-            When enabled, the client will connect securely to the broker
-            using TLS. Ensure the broker supports TLS on the configured port.
-        """.trimIndent(),
+        infoText = stringResource(R.string.mqtt_connection_use_tls_info),
         initialValue = userSettings.mqttUseTls,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

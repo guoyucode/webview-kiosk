@@ -19,10 +19,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.toClipEntry
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.core.net.toUri
 import kotlinx.coroutines.launch
+import uk.nktnet.webviewkiosk.R
 import uk.nktnet.webviewkiosk.states.LockStateSingleton
 import uk.nktnet.webviewkiosk.utils.safeStartActivity
 
@@ -61,14 +63,17 @@ fun LinkOptionsDialog(
                     Button(
                         onClick = {
                             scope.launch {
-                                val clipData = ClipData.newPlainText("Link", link)
+                                val clipData = ClipData.newPlainText(
+                                    context.getString(R.string.runtime_clipboard_link),
+                                    link
+                                )
                                 clipboard.setClipEntry(clipData.toClipEntry())
                                 onDismiss()
                             }
                         },
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        Text("Copy Link")
+                        Text(stringResource(R.string.runtime_copy_link))
                     }
 
                     Button(
@@ -78,7 +83,7 @@ fun LinkOptionsDialog(
                         },
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        Text("Open Link")
+                        Text(stringResource(R.string.runtime_open_link))
                     }
 
                     if (!isLocked) {
@@ -90,7 +95,7 @@ fun LinkOptionsDialog(
                             },
                             modifier = Modifier.fillMaxWidth()
                         ) {
-                            Text("Open in Browser")
+                            Text(stringResource(R.string.runtime_open_in_browser))
                         }
 
                         Button(
@@ -99,13 +104,16 @@ fun LinkOptionsDialog(
                                     type = "text/plain"
                                     putExtra(Intent.EXTRA_TEXT, link)
                                 }
-                                val chooser = Intent.createChooser(intent, "Share Link")
+                                val chooser = Intent.createChooser(
+                                    intent,
+                                    context.getString(R.string.runtime_share_link)
+                                )
                                 safeStartActivity(context, chooser)
                                 onDismiss()
                             },
                             modifier = Modifier.fillMaxWidth()
                         ) {
-                            Text("Share Link")
+                            Text(stringResource(R.string.runtime_share_link))
                         }
                     }
                 }

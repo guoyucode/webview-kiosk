@@ -16,9 +16,7 @@ fun MediaPlaybackRequiresUserGestureSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_engine_media_playback_requires_user_gesture_title),
-        infoText = """
-            Sets whether the WebView requires a user gesture (e.g. tap) to play media.
-        """.trimIndent(),
+        infoText = stringResource(R.string.webengine_media_playback_requires_user_gesture_info),
         initialValue = userSettings.mediaPlaybackRequiresUserGesture,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

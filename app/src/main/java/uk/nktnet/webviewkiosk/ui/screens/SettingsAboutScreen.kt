@@ -52,7 +52,7 @@ fun InfoItem(label: String, value: String) {
                 onClick = {
                     ToastManager.show(
                         context,
-                        "Tap and hold to copy value."
+                        context.getString(R.string.about_tap_hold_copy_value)
                     )
                 },
                 onLongClick = {

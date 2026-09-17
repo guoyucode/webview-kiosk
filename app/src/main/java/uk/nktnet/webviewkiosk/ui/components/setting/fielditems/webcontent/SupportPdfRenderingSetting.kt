@@ -43,24 +43,10 @@ fun SupportPdfRenderingSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_content_support_pdf_rendering_title),
-        infoText = """
-            Set to true to support PDF Rendering using Mozilla's PDF.js renderer:
-
-            - https://github.com/mozilla/pdf.js
-
-            You will first need to download the renderer by opening the popup menu for this
-            setting and clicking the "Download PDF.js assets" button.
-
-            ---
-
-            PDF.js assets and PDF source requests are routed through
-            ${Constants.PDF_JS_ASSETS_DUMMY_URL} and handled locally by the app using the
-            WebViewAssetLoader API.
-
-            For more details, see:
-
-            https://developer.android.com/reference/androidx/webkit/WebViewAssetLoader
-        """.trimIndent(),
+        infoText = stringResource(
+            R.string.web_content_support_pdf_rendering_info,
+            Constants.PDF_JS_ASSETS_DUMMY_URL
+        ),
         initialValue = userSettings.supportPdfRendering,
         settingKey = settingKey,
         restricted = restricted ,
@@ -69,12 +55,12 @@ fun SupportPdfRenderingSetting() {
             val supportText = if (assetsReady) {
                 ""
             } else {
-                "(missing assets)"
+                context.getString(R.string.web_content_pdf_missing_assets)
             }
             if (value) {
-                "True $supportText"
+                context.getString(R.string.web_content_pdf_status_true, supportText)
             } else {
-                "False $supportText"
+                context.getString(R.string.web_content_pdf_status_false, supportText)
             }
         },
         extraContent = {
@@ -94,7 +80,7 @@ fun SupportPdfRenderingSetting() {
                         }
                     ) {
                         Text(
-                            text = "Delete PDF.js assets",
+                            text = stringResource(R.string.web_content_pdf_delete_assets),
                             textAlign = TextAlign.Center,
                             style = MaterialTheme.typography.labelMedium
                         )
@@ -105,20 +91,23 @@ fun SupportPdfRenderingSetting() {
                         modifier = Modifier.fillMaxWidth(),
                         onClick = {
                             coroutineScope.launch {
-                                ToastManager.show(context, "Downloading PDF.js...")
+                                ToastManager.show(
+                                    context,
+                                    context.getString(R.string.web_content_pdf_downloading)
+                                )
                                 PdfJsManager.downloadAssets(context)
                                 assetsReady = PdfJsManager.areAssetsReady(context)
                             }
                         }
                     ) {
                         Text(
-                            text = "Download PDF.js assets",
+                            text = stringResource(R.string.web_content_pdf_download_assets),
                             textAlign = TextAlign.Center,
                             style = MaterialTheme.typography.labelMedium
                         )
                     }
                     Text(
-                        text = "PDF rendering cannot be used until PDF.js assets are downloaded.",
+                        text = stringResource(R.string.web_content_pdf_requires_assets),
                         modifier = Modifier.padding(top = 6.dp),
                         color = MaterialTheme.colorScheme.error,
                         style = MaterialTheme.typography.labelMedium,

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- fielditems/mqtt: MqttEnabledSetting -->
+    <string name="mqtt_enabled_info">When enabled, %1$s will connect to your configured MQTT broker and subscribe/publish to the defined topics.\n\nThis will take effect for new app launches.\n\nIf you are currently in a disconnected state, you will need to manually click the \"Connect\" button after enabling this option (or simply restarts the app).</string>
+
+    <!-- fielditems/mqtt: MqttUseForegroundServiceSetting -->
+    <string name="mqtt_use_foreground_service_info">Start a Foreground Service to keep the MQTT connection alive.\n\nThis will maintain the connection even when %1$s goes to the background (e.g. another app is opened) or the device screen is turned off (by using PowerManager.PARTIAL_WAKE_LOCK).\n\nTurn on notifications to see the current MQTT status being updated by the foreground service every second.\n\nAlso, It is highly recommended that you disable battery optimisation for %1$s to stop the service from being killed.\n\nFor more information, visit:\n- https://dontkillmyapp.com</string>
+
+    <!-- fielditems/mqtt/connection -->
+    <string name="mqtt_connection_server_host_info">The hostname or IP address of the MQTT broker the app should connect to.\n\nFor example,\n- 192.168.1.190\n- broker.hivemq.com\n- broker.emqx.io</string>
+    <string name="mqtt_connection_server_host_placeholder">e.g. broker.example.com</string>
+    <string name="mqtt_connection_server_port_info">The TCP port of the MQTT broker the app should connect to.\n\nTypically,\n- 1883 - MQTT (TCP)\n- 8883 - MQTTS (TCP with SSL/TLS)\n- 80 - WS (WebSocket, same port as HTTP)\n- 443 - WSS (WebSocket Secure, same port as HTTPS)</string>
+    <string name="mqtt_connection_server_port_placeholder">e.g. 1883</string>
+    <string name="mqtt_connection_server_port_websocket_note">NOTE: if your broker accepts WebSocket connections on port %1$s, enable:\n\n - MQTT > Connection > Use WebSocket</string>
+    <string name="mqtt_connection_client_id_info">A unique identifier for this client when connecting to the MQTT broker.\n\nLeave this field blank if you want the broker server to generate a client ID for %1$s.\n\nSupports global variables such as APP_INSTANCE_ID and USERNAME, which you can use like:\n- %2$s</string>
+    <string name="mqtt_connection_client_id_placeholder">e.g. %1$s</string>
+    <string name="mqtt_connection_client_id_clipboard_label">MQTT Client ID</string>
+    <string name="mqtt_use_recommended">Use recommended:</string>
+    <string name="mqtt_connection_use_tls_info">When enabled, the client will connect securely to the broker using TLS. Ensure the broker supports TLS on the configured port.</string>
+    <string name="mqtt_connection_username_info">The username used to authenticate with the MQTT broker.</string>
+    <string name="mqtt_connection_username_placeholder">e.g. user001</string>
+    <string name="mqtt_connection_password_info">The password used to authenticate with the MQTT broker.</string>
+    <string name="mqtt_connection_password_placeholder">e.g. **********</string>
+    <string name="mqtt_connection_clean_start_info">When enabled, the MQTT client will start a new session on connect, discarding any previous session state stored by the broker.\n\nWhen disabled, the client will resume the previous session (subscriptions, in-flight messages, etc.) if it exists.</string>
+    <string name="mqtt_connection_keep_alive_info">The time interval (in seconds) in which the client sends a ping to the broker if no other MQTT packets are sent during this period of time.\n\nIt is used to determine if the connection is still up.</string>
+    <string name="mqtt_connection_keep_alive_placeholder">e.g. 60</string>
+    <string name="mqtt_connection_connect_timeout_info">The timeout between sending the Connect and receiving the ConnAck message.\n\nUse 0 to disable the timeout.</string>
+    <string name="mqtt_connection_connect_timeout_placeholder">e.g. 30</string>
+    <string name="mqtt_connection_socket_connect_timeout_info">The timeout for connecting the socket to the server.\n\nUse 0 to disable the timeout.</string>
+    <string name="mqtt_connection_socket_connect_timeout_placeholder">e.g. 5</string>
+    <string name="mqtt_connection_automatic_reconnect_info">When enabled, attempt to automatically reconnect to the MQTT broker after an unexpected disconnect.\n\nIn %1$s, this is implemented linearly at a fixed %2$d-second interval.</string>
+    <string name="mqtt_connection_session_expiry_interval_info">Specify the maximum time a session is retained on the server after disconnecting from the network.\n\nThe server will discard the corresponding session state when the expiration time is reached.</string>
+    <string name="mqtt_connection_session_expiry_interval_placeholder">e.g. 60</string>
+    <string name="mqtt_connection_session_expiry_interval_immediate">0 (immediate expiry)</string>
+    <string name="mqtt_connection_use_websocket_info">When enabled, the client will use WebSocket transport instead of TCP.\n\nEnsure the broker supports WebSocket on the selected port, which is typically\n- 80 for WS\n- 443 for WSS (WebSocket Secure)\n\nYou should only enable WebSocket when strictly necessary, as it will consume more resources. A valid use case would be when you are connected to a network with a firewall that blocks non-standard ports like 8883.</string>
+    <string name="mqtt_connection_websocket_server_path_info">The path the MQTT broker WebSocket server listens on.\n\nMust start with a \'/\', e.g. /mqtt</string>
+    <string name="mqtt_connection_websocket_server_path_placeholder">/mqtt</string>
+    <string name="mqtt_connection_websocket_server_path_invalid">Path must start with \'/\'</string>
+
+    <!-- fielditems/mqtt/will -->
+    <string name="mqtt_will_topic_info">The MQTT topic to publish the last will message if the client disconnects unexpectedly.\n\nAll global variables are supported, e.g. you can use\n- wk/$%1$s/$%2$s/will</string>
+    <string name="mqtt_will_topic_placeholder">e.g. wk/will</string>
+    <string name="mqtt_will_qos_info">Quality of Service (QoS) for the MQTT last will message.\nDetermines the guarantee of message delivery in case of client disconnect.</string>
+    <string name="mqtt_will_payload_info">The MQTT payload to send for the last will message if the client disconnects unexpectedly.\n\nFor example,\n  {\n    \"message\": \"Client has disconnected.\",\n    \"username\": \"$%1$s\",\n    \"appInstanceId\": \"$%2$s\"\n  }</string>
+    <string name="mqtt_will_payload_placeholder">{\n  \"message\": \"Client has disconnected.\",\n  \"appInstanceId\": \"$%1$s\"\n}</string>
+    <string name="mqtt_will_retain_info">Set to true to retain the last will message on the broker after it is sent.</string>
+    <string name="mqtt_will_message_expiry_interval_info">The lifetime in seconds of the last will message on the broker after it is sent. A value of 0 means the message does not expire.</string>
+    <string name="mqtt_will_message_expiry_interval_placeholder">e.g. 0</string>
+    <string name="mqtt_will_delay_interval_info">Time in seconds the broker will wait before sending the last will message after the client disconnects unexpectedly. A value of 0 means immediate delivery.</string>
+    <string name="mqtt_will_delay_interval_placeholder">e.g. 0</string>
+
+    <!-- fielditems/mqtt/restrictions -->
+    <string name="mqtt_restrictions_receive_maximum_info">Maximum number of MQTT messages the client can receive simultaneously.</string>
+    <string name="mqtt_restrictions_receive_maximum_placeholder">e.g. 16</string>
+    <string name="mqtt_restrictions_send_maximum_info">Maximum number of MQTT messages the client can send simultaneously.</string>
+    <string name="mqtt_restrictions_send_maximum_placeholder">e.g. 32</string>
+    <string name="mqtt_restrictions_maximum_packet_size_info">Maximum size in bytes of MQTT packets the client can receive.</string>
+    <string name="mqtt_restrictions_maximum_packet_size_placeholder">e.g. 2048</string>
+    <string name="mqtt_restrictions_send_maximum_packet_size_info">Maximum size in bytes of MQTT packets the client can send.</string>
+    <string name="mqtt_restrictions_send_maximum_packet_size_placeholder">e.g. 1024</string>
+    <string name="mqtt_restrictions_topic_alias_maximum_info">Maximum number of topic aliases the client can receive.</string>
+    <string name="mqtt_restrictions_topic_alias_maximum_placeholder">e.g. 0</string>
+    <string name="mqtt_restrictions_send_topic_alias_maximum_info">Maximum number of topic aliases the client can send.</string>
+    <string name="mqtt_restrictions_send_topic_alias_maximum_placeholder">e.g. 16</string>
+    <string name="mqtt_restrictions_request_problem_information_info">When enabled, the client requests additional problem information from the broker in MQTT responses.</string>
+    <string name="mqtt_restrictions_request_response_information_info">When enabled, the client requests additional response information from the broker in MQTT responses.</string>
+
+    <!-- fielditems/mqtt/topics -->
+    <string name="mqtt_publish_event_topic_info">The MQTT topic to publish event messages.\n\nSupported variables:\n- %1$s\n- %2$s\n- %3$s\n\nExample:\n- wk/event/$%1$s</string>
+    <string name="mqtt_publish_event_topic_placeholder">e.g. wk/event/$%1$s</string>
+    <string name="mqtt_topics_qos_info">Quality of Service (QoS) ensures different message delivery guarantees in case of connection failures.</string>
+    <string name="mqtt_publish_event_retain_info">Keep event topic messages retained for new subscribers.</string>
+    <string name="mqtt_publish_response_topic_info">Default MQTT topic to publish reply messages to requests.\n\nIf a responseTopic is specified in the request, either in the payload or in MQTT V5\'s metadata, the reply will be published to that responseTopic instead.\n\nSupported variables:\n- %1$s\n- %2$s\n- %3$s\n\nExample:\n- wk/response/$%1$s</string>
+    <string name="mqtt_publish_response_topic_placeholder">e.g. wk/response/$%1$s</string>
+    <string name="mqtt_publish_response_qos_info">Quality of Service (QoS) ensures different message delivery guarantees for response messages in case of connection failures.</string>
+    <string name="mqtt_publish_response_retain_info">Keep response topic messages retained for new subscribers.</string>
+    <string name="mqtt_subscribe_request_topic_info">The MQTT topic name to receive requests.\n\nSupported variables:\n- %1$s\n- %2$s\n\nExample:\n- wk/$%1$s/request</string>
+    <string name="mqtt_subscribe_request_topic_placeholder">e.g. wk/request</string>
+    <string name="mqtt_subscribe_command_topic_info">The MQTT topic name to receive commands.\n\nSupported variables:\n- %1$s\n- %2$s\n\nExample:\n- wk/$%1$s/command</string>
+    <string name="mqtt_subscribe_command_topic_placeholder">e.g. wk/command</string>
+    <string name="mqtt_subscribe_settings_topic_info">The MQTT topic name to receive commands.\n\nSupported variables:\n- %1$s\n- %2$s\n\nExample:\n- wk/$%1$s/settings</string>
+    <string name="mqtt_subscribe_settings_topic_placeholder">e.g. wk/settings</string>
+    <string name="mqtt_subscribe_settings_qos_info">Quality of Service (QoS) ensures different message delivery guarantees for settings subscriptions.</string>
+    <string name="mqtt_subscribe_retain_handling_info">Control whether %1$s should receive existing retained messages when subscribing.</string>
+    <string name="mqtt_subscribe_retain_as_published_info">Controls whether retained messages from the broker keep their original retained flag when delivered to the subscriber.</string>
+
+    <!-- shared -->
+    <string name="mqtt_blank">(blank)</string>
+    <string name="mqtt_more">More</string>
+
+    <!-- components/setting/mqtt: MqttControlButtons -->
+    <string name="mqtt_status_label">Status: </string>
+    <string name="mqtt_disconnect">Disconnect</string>
+    <string name="mqtt_restart">Restart</string>
+    <string name="mqtt_connect">Connect</string>
+    <string name="mqtt_cancel_connection">Cancel Connection</string>
+    <string name="mqtt_toast_disconnected_success">MQTT disconnected successfully</string>
+    <string name="mqtt_toast_disconnected_failed">MQTT disconnected failed: %1$s</string>
+    <string name="mqtt_toast_restarted_success">Restarted successfully.</string>
+    <string name="mqtt_toast_error_connecting">Error connecting: %1$s</string>
+    <string name="mqtt_toast_error_disconnecting">Error disconnecting: %1$s</string>
+    <string name="mqtt_toast_cancelling">Cancelling... (max %1$d seconds)</string>
+    <string name="mqtt_toast_already_cancelling">Already cancelling - please wait up to %1$d seconds.</string>
+    <string name="mqtt_toast_connected_success">MQTT connected successfully.</string>
+    <string name="mqtt_toast_connection_failed">MQTT connection failed: %1$s</string>
+
+    <!-- components/setting: UnifiedPushControlButtons -->
+    <string name="unifiedpush_distributor">Distributor</string>
+    <string name="unifiedpush_distributor_status_pending"> (pending)</string>
+    <string name="unifiedpush_distributor_status_ready_temporary"> (ready, temporary)</string>
+    <string name="unifiedpush_distributor_status_ready"> (ready)</string>
+    <string name="unifiedpush_none">None</string>
+    <string name="unifiedpush_endpoint_url">Endpoint URL</string>
+    <string name="unifiedpush_endpoint_public_key">Endpoint Public Key</string>
+    <string name="unifiedpush_endpoint_auth_secret">Endpoint Auth Secret</string>
+    <string name="unifiedpush_redact">Redact</string>
+    <string name="unifiedpush_show_values">Show Values</string>
+    <string name="unifiedpush_unregister">Unregister</string>
+    <string name="unifiedpush_register">Register</string>
+    <string name="unifiedpush_cancel">Cancel</string>
+    <string name="unifiedpush_unregister_confirm_message">Are you sure you want to unregister from UnifiedPush for:\n\n- DISTRIBUTOR: %1$s\n- INSTANCE: %2$s\n\nThis action cannot be undone.</string>
+    <string name="unifiedpush_redact_confirm_message">Are you sure you want to redact the endpoint? This action cannot be undone.\n\nThis will remove the following values stored in %1$s:\n  - Endpoint URL\n  - Endpoint Public Key\n  - Endpoint Auth Secret\n\nThis will not affect any UnifiedPush functionalities, although it is recommended that you copy and store these values in a secure location before redacting them.</string>
+</resources>

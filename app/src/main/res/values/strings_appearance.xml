@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Appearance settings: info texts and placeholders extracted from fielditems/appearance/ -->
+    <string name="appearance_address_bar_mode_info">Customise the visibility of the address bar.</string>
+    <string name="appearance_address_bar_position_info">Customise the position of the address bar - either top or bottom.</string>
+    <string name="appearance_address_bar_size_info">Customise the size of the address bar, which will determine the\nheight, font size, padding and icon size.</string>
+
+    <string name="appearance_blocked_message_info">Custom message shown on blocked pages.</string>
+    <string name="appearance_blocked_message_placeholder">e.g. This site is blocked by &lt;Company Name&gt;</string>
+
+    <string name="appearance_custom_block_page_html_info">Define the custom HTML content to show when a page is blocked.\n\nLeave blank to use the default block page.</string>
+    <string name="appearance_custom_block_page_html_placeholder">e.g.\n    &lt;div style=\"text-align:center; margin-top:10%;\"&gt;\n      &lt;h1 style=\"font-size:4rem;\"&gt;Blocked&lt;/h1&gt;\n      &lt;p style=\"font-size:3rem;\"&gt;This site is not accessible.&lt;/p&gt;\n    &lt;/div&gt;\n\nor as a redirect:\n    &lt;meta http-equiv=\"refresh\" content=\"0; url=%s\"&gt;</string>
+
+    <string name="appearance_floating_toolbar_mode_info">Control the visibility and behaviour of the floating toolbar menu button.\n\nWhen set to \"Hidden\", the \"Settings\" button will be visible from the\nKiosk Control Panel.</string>
+    <string name="appearance_immersive_mode_info">In immersive mode, your system bars (status and navigation) are hidden.\n\nYou can temporarily reveal the system bars with gestures such as swiping\nfrom the edge of the screen where the bar is hidden from.\n\nNote: immersive mode is enabled automatically when entering fullscreen\n(for example, when watching a video), irrespective of this setting.</string>
+    <string name="appearance_theme_info">Select the app theme: System (default), Dark or Light.\n\nSee also: Settings -&gt; JS Scripts -&gt; Apply App Theme .</string>
+    <string name="appearance_webview_inset_info">Select which WindowInsets the WebView should respect for padding.</string>
+
+</resources>

@@ -18,16 +18,11 @@ fun RefreshOnLoadingErrorIntervalSecondsSetting() {
 
     NumberSettingFieldItem(
         label = stringResource(R.string.web_lifecycle_refresh_on_loading_error_interval_seconds_title),
-        infoText = """
-            Interval in seconds between automatic refresh attempts when a page fails
-            to load. This usually indicate the inability to connect to the server,
-            e.g. due to no internet connection or the server is offline.
-
-            Minimum: ${Constants.MIN_REFRESH_ON_LOADING_ERROR_INTERVAL_SECONDS}
-
-            To disable, use the value 0.
-        """.trimIndent(),
-        placeholder = "e.g. 5",
+        infoText = stringResource(
+            R.string.web_lifecycle_refresh_on_loading_error_interval_seconds_info,
+            Constants.MIN_REFRESH_ON_LOADING_ERROR_INTERVAL_SECONDS
+        ),
+        placeholder = stringResource(R.string.web_lifecycle_refresh_on_loading_error_placeholder),
         initialValue = userSettings.refreshOnLoadingErrorIntervalSeconds,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

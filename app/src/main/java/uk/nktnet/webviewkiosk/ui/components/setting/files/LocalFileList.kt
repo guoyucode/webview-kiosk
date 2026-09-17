@@ -35,6 +35,7 @@ import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.toClipEntry
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -103,17 +104,25 @@ fun LocalFileList(
                         overflow = TextOverflow.Ellipsis
                     )
                     Text(
-                        text = "ID: $uuidPart",
+                        text = stringResource(R.string.setting_common_file_id, uuidPart),
                         fontSize = 12.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Text(
-                        text = "Size: ${humanReadableSize(context, file.length())}",
+                        text = stringResource(
+                            R.string.setting_common_file_size,
+                            humanReadableSize(context, file.length())
+                        ),
                         fontSize = 12.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                     Text(
-                        text = "Time: ${SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(Date(file.lastModified()))}",
+                        text = stringResource(
+                            R.string.setting_common_file_time,
+                            SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(
+                                Date(file.lastModified())
+                            )
+                        ),
                         fontSize = 12.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -153,7 +162,7 @@ fun LocalFileList(
                         }
                     ) {
                         DropdownMenuItem(
-                            text = { Text("Open File") },
+                            text = { Text(stringResource(R.string.setting_common_open_file)) },
                             onClick = {
                                 menuExpanded = false
                                 activeFile = null
@@ -169,7 +178,7 @@ fun LocalFileList(
                             },
                         )
                         DropdownMenuItem(
-                            text = { Text("Copy URL") },
+                            text = { Text(stringResource(R.string.setting_common_copy_url)) },
                             onClick = {
                                 scope.launch {
                                     val clipData = ClipData.newPlainText("File URL", file.getLocalUrl())
@@ -188,7 +197,7 @@ fun LocalFileList(
                         )
                         if (canEditActiveFile) {
                             DropdownMenuItem(
-                                text = { Text("Edit File") },
+                                text = { Text(stringResource(R.string.setting_common_edit_file)) },
                                 onClick = {
                                     showEditDialog = true
                                     menuExpanded = false
@@ -202,7 +211,7 @@ fun LocalFileList(
                             )
                         }
                         DropdownMenuItem(
-                            text = { Text("Rename") },
+                            text = { Text(stringResource(R.string.setting_common_rename)) },
                             onClick = {
                                 showRenameDialog = true
                                 menuExpanded = false
@@ -215,7 +224,7 @@ fun LocalFileList(
                             },
                         )
                         DropdownMenuItem(
-                            text = { Text("Delete") },
+                            text = { Text(stringResource(R.string.setting_common_delete)) },
                             onClick = {
                                 showDeleteDialog = true
                                 menuExpanded = false
@@ -264,7 +273,7 @@ fun LocalFileList(
                 activeFile = null
                 editableText = null
             },
-            title = { Text("Rename File") },
+            title = { Text(stringResource(R.string.setting_common_rename_file)) },
             text = {
                 Column {
                     TextField(
@@ -287,7 +296,7 @@ fun LocalFileList(
                     )
                     Spacer(Modifier.height(8.dp))
                     Text(
-                        text = "NOTE: this may break existing links/bookmarks.",
+                        text = stringResource(R.string.setting_common_rename_note),
                         fontSize = 12.sp,
                         color = MaterialTheme.colorScheme.secondary
                     )
@@ -300,14 +309,14 @@ fun LocalFileList(
                         if (file.renameTo(newFile)) {
                             refreshFiles()
                         } else {
-                            ToastManager.show(context, "Rename failed")
+                            ToastManager.show(context, context.getString(R.string.setting_common_rename_failed))
                         }
                         showRenameDialog = false
                         activeFile = null
                         editableText = null
                     }
                 }) {
-                    Text("Save")
+                    Text(stringResource(R.string.setting_common_save))
                 }
             },
             dismissButton = {
@@ -316,7 +325,7 @@ fun LocalFileList(
                     activeFile = null
                     editableText = null
                 }) {
-                    Text("Cancel")
+                    Text(stringResource(R.string.setting_common_cancel))
                 }
             }
         )
@@ -329,15 +338,14 @@ fun LocalFileList(
                 activeFile = null
                 editableText = null
             },
-            title = { Text("Delete File") },
+            title = { Text(stringResource(R.string.setting_common_delete_file)) },
             text = {
-                Text("""
-                    Are you sure you want to delete this file?
-
-                      ${activeFile?.getDisplayName()}
-
-                    This will only remove the app's copy and not the original file on your device.
-                """.trimIndent())
+                Text(
+                    stringResource(
+                        R.string.setting_common_confirm_delete_file,
+                        activeFile?.getDisplayName() ?: ""
+                    )
+                )
             },
             confirmButton = {
                 TextButton(
@@ -349,7 +357,10 @@ fun LocalFileList(
                             if (file.delete()) {
                                 refreshFiles()
                             } else {
-                                ToastManager.show(context, "Failed to delete ${file.getDisplayName()}")
+                                ToastManager.show(
+                                    context,
+                                    context.getString(R.string.setting_common_failed_delete_file, file.getDisplayName())
+                                )
                             }
                             showDeleteDialog = false
                             activeFile = null
@@ -357,7 +368,7 @@ fun LocalFileList(
                         }
                     }
                 ) {
-                    Text("Delete")
+                    Text(stringResource(R.string.setting_common_delete))
                 }
             },
             dismissButton = {
@@ -368,7 +379,7 @@ fun LocalFileList(
                         editableText = null
                     }
                 ) {
-                    Text("Cancel")
+                    Text(stringResource(R.string.setting_common_cancel))
                 }
             }
         )

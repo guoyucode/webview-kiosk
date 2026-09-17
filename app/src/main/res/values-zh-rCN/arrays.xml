@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entries_theme_option">
+        <item>跟随系统</item>
+        <item>深色模式</item>
+        <item>浅色模式</item>
+    </string-array>
+
+    <string-array name="entries_address_bar_mode_option">
+        <item>隐藏</item>
+        <item>锁定时隐藏</item>
+        <item>显示</item>
+    </string-array>
+
+    <string-array name="entries_address_bar_size_option">
+        <item>特小</item>
+        <item>小</item>
+        <item>中</item>
+        <item>大</item>
+        <item>特大</item>
+    </string-array>
+
+    <string-array name="entries_address_bar_position_option">
+        <item>顶部</item>
+        <item>底部</item>
+    </string-array>
+
+    <string-array name="entries_floating_toolbar_mode_option">
+        <item>隐藏</item>
+        <item>锁定时隐藏</item>
+        <item>显示</item>
+    </string-array>
+
+    <string-array name="entries_immersive_mode_option">
+        <item>始终开启</item>
+        <item>始终关闭</item>
+        <item>仅锁定时</item>
+    </string-array>
+
+    <string-array name="entries_cache_mode_option">
+        <item>默认</item>
+        <item>优先缓存，否则网络</item>
+        <item>不使用缓存</item>
+        <item>仅用缓存</item>
+    </string-array>
+
+    <string-array name="entries_layout_algorithm_option">
+        <item>正常</item>
+        <item>单列</item>
+        <item>窄列</item>
+        <item>文字自动调整大小</item>
+    </string-array>
+
+    <string-array name="entries_device_rotation_option">
+        <item>自动</item>
+        <item>0°</item>
+        <item>90°</item>
+        <item>180°</item>
+        <item>270°</item>
+    </string-array>
+
+    <string-array name="entries_kiosk_control_panel_region_option">
+        <item>左上角</item>
+        <item>右上角</item>
+        <item>左下角</item>
+        <item>右下角</item>
+        <item>顶部</item>
+        <item>底部</item>
+        <item>全屏</item>
+        <item>禁用</item>
+    </string-array>
+
+    <string-array name="entries_webview_control_action_option">
+        <item>导航</item>
+        <item>后退</item>
+        <item>前进</item>
+        <item>刷新</item>
+        <item>主页</item>
+        <item>历史记录</item>
+        <item>书签</item>
+        <item>文件</item>
+        <item>查找</item>
+        <item>滚动到顶部</item>
+        <item>滚动到底部</item>
+        <item>应用</item>
+        <item>设置</item>
+        <item>锁定</item>
+        <item>解锁</item>
+    </string-array>
+
+    <string-array name="entries_webview_inset_option">
+        <item>无</item>
+        <item>状态栏</item>
+        <item>导航栏</item>
+        <item>系统栏</item>
+        <item>屏幕挖孔</item>
+        <item>安全绘制区域</item>
+        <item>安全手势区域</item>
+        <item>安全内容区域</item>
+    </string-array>
+
+    <string-array name="entries_back_button_hold_action_option">
+        <item>打开 Kiosk 控制面板</item>
+        <item>返回主页</item>
+        <item>禁用</item>
+    </string-array>
+
+    <string-array name="entries_unlock_auth_requirement_option">
+        <item>默认</item>
+        <item>关闭</item>
+        <item>必须验证</item>
+    </string-array>
+
+    <string-array name="entries_ssl_error_mode_option">
+        <item>拦截</item>
+        <item>询问</item>
+        <item>继续</item>
+    </string-array>
+
+    <string-array name="entries_search_suggestion_engine_option">
+        <item>无</item>
+        <item>Google</item>
+        <item>DuckDuckGo</item>
+        <item>Yahoo</item>
+    </string-array>
+
+    <string-array name="entries_mixed_content_mode_option">
+        <item>一律不允许</item>
+        <item>兼容模式</item>
+        <item>始终允许</item>
+    </string-array>
+
+    <string-array name="entries_over_scroll_mode_option">
+        <item>从不</item>
+        <item>总是</item>
+        <item>内容可滚动时</item>
+    </string-array>
+
+    <string-array name="entries_override_url_loading_block_action_option">
+        <item>显示拦截页面</item>
+        <item>阻止导航</item>
+        <item>显示 Toast 提示</item>
+    </string-array>
+
+    <string-array name="entries_mqtt_qos_option">
+        <item>至多一次（0）</item>
+        <item>至少一次（1）</item>
+        <item>恰好一次（2）</item>
+    </string-array>
+
+    <string-array name="entries_mqtt_retain_handling_option">
+        <item>发送</item>
+        <item>订阅不存在时才发送</item>
+        <item>不发送</item>
+    </string-array>
+
+    <string-array name="entries_refresh_on_network_available_option">
+        <item>总是</item>
+        <item>页面出错时</item>
+        <item>从不</item>
+    </string-array>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Web Content -->
+    <string name="web_content_allow_local_files_info">设为 true 允许用户将本地 HTML 文件加载到 WebView 中。\n\n可通过地址栏右侧的三点图标访问。</string>
+    <string name="web_content_home_url_info">可通过以下方式返回到该 URL：\n  1. 快速连续点击屏幕 10 次\n  2. 使用悬浮工具栏图标\n  3. 使用地址栏菜单\n\n该功能也受「网页浏览」下的 \"Allow Go Home\"（允许返回主页）设置控制。</string>
+    <string name="web_content_home_url_placeholder">例如 %1$s</string>
+    <string name="web_content_home_url_invalid">输入的主页 URL 无效。</string>
+    <string name="web_content_home_url_use_current">使用当前 URL：</string>
+    <string name="web_content_select_from_history">从历史记录中选择</string>
+    <string name="web_content_support_pdf_rendering_info">设为 true 以支持使用 Mozilla 的 PDF.js 渲染器渲染 PDF：\n\n- https://github.com/mozilla/pdf.js\n\n首先需要打开此设置的弹出菜单，\n点击 \"Download PDF.js assets\" 按钮下载渲染器。\n\n---\n\nPDF.js 资源和 PDF 源请求经由\n%1$s 路由，并由应用通过\nWebViewAssetLoader API 在本地处理。\n\n更多详情参见：\n\nhttps://developer.android.com/reference/androidx/webkit/WebViewAssetLoader</string>
+    <string name="web_content_pdf_missing_assets">（缺少资源）</string>
+    <string name="web_content_pdf_status_true">是 %1$s</string>
+    <string name="web_content_pdf_status_false">否 %1$s</string>
+    <string name="web_content_pdf_delete_assets">删除 PDF.js 资源</string>
+    <string name="web_content_pdf_download_assets">下载 PDF.js 资源</string>
+    <string name="web_content_pdf_downloading">正在下载 PDF.js...</string>
+    <string name="web_content_pdf_requires_assets">下载 PDF.js 资源后才能使用 PDF 渲染。</string>
+    <string name="web_content_regex_filter_info">每行指定一个正则表达式（regex）。\n\n正则中的特殊字符（如 \'.\' 和 \'?\'）需要用反斜杠（\\）转义。\n\n这些模式使用部分匹配。如需严格控制，请用 `^` 和 `$` 锚定正则。\n\n白名单模式优先于黑名单模式。</string>
+    <string name="web_content_website_blacklist_placeholder">例如：\n    ^.*$\n    ^https://.*\\.?google\\.com/?.*</string>
+    <string name="web_content_website_whitelist_placeholder">例如：\n    ^https://trusted\\.org/?$\n    ^https://.*\\.trusted\\.org/.*</string>
+    <string name="web_content_regex_filter_invalid">部分行的正则表达式无效。</string>
+    <string name="web_content_website_bookmarks_info">每行指定一个书签 URL，空行将被忽略。\n\n可在地址栏中访问。参见相关设置「网页浏览 -> 允许访问书签」。\n\n也可以按 \"&lt;URL&gt; | &lt;标题&gt;\" 的格式指定要显示的标题。\n\n例如：\n\n```\n\n%1$s | Webview Kiosk\n\nhttps://duckduckgo.com | DuckDuckGo\n\nhttps://f-droid.org | F-Droid\n\n```</string>
+    <string name="web_content_website_bookmarks_placeholder">例如：\n\n%1$s | Webview Kiosk\n\nhttps://duckduckgo.com | DuckDuckGo\n\nhttps://f-droid.org | F-Droid</string>
+    <string name="web_content_website_bookmarks_invalid">部分行的 URL 无效</string>
+    <string name="web_content_website_bookmarks_append_current">追加当前 URL：</string>
+
+    <!-- Web Lifecycle -->
+    <string name="web_lifecycle_dim_screen_on_inactivity_seconds_info">屏幕变暗前的无操作秒数。\n\n这会将亮度设为 0，并在新的用户操作时\n将亮度恢复到「设备 -> 亮度」设置。\n\n最小值：%1$d\n\n设为 0 可禁用。</string>
+    <string name="web_lifecycle_dim_screen_on_inactivity_placeholder">例如 120</string>
+    <string name="web_lifecycle_lock_on_launch_info">启用后，应用启动时将立即进入锁定/固定模式，\n取消固定前无法退出。\n\n在某些设备上，仍可能弹出确认屏幕。</string>
+    <string name="web_lifecycle_refresh_on_loading_error_interval_seconds_info">页面加载失败时自动重试刷新的间隔秒数。\n这通常表示无法连接到服务器，\n例如没有网络连接或服务器已离线。\n\n最小值：%1$d\n\n设为 0 可禁用。</string>
+    <string name="web_lifecycle_refresh_on_loading_error_placeholder">例如 5</string>
+    <string name="web_lifecycle_refresh_on_network_available_info">选择网络连接恢复时页面自动刷新的时机。\n\n- 总是：只要有网络连接就刷新\n- 页面出错时：仅在上次页面加载失败时刷新\n- 从不：不自动刷新</string>
+    <string name="web_lifecycle_reset_on_inactivity_seconds_info">应用重置回主页 URL 前的无操作秒数。\n\n剩余 5 秒时，屏幕上将显示\n警告倒计时。\n\n用户与屏幕交互将重置计时器。\n\n重置时会清除导航历史。\n\n最小值：%1$d\n\n设为 0 可禁用。</string>
+    <string name="web_lifecycle_reset_on_inactivity_placeholder">例如 3600（即 1 小时）</string>
+    <string name="web_lifecycle_reset_on_launch_info">启用后，应用关闭后重新打开时，将始终在主页 URL\n全新启动，而不是上次访问的 URL。\n\n导航历史也会被清除。</string>
+
+</resources>

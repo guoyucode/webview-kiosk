@@ -28,7 +28,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import uk.nktnet.webviewkiosk.R
 import uk.nktnet.webviewkiosk.config.Constants
 import uk.nktnet.webviewkiosk.config.UserSettings
 import uk.nktnet.webviewkiosk.config.UserSettingsKeys
@@ -75,7 +77,7 @@ fun AppLauncherDialog(
 
     BaseAppListDialog(
         onDismiss = onDismiss,
-        title = "Apps",
+        title = stringResource(R.string.setting_common_apps),
         getDescription = { app ->
             if (app.activities.size > 1) {
                 "${app.packageName} (${app.activities.size})"
@@ -107,7 +109,7 @@ fun AppLauncherDialog(
                     activityDialogApp = app
                 }
                 else -> {
-                    ToastManager.show(context, "Error: no activities for app.")
+                    ToastManager.show(context, context.getString(R.string.setting_common_error_no_activities))
                 }
             }
         },
@@ -119,21 +121,31 @@ fun AppLauncherDialog(
                 ) {
                     if (!userSettings.lockTaskFeatureHome) {
                         Text(
-                            text = "Error: please enable ${UserSettingsKeys.Device.Owner.LockTaskFeature.HOME}",
+                            text = context.getString(
+                                R.string.setting_common_error_enable_lock_task_feature,
+                                UserSettingsKeys.Device.Owner.LockTaskFeature.HOME
+                            ),
                             color = MaterialTheme.colorScheme.error,
                             style = MaterialTheme.typography.bodySmall,
                         )
                     }
                     if (!dpm.isLockTaskPermitted(context.packageName)) {
                         Text(
-                            text = "Error: ${context.packageName} must be lock task permitted to launch apps.",
+                            text = context.getString(
+                                R.string.setting_common_error_lock_task_permitted,
+                                context.packageName
+                            ),
                             color = MaterialTheme.colorScheme.error,
                             style = MaterialTheme.typography.bodySmall,
                         )
                     }
                     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
                         Text(
-                            text = "Error: kiosk launch requires Android API ${Build.VERSION_CODES.P}+ (current: ${Build.VERSION.SDK_INT}).",
+                            text = context.getString(
+                                R.string.setting_common_error_kiosk_api,
+                                Build.VERSION_CODES.P,
+                                Build.VERSION.SDK_INT
+                            ),
                             color = MaterialTheme.colorScheme.error,
                             style = MaterialTheme.typography.bodySmall,
                         )
@@ -144,24 +156,16 @@ fun AppLauncherDialog(
         emptyContent = {
             if (isLocked) {
                 Text(
-                    normaliseInfoText("""
-                        No apps available.
-
-                        In kiosk/locked mode, you can only launch apps that have been added to
-                        the lock task permitted list (under device owner settings).
-
-                        For user devices that utilise screen pinning, you will not be able to
-                        launch other apps.
-
-                        Refer to the documentations for how device owner can be obtained - this
-                        requires one of: ADB, Shizuku or Dhizuku.
-
-                        - ${Constants.DOCUMENTATION_URL}
-                    """.trimIndent()),
+                    normaliseInfoText(
+                        stringResource(
+                            R.string.setting_common_no_apps_kiosk_info,
+                            Constants.DOCUMENTATION_URL
+                        )
+                    ),
                     style = MaterialTheme.typography.bodySmall,
                 )
             } else {
-                Text("No apps available.")
+                Text(stringResource(R.string.setting_common_no_apps_available))
             }
         }
     )
@@ -179,7 +183,7 @@ fun AppLauncherDialog(
             text = {
                 Column {
                     Text(
-                        "Select an activity to launch:",
+                        stringResource(R.string.setting_common_select_activity),
                         Modifier.padding(bottom = 12.dp)
                     )
                     app.activities.forEach { activity ->
@@ -204,7 +208,7 @@ fun AppLauncherDialog(
             },
             confirmButton = {
                 TextButton(onClick = { activityDialogApp = null }) {
-                    Text("Close")
+                    Text(stringResource(R.string.setting_common_close))
                 }
             },
         )

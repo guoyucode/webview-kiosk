@@ -20,10 +20,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.hivemq.client.mqtt.MqttClientState
 import kotlinx.coroutines.delay
+import uk.nktnet.webviewkiosk.R
 import uk.nktnet.webviewkiosk.config.UserSettings
 import uk.nktnet.webviewkiosk.config.remote.outbound.OutboundDisconnectingEvent
 import uk.nktnet.webviewkiosk.managers.MqttManager
@@ -81,7 +83,7 @@ fun MqttControlButtons() {
             ) {
                 Row {
                     Text(
-                        text = "Status: ",
+                        text = stringResource(R.string.mqtt_status_label),
                         style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
                         color = MaterialTheme.colorScheme.onBackground
                     )
@@ -103,11 +105,20 @@ fun MqttControlButtons() {
                                 cause = OutboundDisconnectingEvent.DisconnectCause.USER_INITIATED_DISCONNECT,
                                 onDisconnected = {
                                     isDisconnecting = false
-                                    ToastManager.show(context, "MQTT disconnected successfully")
+                                    ToastManager.show(
+                                        context,
+                                        context.getString(R.string.mqtt_toast_disconnected_success)
+                                    )
                                 },
                                 onError = { err ->
                                     isDisconnecting = false
-                                    ToastManager.show(context, "MQTT disconnected failed: $err")
+                                    ToastManager.show(
+                                        context,
+                                        context.getString(
+                                            R.string.mqtt_toast_disconnected_failed,
+                                            err
+                                        )
+                                    )
                                 },
                             )
                         },
@@ -117,7 +128,7 @@ fun MqttControlButtons() {
                             contentColor = MaterialTheme.colorScheme.onErrorContainer
                         )
                     ) {
-                        Text("Disconnect")
+                        Text(stringResource(R.string.mqtt_disconnect))
                     }
 
                     Button(
@@ -131,23 +142,38 @@ fun MqttControlButtons() {
                                         context.applicationContext,
                                         onConnected = {
                                             isRestarting = false
-                                            ToastManager.show(context, "Restarted successfully.")
+                                            ToastManager.show(
+                                                context,
+                                                context.getString(R.string.mqtt_toast_restarted_success)
+                                            )
                                         },
                                         onError = {
                                             isRestarting = false
-                                            ToastManager.show(context, "Error connecting: $it")
+                                            ToastManager.show(
+                                                context,
+                                                context.getString(
+                                                    R.string.mqtt_toast_error_connecting,
+                                                    it
+                                                )
+                                            )
                                         }
                                     )
                                 },
                                 onError = {
                                     isRestarting = false
-                                    ToastManager.show(context, "Error disconnecting: $it")
+                                    ToastManager.show(
+                                        context,
+                                        context.getString(
+                                            R.string.mqtt_toast_error_disconnecting,
+                                            it
+                                        )
+                                    )
                                 }
                             )
 
                         },
                         modifier = Modifier.weight(1f)
-                    ) { Text("Restart") }
+                    ) { Text(stringResource(R.string.mqtt_restart)) }
                 }
             } else if (
                 state in listOf(
@@ -164,11 +190,17 @@ fun MqttControlButtons() {
                             userSettings.mqttConnectTimeout
                         )
                         if (res) {
-                            ToastManager.show(context, "Cancelling... (max $maxWait seconds)")
+                            ToastManager.show(
+                                context,
+                                context.getString(R.string.mqtt_toast_cancelling, maxWait)
+                            )
                         } else {
                             ToastManager.show(
                                 context,
-                                "Already cancelling - please wait up to $maxWait seconds."
+                                context.getString(
+                                    R.string.mqtt_toast_already_cancelling,
+                                    maxWait
+                                )
                             )
                         }
                     },
@@ -178,7 +210,7 @@ fun MqttControlButtons() {
                     ),
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text("Cancel Connection")
+                    Text(stringResource(R.string.mqtt_cancel_connection))
                 }
             } else {
                 Button(
@@ -189,17 +221,23 @@ fun MqttControlButtons() {
                             context.applicationContext,
                             onConnected = {
                                 isConnecting = false
-                                ToastManager.show(context, "MQTT connected successfully.")
+                                ToastManager.show(
+                                    context,
+                                    context.getString(R.string.mqtt_toast_connected_success)
+                                )
                             },
                             onError = {
                                 isConnecting = false
-                                ToastManager.show(context, "MQTT connection failed: $it")
+                                ToastManager.show(
+                                    context,
+                                    context.getString(R.string.mqtt_toast_connection_failed, it)
+                                )
                             }
                         )
                     },
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Text("Connect")
+                    Text(stringResource(R.string.mqtt_connect))
                 }
             }
         }

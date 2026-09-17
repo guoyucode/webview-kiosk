@@ -31,19 +31,21 @@ fun AllowCameraSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.device_allow_camera_title),
-        infoText = """
-            Set to true to give WebView access to your device's camera.
-
-            You will need to grant the CAMERA permission, which is required for the
-            WebView's RESOURCE_VIDEO_CAPTURE feature.
-        """.trimIndent(),
+        infoText = stringResource(R.string.device_allow_camera_info),
         initialValue = userSettings.allowCamera,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         onSave = { userSettings.allowCamera = it },
         itemText = { v ->
-            val statusText = if (permissionState.granted) "" else "(no permission)"
-            if (v) "True $statusText" else "False $statusText"
+            val statusText = if (permissionState.granted) {
+                ""
+            } else {
+                context.getString(R.string.device_status_no_permission)
+            }
+            context.getString(
+                if (v) R.string.device_value_true else R.string.device_value_false,
+                statusText
+            )
         },
         extraContent = {
             Button(
@@ -52,13 +54,13 @@ fun AllowCameraSetting() {
             ) {
                 val buttonText = when {
                     permissionState.granted -> {
-                        "Disable in App Info"
+                        stringResource(R.string.device_button_disable_in_app_info)
                     }
                     !permissionState.granted && !permissionState.shouldShowRationale -> {
-                        "Request Camera Permission"
+                        stringResource(R.string.device_button_request_camera_permission)
                     }
                     else -> {
-                        "Enable in App Info"
+                        stringResource(R.string.device_button_enable_in_app_info)
                     }
                 }
                 Text(

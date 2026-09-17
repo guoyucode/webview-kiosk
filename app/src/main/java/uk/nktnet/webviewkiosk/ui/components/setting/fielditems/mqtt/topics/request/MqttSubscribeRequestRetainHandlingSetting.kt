@@ -27,6 +27,6 @@ fun MqttSubscribeRequestRetainHandlingSetting() {
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         onSave = { userSettings.mqttSubscribeRequestRetainHandling = it },
-        itemText = { it.getSettingLabel() },
+        itemText = { context.getString(it.labelRes) + " (${it.code})" },
     )
 }

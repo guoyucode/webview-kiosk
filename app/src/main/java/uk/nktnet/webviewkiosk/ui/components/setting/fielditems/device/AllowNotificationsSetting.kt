@@ -46,24 +46,24 @@ fun AllowNotificationsSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.device_allow_notifications_title),
-        infoText = """
-            Set to true to allow ${stringResource(R.string.app_name)} to send notifications.
-            For example, this will allow the MQTT notify command to create alerts.
-
-            You will need to grant the POST_NOTIFICATIONS android permission.
-
-            Please note that for foreground services, e.g. when using lock task mode
-            kiosk-launch or MQTT, the notification will always be created irrespective
-            of this setting. You can disable notifications at the device level if you
-            do not want them.
-        """.trimIndent(),
+        infoText = stringResource(
+            R.string.device_allow_notifications_info,
+            stringResource(R.string.app_name)
+        ),
         initialValue = userSettings.allowNotifications,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         onSave = { userSettings.allowNotifications = it },
         itemText = { v ->
-            val statusText = if (permissionState.granted) "" else "(no permission)"
-            if (v) "True $statusText" else "False $statusText"
+            val statusText = if (permissionState.granted) {
+                ""
+            } else {
+                context.getString(R.string.device_status_no_permission)
+            }
+            context.getString(
+                if (v) R.string.device_value_true else R.string.device_value_false,
+                statusText
+            )
         },
         extraContent = {
             Button(
@@ -72,13 +72,13 @@ fun AllowNotificationsSetting() {
             ) {
                 val buttonText = when {
                     permissionState.granted -> {
-                        "Disable in App Info"
+                        stringResource(R.string.device_button_disable_in_app_info)
                     }
                     !permissionState.granted && !permissionState.shouldShowRationale -> {
-                        "Request Notification Permission"
+                        stringResource(R.string.device_button_request_notification_permission)
                     }
                     else -> {
-                        "Enable in App Info"
+                        stringResource(R.string.device_button_enable_in_app_info)
                     }
                 }
                 Text(

@@ -16,10 +16,7 @@ fun LockTaskFeatureSystemInfoSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.device_owner_lock_task_feature_system_info_title),
-        infoText = """
-            Enables the status bar's system info area that contains indicators
-            such as connectivity, battery, and sound/vibrate options.
-        """.trimIndent(),
+        infoText = stringResource(R.string.device_owner_lock_task_feature_system_info_info),
         initialValue = userSettings.lockTaskFeatureSystemInfo,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

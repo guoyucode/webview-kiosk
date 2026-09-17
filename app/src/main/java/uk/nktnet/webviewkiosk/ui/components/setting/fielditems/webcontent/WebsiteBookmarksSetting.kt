@@ -40,35 +40,15 @@ fun WebsiteBookmarksSetting() {
     val restricted = userSettings.isRestricted(settingKey)
 
     TextSettingFieldItem(
-        label = stringResource(R.string.web_content_website_bookmarks_title ),
-        infoText = """
-            Specify bookmarked URLs one per line. Blank lines will be ignored.
-
-            This is accessible in the address bar. See the relevant setting "Web Browsing -> Allow Bookmark Access".
-
-            You can also specify a title for display in the format: "<URL> | <Title>".
-
-            For example:
-
-            ```
-
-            ${Constants.WEBSITE_URL} | Webview Kiosk
-
-            https://duckduckgo.com | DuckDuckGo
-
-            https://f-droid.org | F-Droid
-
-            ```
-        """.trimIndent(),
-        placeholder = """
-            e.g.
-
-            ${Constants.WEBSITE_URL} | Webview Kiosk
-
-            https://duckduckgo.com | DuckDuckGo
-
-            https://f-droid.org | F-Droid
-        """.trimIndent(),
+        label = stringResource(R.string.web_content_website_bookmarks_title),
+        infoText = stringResource(
+            R.string.web_content_website_bookmarks_info,
+            Constants.WEBSITE_URL
+        ),
+        placeholder = stringResource(
+            R.string.web_content_website_bookmarks_placeholder,
+            Constants.WEBSITE_URL
+        ),
         initialValue = userSettings.websiteBookmarks,
         settingKey = settingKey,
         restricted = restricted,
@@ -87,7 +67,7 @@ fun WebsiteBookmarksSetting() {
                 }
             }
         },
-        validationMessage = "Some lines contain invalid URLs",
+        validationMessage = stringResource(R.string.web_content_website_bookmarks_invalid),
         onSave = { input ->
             userSettings.websiteBookmarks = input
         },
@@ -118,7 +98,7 @@ fun WebsiteBookmarksSetting() {
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     Text(
-                        text = "Append the current URL:",
+                        text = stringResource(R.string.web_content_website_bookmarks_append_current),
                         style = MaterialTheme.typography.bodySmall,
                         fontWeight = FontWeight.Bold,
                         color = MaterialTheme.colorScheme.onPrimary,
@@ -145,7 +125,7 @@ fun WebsiteBookmarksSetting() {
                 colors = ButtonDefaults.buttonColors()
             ) {
                 Text(
-                    text = "Select from History",
+                    text = stringResource(R.string.web_content_select_from_history),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onPrimary,
                     textAlign = TextAlign.Center,

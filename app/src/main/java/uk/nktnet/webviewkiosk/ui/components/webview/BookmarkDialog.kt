@@ -23,6 +23,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -30,6 +31,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import uk.nktnet.webviewkiosk.R
 import uk.nktnet.webviewkiosk.config.UserSettings
 import uk.nktnet.webviewkiosk.utils.handleUserKeyEvent
 import uk.nktnet.webviewkiosk.utils.handleUserTouchEvent
@@ -83,7 +85,7 @@ fun BookmarksDialog(
                     .padding(16.dp)
             ) {
                 Text(
-                    text = "Bookmarks",
+                    text = stringResource(R.string.runtime_bookmarks_title),
                     style = MaterialTheme.typography.headlineMedium
                 )
 
@@ -97,7 +99,7 @@ fun BookmarksDialog(
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            text = "No bookmarks saved.",
+                            text = stringResource(R.string.runtime_no_bookmarks),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -159,7 +161,7 @@ fun BookmarksDialog(
                     horizontalArrangement = Arrangement.End
                 ) {
                     TextButton(onClick = onDismiss) {
-                        Text("Close")
+                        Text(stringResource(R.string.runtime_close))
                     }
                 }
             }

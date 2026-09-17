@@ -43,6 +43,7 @@ import androidx.compose.ui.input.pointer.pointerInteropFilter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
@@ -86,11 +87,11 @@ private fun ActionButton(
     ) {
         Icon(
             painter = painterResource(iconRes),
-            contentDescription = action.label,
+            contentDescription = stringResource(action.labelRes),
             modifier = Modifier.size(24.dp)
         )
         Spacer(modifier = Modifier.width(8.dp))
-        Text(action.label)
+        Text(stringResource(action.labelRes))
     }
 }
 
@@ -208,7 +209,10 @@ fun KioskControlPanel(
                                 tapsLeft <= 5 -> {
                                     ToastManager.show(
                                         context,
-                                        "Tap $tapsLeft more times to open the Kiosk Control Panel"
+                                        context.getString(
+                                            R.string.runtime_kiosk_tap_countdown,
+                                            tapsLeft
+                                        )
                                     )
                                 }
                             }
@@ -264,12 +268,12 @@ fun KioskControlPanel(
                     ) {
                         Icon(
                             painter = painterResource(R.drawable.baseline_arrow_back_24),
-                            contentDescription = "Back",
+                            contentDescription = stringResource(R.string.runtime_back),
                             modifier = Modifier.size(24.dp)
                         )
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
-                            "Back",
+                            stringResource(R.string.runtime_back),
                             style = MaterialTheme.typography.labelSmall,
                         )
                     }
@@ -283,13 +287,13 @@ fun KioskControlPanel(
                         modifier = Modifier.weight(1f)
                     ) {
                         Text(
-                            "Forward",
+                            stringResource(R.string.runtime_forward),
                             style = MaterialTheme.typography.labelSmall,
                         )
                         Spacer(modifier = Modifier.width(4.dp))
                         Icon(
                             painter = painterResource(R.drawable.baseline_arrow_forward_24),
-                            contentDescription = "Forward",
+                            contentDescription = stringResource(R.string.runtime_forward),
                             modifier = Modifier.size(24.dp),
                         )
                     }
@@ -481,7 +485,7 @@ fun KioskControlPanel(
                         horizontalArrangement = Arrangement.SpaceBetween,
                     ) {
                         Text(
-                            "Kiosk Control Panel",
+                            stringResource(R.string.runtime_kiosk_control_panel_title),
                             style = MaterialTheme.typography.titleMedium,
                             color = MaterialTheme.colorScheme.onSurface.copy(
                                 alpha = if (enableInteraction) 1f else 0.5f
@@ -492,7 +496,16 @@ fun KioskControlPanel(
                             modifier = Modifier.offset(y = (-2).dp),
                             onClick = {
                                 val newSticky = !isSticky
-                                ToastManager.show(context, "Sticky mode ${if (newSticky) "enabled." else "disabled."}")
+                                ToastManager.show(
+                                    context,
+                                    context.getString(
+                                        if (newSticky) {
+                                            R.string.runtime_sticky_mode_enabled
+                                        } else {
+                                            R.string.runtime_sticky_mode_disabled
+                                        }
+                                    )
+                                )
                                 isSticky = newSticky
                                 systemSettings.isKioskControlPanelSticky = newSticky
                             },
@@ -503,7 +516,9 @@ fun KioskControlPanel(
                                 } else {
                                     painterResource(R.drawable.custom_unpin)
                                 },
-                                contentDescription = if (isSticky) "Sticky" else "Non-Sticky",
+                                contentDescription = stringResource(
+                                    if (isSticky) R.string.runtime_sticky else R.string.runtime_non_sticky
+                                ),
                                 modifier = Modifier.size(20.dp)
                             )
                         }
@@ -574,7 +589,7 @@ fun KioskControlPanel(
                             ),
                         ) {
                             Text(
-                                text = "Close",
+                                text = stringResource(R.string.runtime_close),
                                 fontWeight = FontWeight.Bold,
                             )
                         }

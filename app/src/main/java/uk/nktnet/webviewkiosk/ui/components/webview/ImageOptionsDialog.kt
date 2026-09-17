@@ -21,10 +21,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.toClipEntry
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.core.net.toUri
 import kotlinx.coroutines.launch
+import uk.nktnet.webviewkiosk.R
 import uk.nktnet.webviewkiosk.config.UserSettings
 import uk.nktnet.webviewkiosk.managers.ToastManager
 import uk.nktnet.webviewkiosk.states.LockStateSingleton
@@ -70,14 +72,17 @@ fun ImageOptionsDialog(
                     Button(
                         onClick = {
                             scope.launch {
-                                val clipData = ClipData.newPlainText("Image URL", imageUrl)
+                                val clipData = ClipData.newPlainText(
+                                    context.getString(R.string.runtime_clipboard_image_url),
+                                    imageUrl
+                                )
                                 clipboard.setClipEntry(clipData.toClipEntry())
                                 onDismiss()
                             }
                         },
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        Text("Copy Link")
+                        Text(stringResource(R.string.runtime_copy_link))
                     }
 
                     Button(
@@ -87,7 +92,7 @@ fun ImageOptionsDialog(
                         },
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        Text("Open Image")
+                        Text(stringResource(R.string.runtime_open_image))
                     }
 
                     if (!isLocked) {
@@ -101,7 +106,7 @@ fun ImageOptionsDialog(
                                 },
                                 modifier = Modifier.fillMaxWidth()
                             ) {
-                                Text("Open in Browser")
+                                Text(stringResource(R.string.runtime_open_in_browser))
                             }
                         }
 
@@ -111,13 +116,16 @@ fun ImageOptionsDialog(
                                     type = "text/plain"
                                     putExtra(Intent.EXTRA_TEXT, imageUrl)
                                 }
-                                val chooser = Intent.createChooser(intent, "Share Link")
+                                val chooser = Intent.createChooser(
+                                    intent,
+                                    context.getString(R.string.runtime_share_link)
+                                )
                                 safeStartActivity(context, chooser)
                                 onDismiss()
                             },
                             modifier = Modifier.fillMaxWidth()
                         ) {
-                            Text("Share Link")
+                            Text(stringResource(R.string.runtime_share_link))
                         }
                     }
 
@@ -132,7 +140,7 @@ fun ImageOptionsDialog(
                                     if (mimeType == null) {
                                         ToastManager.show(
                                             context,
-                                            "Retrieving image details..."
+                                            context.getString(R.string.runtime_retrieving_image_details)
                                         )
                                         fetchRemoteFileInfo(imageUrl)?.let { info ->
                                             mimeType = info.mimeType
@@ -157,7 +165,7 @@ fun ImageOptionsDialog(
                             },
                             modifier = Modifier.fillMaxWidth()
                         ) {
-                            Text("Download Image")
+                            Text(stringResource(R.string.runtime_download_image))
                         }
                     }
                 }

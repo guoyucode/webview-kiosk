@@ -24,7 +24,7 @@ fun LanguageSetting() {
         initialValue = userSettings.appLanguage,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
-        itemText = { it.label },
+        itemText = { context.getString(it.labelRes) },
         onSave = {
             userSettings.appLanguage = it
             applyAppLanguage(it)

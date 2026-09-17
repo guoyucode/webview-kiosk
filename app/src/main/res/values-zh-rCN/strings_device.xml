@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shared permission/status snippets (fielditems/device) -->
+    <string name="device_value_true">开 %s</string>
+    <string name="device_value_false">关 %s</string>
+    <string name="device_status_no_permission">（无权限）</string>
+    <string name="device_status_precise">（精确）</string>
+    <string name="device_status_approximate">（大致）</string>
+    <string name="device_status_nfc_disabled">（NFC 已关闭）</string>
+    <string name="device_status_nfc_not_supported">（不支持 NFC）</string>
+    <string name="device_button_disable_in_app_info">在应用信息中关闭</string>
+    <string name="device_button_enable_in_app_info">在应用信息中开启</string>
+    <string name="device_button_request_camera_permission">请求相机权限</string>
+    <string name="device_button_request_microphone_permission">请求麦克风权限</string>
+    <string name="device_button_request_fine_location_permission">请求精确位置权限</string>
+    <string name="device_button_request_coarse_location_permission">请求大致位置权限</string>
+    <string name="device_button_request_notification_permission">请求通知权限</string>
+
+    <!-- AllowCameraSetting -->
+    <string name="device_allow_camera_info">设为 true 以允许 WebView 访问设备的相机。\n\n你需要授予 CAMERA 权限，这是 WebView 的 RESOURCE_VIDEO_CAPTURE 功能所必需的。</string>
+
+    <!-- AllowLocationSetting -->
+    <string name="device_allow_location_info">启用后，网站可以请求设备的位置。\n\n你可以选择请求精确位置（FINE）或大致位置（COARSE）。\n\n你需要授予 ACCESS_FINE_LOCATION 或 ACCESS_COARSE_LOCATION 权限，这是 WebView 的 GeolocationPermissions 所必需的。</string>
+    <string name="device_location_request_precise">请求精确位置</string>
+
+    <!-- AllowMicrophoneSetting -->
+    <string name="device_allow_microphone_info">设为 true 以允许 WebView 访问设备的麦克风。\n\n你需要授予 RECORD_AUDIO 权限，这是 WebView 的 RESOURCE_AUDIO_CAPTURE 功能所必需的。</string>
+
+    <!-- AllowNfcSetting -->
+    <string name="device_allow_nfc_info">设为 true 以通过 Web NFC 兼容桥接层启用 NFC 支持。\n\n网站可使用设备的 NFC 硬件读写 NFC 标签。\n\n请注意，这并非直接使用 Web NFC，因为 Android System WebView 尚未提供该功能，而是在原生 NFC 与 JavaScript 之间提供了一个兼容层。因此，它不受与 Web NFC 相同的安全限制：\n\n- https://developer.chrome.com/docs/capabilities/nfc#security-and-permissions\n\n并且也可以在非安全（非 HTTPS）网站上运行。</string>
+    <string name="device_nfc_open_settings">打开 NFC 设置</string>
+    <string name="device_nfc_unsupported_message">此设备不支持 NFC。</string>
+
+    <!-- AllowNotificationsSetting -->
+    <string name="device_allow_notifications_info">设为 true 以允许 %1$s 发送通知。\n例如，这将允许 MQTT notify 命令创建提醒。\n\n你需要授予 POST_NOTIFICATIONS Android 权限。\n\n请注意，对于前台服务（例如使用锁任务模式 kiosk-launch 或 MQTT 时），无论此设置如何都会创建通知。如果不希望收到通知，可以在设备层面关闭通知。</string>
+
+    <!-- BackButtonHoldActionSetting -->
+    <string name="device_back_button_hold_action_info">自定义长按返回键时的行为。</string>
+
+    <!-- BlockScreenCaptureSetting -->
+    <string name="device_block_screen_capture_info">阻止截屏、录屏以及在最近任务中显示内容预览。\n这是通过设置 FLAG_SECURE 窗口标志实现的。</string>
+
+    <!-- BlockVolumeKeysSetting -->
+    <string name="device_block_volume_keys_info">在 Kiosk 应用中阻止用户使用硬件按键调节设备音量。</string>
+
+    <!-- BrightnessSetting -->
+    <string name="device_brightness_info">设置应用窗口亮度，范围 0（非常昏暗）到 100（非常暗）。\n\n使用 -1 可停用（即使用系统默认亮度）。</string>
+    <string name="device_brightness_placeholder">例如：20</string>
+    <string name="device_brightness_system_default">-1（系统默认）</string>
+    <string name="device_brightness_use_system_default">使用系统默认（-1）</string>
+
+    <!-- CustomAuthPasswordSetting -->
+    <string name="device_custom_auth_password_info">设置自定义密码，用于保护设置，或在从 Kiosk 状态解锁时进行验证。\n\n对于使用屏幕固定的用户自有设备，仅当你使用应用提供的解锁方式时才生效。\n\n设备级取消固定方法（例如手势，或同时按住概览键和返回键）会绕过此设置。为加强安全性，请参阅：%1$s/security\n\n将此设置留空，即可使用设备的生物识别或凭据。</string>
+    <string name="device_custom_auth_password_blank_hint">（留空 = 使用设备凭据）</string>
+    <string name="device_custom_auth_password_too_long">请输入少于 %1$d 个字符。</string>
+    <string name="device_custom_auth_password_save">下一步</string>
+    <string name="device_custom_auth_password_reenter_title">重新输入密码</string>
+    <string name="device_custom_auth_password_confirm_label">确认密码</string>
+    <string name="device_custom_auth_password_show_password">显示密码</string>
+    <string name="device_custom_auth_password_mismatch">两次输入的密码不一致。</string>
+    <string name="device_custom_auth_password_remove_title">移除自定义密码</string>
+    <string name="device_custom_auth_password_remove_message">确定要移除自定义密码吗？\n\n移除后将改用设备凭据或生物识别。</string>
+    <string name="device_action_confirm">确认</string>
+    <string name="device_action_cancel">取消</string>
+    <string name="device_action_remove">移除</string>
+
+    <!-- CustomUnlockShortcutSetting -->
+    <string name="device_custom_unlock_shortcut_info">提供一个自定义键盘快捷键：将修饰键（CTRL/SHIFT/ALT/META）与另一个标准按键组合，用于解锁/取消固定应用。\n\n例如 CTRL+1。\n\n适用于屏幕上没有导航按钮、外接物理键盘的设备。</string>
+    <string name="device_shortcut_requires_modifier">快捷键必须包含 CTRL/SHIFT/ALT/META 之一。</string>
+    <string name="device_shortcut_detected">快捷键：%1$s</string>
+    <string name="device_shortcut_listening">正在监听…</string>
+    <string name="device_shortcut_scan">扫描键盘快捷键</string>
+
+    <!-- DeviceRotationSetting -->
+    <string name="device_rotation_info">选择固定的设备方向，或选择“自动”以允许系统自动旋转屏幕。</string>
+
+    <!-- KeepScreenOnSetting -->
+    <string name="device_keep_screen_on_info">启用此选项可保持设备唤醒状态（屏幕不超时熄灭）。</string>
+
+    <!-- UnlockAuthRequirementSetting -->
+    <string name="device_unlock_auth_requirement_info">此设置仅适用于应用内解锁方式，例如使用 Kiosk Control Panel 或自定义解锁快捷键解锁时。\n\n可用选项：\n\n  - DEFAULT：锁任务模式（设备所有者、完全托管/企业所有设备）要求验证身份；屏幕固定（用户自有设备）则不要求\n\n  - OFF：解锁时无需验证身份\n\n  - REQUIRE：解锁时提示使用生物识别或设备凭据\n\n对于没有锁任务模式的用户自有设备，取消固定后设备会自动锁定，这不受 %1$s 控制。</string>
+
+    <!-- DhizukuRequestPermissionOnLaunchSetting -->
+    <string name="device_owner_dhizuku_request_permission_on_launch_label">启动时请求权限</string>
+    <string name="device_owner_dhizuku_request_permission_on_launch_info">启用后，若已安装 Dhizuku 且尚未授予 %1$s 设备所有者权限，则向用户弹出权限请求。</string>
+
+    <!-- LockTaskFeature settings -->
+    <string name="device_owner_lock_task_feature_block_activity_start_in_task_info">启用后，将阻止非白名单 Activity 启动到锁定任务中。\n\n需要 Android 11（API 级别 30）。</string>
+    <string name="device_owner_lock_task_feature_global_actions_info">启用长按电源按钮时显示的全局操作对话框。\n\n这是 setLockTaskFeatures() 未被调用时唯一启用的功能。如果禁用此对话框，用户通常无法关闭设备电源。</string>
+    <string name="device_owner_lock_task_feature_home_info">显示主屏幕按钮（Home）。\n\n为自定义启动器启用——除非将 Android 默认启动器加入白名单，否则点击已启用的主屏幕按钮不会有任何动作。</string>
+    <string name="device_owner_lock_task_feature_keyguard_info">启用设备上可能设置的任何锁屏。\n通常不适用于公用设备，如 Kiosk 或数字标牌。</string>
+    <string name="device_owner_lock_task_feature_notifications_info">启用所有应用的通知。\n\n这会在状态栏显示通知图标、弹出横幅通知，以及可展开的通知栏。\n\n如果启用此按钮，还必须启用主屏幕按钮。\n\n在锁任务模式下，点击通知操作和打开新面板的按钮不会生效。</string>
+    <string name="device_owner_lock_task_feature_overview_info">显示概览按钮（点击此按钮可打开最近任务界面）。\n\n如果启用此按钮，还必须启用主屏幕按钮。</string>
+    <string name="device_owner_lock_task_feature_system_info_info">启用状态栏上的系统信息区域，其中包含连接、电池以及声音/振动等指示图标。</string>
+
+    <!-- Accessibility content descriptions -->
+    <string name="device_content_description_clear">清除</string>
+</resources>

@@ -52,19 +52,17 @@ fun SearchProviderUrlSetting() {
 
     TextSettingFieldItem(
         label = stringResource(R.string.web_browsing_search_provider_url_title),
-        infoText = """
-            The URL used for search queries in the address bar.
-
-            This URL must include a query parameter, e.g.
-              ${Constants.DEFAULT_SEARCH_PROVIDER_URL}
-        """.trimIndent(),
+        infoText = stringResource(
+            R.string.web_browsing_search_provider_url_info,
+            Constants.DEFAULT_SEARCH_PROVIDER_URL
+        ),
         placeholder = Constants.DEFAULT_SEARCH_PROVIDER_URL,
         initialValue = userSettings.searchProviderUrl,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         isMultiline = false,
         validator = { validateUrl(it) },
-        validationMessage = "Invalid search provider URL.",
+        validationMessage = stringResource(R.string.web_browsing_search_provider_url_validation),
         onSave = { userSettings.searchProviderUrl = it },
         extraContent = { _, setValue ->
             if (restricted) {

@@ -17,7 +17,7 @@ fun AllowBookmarkAccessSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_browsing_allow_bookmark_access_title),
-        infoText = "Whether the user can access saved bookmarks from the address bar.",
+        infoText = stringResource(R.string.web_browsing_allow_bookmark_access_info),
         initialValue = userSettings.allowBookmarkAccess,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

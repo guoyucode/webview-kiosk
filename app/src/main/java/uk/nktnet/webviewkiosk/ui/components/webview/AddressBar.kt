@@ -41,6 +41,7 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.input.ImeAction
@@ -70,13 +71,13 @@ private fun AddressBarMenuItem(
     iconRes: Int,
 ) {
     DropdownMenuItem(
-        text = { Text(action.label) },
+        text = { Text(stringResource(action.labelRes)) },
         enabled = enabled,
         onClick = onClick,
         leadingIcon = {
             Icon(
                 painter = painterResource(iconRes),
-                contentDescription = action.label
+                contentDescription = stringResource(action.labelRes)
             )
         }
     )
@@ -169,7 +170,7 @@ fun AddressBar(
                         Icon(
                             modifier = Modifier.padding(start = 8.dp),
                             painter = painterResource(R.drawable.baseline_arrow_back_24),
-                            contentDescription = WebviewControlActionOption.BACK.label
+                            contentDescription = stringResource(R.string.webview_control_action_option_back)
                         )
                     }
 
@@ -187,7 +188,7 @@ fun AddressBar(
                         Icon(
                             modifier = Modifier.padding(end = 8.dp),
                             painter = painterResource(R.drawable.baseline_arrow_forward_24),
-                            contentDescription = WebviewControlActionOption.FORWARD.label
+                            contentDescription = stringResource(R.string.webview_control_action_option_forward)
                         )
                     }
                 }
@@ -391,7 +392,7 @@ fun AddressBar(
                     ) {
                         if (urlBarText.text.isEmpty()) {
                             Text(
-                                text = "Search",
+                                text = stringResource(R.string.runtime_search),
                                 style = LocalTextStyle.current.copy(
                                     color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f),
                                     fontSize = userSettings.addressBarSize.fontSizeSp,
@@ -409,7 +410,7 @@ fun AddressBar(
                     ) {
                         Icon(
                             painter = painterResource(R.drawable.baseline_search_24),
-                            contentDescription = "Search",
+                            contentDescription = stringResource(R.string.runtime_search),
                             modifier = Modifier
                                 .fillMaxSize()
                                 .padding(userSettings.addressBarSize.searchIconPaddingDp),
@@ -458,7 +459,7 @@ fun AddressBar(
                 ) {
                     Icon(
                         painter = painterResource(R.drawable.outline_more_vert_24),
-                        contentDescription = "Menu",
+                        contentDescription = stringResource(R.string.runtime_menu),
                         modifier = Modifier.fillMaxSize()
                     )
                 }

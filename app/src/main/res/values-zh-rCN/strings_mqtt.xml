@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- fielditems/mqtt: MqttEnabledSetting -->
+    <string name="mqtt_enabled_info">启用后，%1$s 将连接到您配置的 MQTT broker，并向已定义的主题进行订阅/发布。\n\n此设置将在应用新启动时生效。\n\n如果您当前处于未连接状态，启用此选项后需要手动点击“连接”按钮（或直接重启应用）。</string>
+
+    <!-- fielditems/mqtt: MqttUseForegroundServiceSetting -->
+    <string name="mqtt_use_foreground_service_info">启动前台服务（Foreground Service）以保持 MQTT 连接。\n\n即使 %1$s 退到后台（例如打开了其他应用）或设备屏幕关闭（通过 PowerManager.PARTIAL_WAKE_LOCK），也能保持连接。\n\n开启通知后，可查看前台服务每秒更新的当前 MQTT 状态。\n\n此外，强烈建议为 %1$s 关闭电池优化，以防服务被系统杀死。\n\n更多信息请访问：\n- https://dontkillmyapp.com</string>
+
+    <!-- fielditems/mqtt/connection -->
+    <string name="mqtt_connection_server_host_info">应用要连接的 MQTT broker 的主机名或 IP 地址。\n\n例如，\n- 192.168.1.190\n- broker.hivemq.com\n- broker.emqx.io</string>
+    <string name="mqtt_connection_server_host_placeholder">例如 broker.example.com</string>
+    <string name="mqtt_connection_server_port_info">应用要连接的 MQTT broker 的 TCP 端口。\n\n通常为，\n- 1883 - MQTT（TCP）\n- 8883 - MQTTS（基于 SSL/TLS 的 TCP）\n- 80 - WS（WebSocket，与 HTTP 同端口）\n- 443 - WSS（WebSocket Secure，与 HTTPS 同端口）</string>
+    <string name="mqtt_connection_server_port_placeholder">例如 1883</string>
+    <string name="mqtt_connection_server_port_websocket_note">注意：如果您的 broker 在端口 %1$s 上接受 WebSocket 连接，请启用：\n\n - MQTT > Connection > Use WebSocket</string>
+    <string name="mqtt_connection_client_id_info">连接 MQTT broker 时此客户端的唯一标识符。\n\n如果希望由 broker 服务器为 %1$s 生成客户端 ID，请将此字段留空。\n\n支持 APP_INSTANCE_ID、USERNAME 等全局变量，使用方式例如：\n- %2$s</string>
+    <string name="mqtt_connection_client_id_placeholder">例如 %1$s</string>
+    <string name="mqtt_connection_client_id_clipboard_label">MQTT 客户端 ID</string>
+    <string name="mqtt_use_recommended">使用推荐值：</string>
+    <string name="mqtt_connection_use_tls_info">启用后，客户端将使用 TLS 安全连接到 broker。请确保 broker 在所配置的端口上支持 TLS。</string>
+    <string name="mqtt_connection_username_info">用于向 MQTT broker 进行身份验证的用户名。</string>
+    <string name="mqtt_connection_username_placeholder">例如 user001</string>
+    <string name="mqtt_connection_password_info">用于向 MQTT broker 进行身份验证的密码。</string>
+    <string name="mqtt_connection_password_placeholder">例如 **********</string>
+    <string name="mqtt_connection_clean_start_info">启用后，MQTT 客户端将在连接时开始一个新会话，丢弃 broker 上存储的所有先前会话状态。\n\n禁用后，如果存在先前会话，客户端将恢复该会话（订阅、在途消息等）。</string>
+    <string name="mqtt_connection_keep_alive_info">如果在此期间没有发送其他 MQTT 数据包，客户端向 broker 发送 ping 的时间间隔（秒）。\n\n用于判断连接是否仍然有效。</string>
+    <string name="mqtt_connection_keep_alive_placeholder">例如 60</string>
+    <string name="mqtt_connection_connect_timeout_info">发送 Connect 到接收 ConnAck 消息之间的超时时间。\n\n设为 0 可禁用超时。</string>
+    <string name="mqtt_connection_connect_timeout_placeholder">例如 30</string>
+    <string name="mqtt_connection_socket_connect_timeout_info">连接服务器 socket 的超时时间。\n\n设为 0 可禁用超时。</string>
+    <string name="mqtt_connection_socket_connect_timeout_placeholder">例如 5</string>
+    <string name="mqtt_connection_automatic_reconnect_info">启用后，在意外断开后将尝试自动重新连接 MQTT broker。\n\n在 %1$s 中，此功能以固定的 %2$d 秒间隔线性重连。</string>
+    <string name="mqtt_connection_session_expiry_interval_info">指定断开网络连接后会话在服务器上保留的最长时间。\n\n到达过期时间后，服务器将丢弃相应的会话状态。</string>
+    <string name="mqtt_connection_session_expiry_interval_placeholder">例如 60</string>
+    <string name="mqtt_connection_session_expiry_interval_immediate">0（立即过期）</string>
+    <string name="mqtt_connection_use_websocket_info">启用后，客户端将使用 WebSocket 传输而非 TCP。\n\n请确保 broker 在所选端口上支持 WebSocket，通常为\n- WS 用 80\n- WSS（WebSocket Secure）用 443\n\n仅应在确有必要时启用 WebSocket，因为它会消耗更多资源。一种典型的使用场景是：您所在的网络有防火墙，会阻止 8883 之类的非标准端口。</string>
+    <string name="mqtt_connection_websocket_server_path_info">MQTT broker 的 WebSocket 服务器监听的路径。\n\n必须以 \'/\' 开头，例如 /mqtt</string>
+    <string name="mqtt_connection_websocket_server_path_placeholder">/mqtt</string>
+    <string name="mqtt_connection_websocket_server_path_invalid">路径必须以 \'/\' 开头</string>
+
+    <!-- fielditems/mqtt/will -->
+    <string name="mqtt_will_topic_info">客户端意外断开时要发布遗嘱（last will）消息的 MQTT 主题。\n\n支持所有全局变量，例如您可以使用\n- wk/$%1$s/$%2$s/will</string>
+    <string name="mqtt_will_topic_placeholder">例如 wk/will</string>
+    <string name="mqtt_will_qos_info">MQTT 遗嘱消息的服务质量（QoS）。\n决定客户端断开时消息投递的保障级别。</string>
+    <string name="mqtt_will_payload_info">客户端意外断开时要发送的遗嘱消息的 payload。\n\n例如，\n  {\n    \"message\": \"Client has disconnected.\",\n    \"username\": \"$%1$s\",\n    \"appInstanceId\": \"$%2$s\"\n  }</string>
+    <string name="mqtt_will_payload_placeholder">{\n  \"message\": \"Client has disconnected.\",\n  \"appInstanceId\": \"$%1$s\"\n}</string>
+    <string name="mqtt_will_retain_info">设为 true 可在遗嘱消息发送后将其保留在 broker 上。</string>
+    <string name="mqtt_will_message_expiry_interval_info">遗嘱消息在 broker 上的存活时间（秒）。值为 0 表示消息不过期。</string>
+    <string name="mqtt_will_message_expiry_interval_placeholder">例如 0</string>
+    <string name="mqtt_will_delay_interval_info">客户端意外断开后，broker 在发送遗嘱消息前的等待时间（秒）。值为 0 表示立即投递。</string>
+    <string name="mqtt_will_delay_interval_placeholder">例如 0</string>
+
+    <!-- fielditems/mqtt/restrictions -->
+    <string name="mqtt_restrictions_receive_maximum_info">客户端可同时接收的 MQTT 消息最大数量。</string>
+    <string name="mqtt_restrictions_receive_maximum_placeholder">例如 16</string>
+    <string name="mqtt_restrictions_send_maximum_info">客户端可同时发送的 MQTT 消息最大数量。</string>
+    <string name="mqtt_restrictions_send_maximum_placeholder">例如 32</string>
+    <string name="mqtt_restrictions_maximum_packet_size_info">客户端可接收的 MQTT 数据包的最大字节数。</string>
+    <string name="mqtt_restrictions_maximum_packet_size_placeholder">例如 2048</string>
+    <string name="mqtt_restrictions_send_maximum_packet_size_info">客户端可发送的 MQTT 数据包的最大字节数。</string>
+    <string name="mqtt_restrictions_send_maximum_packet_size_placeholder">例如 1024</string>
+    <string name="mqtt_restrictions_topic_alias_maximum_info">客户端可接收的主题别名（topic alias）最大数量。</string>
+    <string name="mqtt_restrictions_topic_alias_maximum_placeholder">例如 0</string>
+    <string name="mqtt_restrictions_send_topic_alias_maximum_info">客户端可发送的主题别名最大数量。</string>
+    <string name="mqtt_restrictions_send_topic_alias_maximum_placeholder">例如 16</string>
+    <string name="mqtt_restrictions_request_problem_information_info">启用后，客户端将在 MQTT 响应中向 broker 请求额外的问题信息。</string>
+    <string name="mqtt_restrictions_request_response_information_info">启用后，客户端将在 MQTT 响应中向 broker 请求额外的响应信息。</string>
+
+    <!-- fielditems/mqtt/topics -->
+    <string name="mqtt_publish_event_topic_info">用于发布事件消息的 MQTT 主题。\n\n支持的变量：\n- %1$s\n- %2$s\n- %3$s\n\n示例：\n- wk/event/$%1$s</string>
+    <string name="mqtt_publish_event_topic_placeholder">例如 wk/event/$%1$s</string>
+    <string name="mqtt_topics_qos_info">服务质量（QoS）在连接故障时提供不同的消息投递保障。</string>
+    <string name="mqtt_publish_event_retain_info">为新订阅者保留事件主题的消息。</string>
+    <string name="mqtt_publish_response_topic_info">用于发布请求回复消息的默认 MQTT 主题。\n\n如果请求中指定了 responseTopic（无论在 payload 中还是在 MQTT V5 的元数据中），回复将改为发布到该 responseTopic。\n\n支持的变量：\n- %1$s\n- %2$s\n- %3$s\n\n示例：\n- wk/response/$%1$s</string>
+    <string name="mqtt_publish_response_topic_placeholder">例如 wk/response/$%1$s</string>
+    <string name="mqtt_publish_response_qos_info">服务质量（QoS）在连接故障时为响应消息提供不同的投递保障。</string>
+    <string name="mqtt_publish_response_retain_info">为新订阅者保留响应主题的消息。</string>
+    <string name="mqtt_subscribe_request_topic_info">用于接收请求的 MQTT 主题名。\n\n支持的变量：\n- %1$s\n- %2$s\n\n示例：\n- wk/$%1$s/request</string>
+    <string name="mqtt_subscribe_request_topic_placeholder">例如 wk/request</string>
+    <string name="mqtt_subscribe_command_topic_info">用于接收命令的 MQTT 主题名。\n\n支持的变量：\n- %1$s\n- %2$s\n\n示例：\n- wk/$%1$s/command</string>
+    <string name="mqtt_subscribe_command_topic_placeholder">例如 wk/command</string>
+    <string name="mqtt_subscribe_settings_topic_info">用于接收命令的 MQTT 主题名。\n\n支持的变量：\n- %1$s\n- %2$s\n\n示例：\n- wk/$%1$s/settings</string>
+    <string name="mqtt_subscribe_settings_topic_placeholder">例如 wk/settings</string>
+    <string name="mqtt_subscribe_settings_qos_info">服务质量（QoS）在连接故障时为 settings 订阅提供不同的消息投递保障。</string>
+    <string name="mqtt_subscribe_retain_handling_info">控制订阅时 %1$s 是否应接收已存在的保留消息。</string>
+    <string name="mqtt_subscribe_retain_as_published_info">控制来自 broker 的保留消息在投递给订阅者时是否保留其原始的 retain 标志。</string>
+
+    <!-- shared -->
+    <string name="mqtt_blank">（空）</string>
+    <string name="mqtt_more">更多</string>
+
+    <!-- components/setting/mqtt: MqttControlButtons -->
+    <string name="mqtt_status_label">状态：</string>
+    <string name="mqtt_disconnect">断开连接</string>
+    <string name="mqtt_restart">重启</string>
+    <string name="mqtt_connect">连接</string>
+    <string name="mqtt_cancel_connection">取消连接</string>
+    <string name="mqtt_toast_disconnected_success">MQTT 已成功断开</string>
+    <string name="mqtt_toast_disconnected_failed">MQTT 断开失败：%1$s</string>
+    <string name="mqtt_toast_restarted_success">重启成功。</string>
+    <string name="mqtt_toast_error_connecting">连接出错：%1$s</string>
+    <string name="mqtt_toast_error_disconnecting">断开连接出错：%1$s</string>
+    <string name="mqtt_toast_cancelling">正在取消…（最长 %1$d 秒）</string>
+    <string name="mqtt_toast_already_cancelling">正在取消，请最多等待 %1$d 秒。</string>
+    <string name="mqtt_toast_connected_success">MQTT 连接成功。</string>
+    <string name="mqtt_toast_connection_failed">MQTT 连接失败：%1$s</string>
+
+    <!-- components/setting: UnifiedPushControlButtons -->
+    <string name="unifiedpush_distributor">分发器（Distributor）</string>
+    <string name="unifiedpush_distributor_status_pending">（待处理）</string>
+    <string name="unifiedpush_distributor_status_ready_temporary">（就绪，临时）</string>
+    <string name="unifiedpush_distributor_status_ready">（就绪）</string>
+    <string name="unifiedpush_none">无</string>
+    <string name="unifiedpush_endpoint_url">Endpoint URL</string>
+    <string name="unifiedpush_endpoint_public_key">Endpoint 公钥</string>
+    <string name="unifiedpush_endpoint_auth_secret">Endpoint 认证密钥</string>
+    <string name="unifiedpush_redact">打码</string>
+    <string name="unifiedpush_show_values">显示值</string>
+    <string name="unifiedpush_unregister">注销</string>
+    <string name="unifiedpush_register">注册</string>
+    <string name="unifiedpush_cancel">取消</string>
+    <string name="unifiedpush_unregister_confirm_message">确定要针对以下对象注销 UnifiedPush 吗：\n\n- DISTRIBUTOR：%1$s\n- INSTANCE：%2$s\n\n此操作无法撤销。</string>
+    <string name="unifiedpush_redact_confirm_message">确定要对 endpoint 打码吗？此操作无法撤销。\n\n这将删除 %1$s 中存储的以下值：\n  - Endpoint URL\n  - Endpoint 公钥\n  - Endpoint 认证密钥\n\n这不会影响任何 UnifiedPush 功能，但建议您在打码前将这些值复制并妥善保存在安全的位置。</string>
+</resources>

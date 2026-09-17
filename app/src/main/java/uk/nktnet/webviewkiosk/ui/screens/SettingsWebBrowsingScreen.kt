@@ -86,7 +86,7 @@ fun SettingsWebBrowsingScreen(
                 onClick = { navController.navigate(Screen.SettingsWebBrowsingSitePermissions.route) },
                 modifier = Modifier.fillMaxWidth(),
             ) {
-                Text("Manage Site Permissions")
+                Text(stringResource(R.string.web_browsing_manage_site_permissions))
             }
 
             Spacer(modifier = Modifier.height(16.dp))

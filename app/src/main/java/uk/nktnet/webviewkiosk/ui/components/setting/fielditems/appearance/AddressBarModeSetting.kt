@@ -18,12 +18,12 @@ fun AddressBarModeSetting() {
 
     DropdownSettingFieldItem(
         label = stringResource(R.string.appearance_address_bar_mode_title),
-        infoText = "Customise the visibility of the address bar.",
+        infoText = stringResource(R.string.appearance_address_bar_mode_info),
         options = AddressBarModeOption.entries,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         initialValue = userSettings.addressBarMode,
         onSave = { userSettings.addressBarMode = it },
-        itemText = { it.label },
+        itemText = { context.getString(it.labelRes) },
     )
 }

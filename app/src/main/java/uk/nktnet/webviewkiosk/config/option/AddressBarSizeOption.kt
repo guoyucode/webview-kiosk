@@ -1,12 +1,15 @@
 package uk.nktnet.webviewkiosk.config.option
 
+import androidx.annotation.StringRes
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.TextUnit
+import uk.nktnet.webviewkiosk.R
 
 enum class AddressBarSizeOption(
     val label: String,
+    @StringRes val labelRes: Int,
     val heightDp: Dp,
     val paddingDp: Dp,
     val fontSizeSp: TextUnit,
@@ -16,6 +19,7 @@ enum class AddressBarSizeOption(
 ) {
     EXTRA_SMALL(
         label = "Extra Small",
+        labelRes = R.string.address_bar_size_option_extra_small,
         heightDp = 35.dp,
         paddingDp = 4.dp,
         fontSizeSp = 12.sp,
@@ -25,6 +29,7 @@ enum class AddressBarSizeOption(
     ),
     SMALL(
         label = "Small",
+        labelRes = R.string.address_bar_size_option_small,
         heightDp = 45.dp,
         paddingDp = 6.dp,
         fontSizeSp = 14.sp,
@@ -34,6 +39,7 @@ enum class AddressBarSizeOption(
     ),
     MEDIUM(
         label = "Medium",
+        labelRes = R.string.address_bar_size_option_medium,
         heightDp = 55.dp,
         paddingDp = 8.dp,
         fontSizeSp = 16.sp,
@@ -43,6 +49,7 @@ enum class AddressBarSizeOption(
     ),
     LARGE(
         label = "Large",
+        labelRes = R.string.address_bar_size_option_large,
         heightDp = 65.dp,
         paddingDp = 10.dp,
         fontSizeSp = 20.sp,
@@ -52,6 +59,7 @@ enum class AddressBarSizeOption(
     ),
     EXTRA_LARGE(
         label = "Extra Large",
+        labelRes = R.string.address_bar_size_option_extra_large,
         heightDp = 75.dp,
         paddingDp = 12.dp,
         fontSizeSp = 26.sp,

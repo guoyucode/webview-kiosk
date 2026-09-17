@@ -20,17 +20,12 @@ fun MqttSubscribeSettingsTopicSetting() {
 
     TextSettingFieldItem(
         label = stringResource(R.string.mqtt_subscribe_settings_topic_title),
-        infoText = $$"""
-            The MQTT topic name to receive commands.
-
-            Supported variables:
-            - $${MqttVariableName.APP_INSTANCE_ID.name}
-            - $${MqttVariableName.USERNAME.name}
-
-            Example:
-            - wk/${$${MqttVariableName.APP_INSTANCE_ID.name}}/settings
-        """.trimIndent(),
-        placeholder = "e.g. wk/settings",
+        infoText = stringResource(
+            R.string.mqtt_subscribe_settings_topic_info,
+            MqttVariableName.APP_INSTANCE_ID.name,
+            MqttVariableName.USERNAME.name
+        ),
+        placeholder = stringResource(R.string.mqtt_subscribe_settings_topic_placeholder),
         initialValue = userSettings.mqttSubscribeSettingsTopic,
         validator = { it.isEmpty() || isValidMqttSubscribeTopic(it) },
         descriptionFormatter = {

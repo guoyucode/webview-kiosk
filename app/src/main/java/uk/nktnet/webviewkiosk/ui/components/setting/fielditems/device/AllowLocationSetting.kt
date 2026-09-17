@@ -47,27 +47,23 @@ fun AllowLocationSetting() {
     val requestPermission = if (requestFine) requestFinePermission else requestCoarsePermission
 
     val statusText = when {
-        fineState.granted -> "(precise)"
-        coarseState.granted -> "(approximate)"
-        else -> "(no permission)"
+        fineState.granted -> context.getString(R.string.device_status_precise)
+        coarseState.granted -> context.getString(R.string.device_status_approximate)
+        else -> context.getString(R.string.device_status_no_permission)
     }
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.device_allow_location_title),
-        infoText = """
-            When enabled, websites can request the device's location.
-
-            You can choose to request precise location (FINE) or approximate location (COARSE).
-
-            You will need to grant either ACCESS_FINE_LOCATION or ACCESS_COARSE_LOCATION,
-            required for the WebView's GeolocationPermissions.
-        """.trimIndent(),
+        infoText = stringResource(R.string.device_allow_location_info),
         initialValue = userSettings.allowLocation,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),
         onSave = { userSettings.allowLocation = it },
         itemText = { v ->
-            if (v) "True $statusText" else "False $statusText"
+            context.getString(
+                if (v) R.string.device_value_true else R.string.device_value_false,
+                statusText
+            )
         },
         extraContent = {
             Column(modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
@@ -76,7 +72,7 @@ fun AllowLocationSetting() {
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
-                        text = "Request precise location",
+                        text = stringResource(R.string.device_location_request_precise),
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier
                             .weight(1f)
@@ -99,15 +95,15 @@ fun AllowLocationSetting() {
                     onClick = requestPermission
                 ) {
                     val buttonText = if (permissionState.granted) {
-                        "Disable in App Info"
+                        stringResource(R.string.device_button_disable_in_app_info)
                     } else if (!permissionState.shouldShowRationale) {
                         if (requestFine) {
-                            "Request Fine Location Permission"
+                            stringResource(R.string.device_button_request_fine_location_permission)
                         } else {
-                            "Request Coarse Location Permission"
+                            stringResource(R.string.device_button_request_coarse_location_permission)
                         }
                     } else {
-                        "Enable in App Info"
+                        stringResource(R.string.device_button_enable_in_app_info)
                     }
 
                     Text(

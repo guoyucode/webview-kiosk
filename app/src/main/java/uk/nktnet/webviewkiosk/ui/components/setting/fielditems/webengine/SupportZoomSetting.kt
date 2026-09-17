@@ -16,10 +16,7 @@ fun SupportZoomSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_engine_support_zoom_title),
-        infoText = """
-            Sets whether the WebView should support zooming using its on-screen
-            zoom controls and gestures.
-        """.trimIndent(),
+        infoText = stringResource(R.string.webengine_support_zoom_info),
         initialValue = userSettings.supportZoom,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

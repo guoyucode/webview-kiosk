@@ -43,17 +43,19 @@ fun WebViewUnavailable(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
-                text = "WebView Error",
+                text = stringResource(R.string.runtime_webview_error_title),
                 style = MaterialTheme.typography.headlineLarge,
                 textAlign = TextAlign.Center,
             )
             Spacer(modifier = Modifier.height(32.dp))
             SelectionContainer {
                 Text(
-                    text = normaliseInfoText("""
-                    ${stringResource(R.string.app_name)} requires Android System WebView
-                    (com.google.android.webview) to be installed on your device.
-                    """.trimIndent()),
+                    text = normaliseInfoText(
+                        stringResource(
+                            R.string.runtime_webview_required_message,
+                            stringResource(R.string.app_name)
+                        )
+                    ),
                     style = MaterialTheme.typography.bodyLarge,
                     textAlign = TextAlign.Center,
                 )
@@ -67,7 +69,7 @@ fun WebViewUnavailable(
                 }
             ) {
                 Text(
-                    text = "Refresh",
+                    text = stringResource(R.string.runtime_refresh),
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.bodyLarge
                 )
@@ -76,7 +78,7 @@ fun WebViewUnavailable(
             if (exception != null) {
                 HorizontalDivider(modifier = Modifier.padding(vertical = 24.dp))
                 Text(
-                    text = "Exception:",
+                    text = stringResource(R.string.runtime_exception),
                     style = MaterialTheme.typography.headlineSmall,
                     textAlign = TextAlign.Center,
                 )

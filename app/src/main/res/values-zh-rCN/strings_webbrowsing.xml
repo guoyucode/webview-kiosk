@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Address Bar Actions -->
+    <string name="web_browsing_address_bar_actions_info">管理地址栏中显示的操作。\n\n拖动条目末尾的拖拽手柄可以重新排序。</string>
+
+    <!-- Allow Backwards Navigation -->
+    <string name="web_browsing_allow_backwards_navigation_info">用户是否可以使用设备的返回键（back）在历史记录中回退一页。</string>
+
+    <!-- Allow Bookmark Access -->
+    <string name="web_browsing_allow_bookmark_access_info">用户是否可以从地址栏访问已保存的书签。</string>
+
+    <!-- Allow Default Long Press -->
+    <string name="web_browsing_allow_default_long_press_info">启用后，长按 WebView 中的区域会触发原生 WebView 行为，例如文本选择。\n\n特别是链接：即使将此设置设为 false，也可能被“允许链接长按上下文菜单”设置覆盖。</string>
+
+    <!-- Allow Go Home -->
+    <string name="web_browsing_allow_go_home_info">用户是否可以返回已配置的主页。</string>
+
+    <!-- Allow History Access -->
+    <string name="web_browsing_allow_history_access_info">用户是否可以从地址栏访问浏览历史。</string>
+
+    <!-- Allow Link Long Press Context Menu -->
+    <string name="web_browsing_allow_link_long_press_context_menu_info">启用后，长按链接或图片会弹出自定义上下文菜单。\n\n它会优先于“允许默认长按”设置（即覆盖该设置）。\n\n链接的选项有：\n- 复制链接\n- 打开链接\n- 在浏览器中打开（未锁定时）\n- 分享链接（未锁定时）\n\n图片还会多出一个选项：\n- 下载图片（需要 %1$s）</string>
+
+    <!-- Allow Other URL Schemes -->
+    <string name="web_browsing_allow_other_url_schemes_info">允许在其他应用中处理非 http/https 的 URL scheme（即 intent），例如 intent:、mailto:、sms:、tel:、spotify:、whatsapp:、unifiedpush: 等。\n\n在 Lock Task Mode 下，负责处理这些 intent 的应用必须出现在设备所有者设置中的 Lock Task 许可列表里才能正常工作。</string>
+
+    <!-- Allow Pull to Refresh -->
+    <string name="web_browsing_allow_pull_to_refresh_info">设为 true 后，用户可以从屏幕顶部 1/4 区域下拉来刷新页面。\n\n注意这需要满足：\n- “允许刷新”设置也为 true\n- 手势之前页面已滚动到最顶部\n- 使用单指（触摸）操作</string>
+
+    <!-- Allow Refresh -->
+    <string name="web_browsing_allow_refresh_info">设为 true 以允许用户刷新页面，可通过：\n- 地址栏操作\n- Kiosk 控制面板\n- 下拉刷新（可单独配置）</string>
+
+    <!-- Clear History on Home -->
+    <string name="web_browsing_clear_history_on_home_info">每当用户触发返回主页的操作时，清除浏览器历史记录。</string>
+
+    <!-- Kiosk Control Panel Actions -->
+    <string name="web_browsing_kiosk_control_panel_actions_info">管理 Kiosk 控制面板中显示的操作。\n\n拖动条目末尾的拖拽手柄可以重新排序。\n\n在锁定模式下，如果未配置“UNLOCK”操作，它会被追加到列表末尾。\n\n在未锁定模式下，如果“外观 -&gt; 悬浮工具栏模式”设为 Hidden，则“SETTINGS”操作会被追加到列表末尾。</string>
+
+    <!-- Kiosk Control Panel Region -->
+    <string name="web_browsing_kiosk_control_panel_region_info">控制屏幕的哪个区域可以被快速连点 10 次以呼出 Kiosk 控制面板。\n\n默认为左上角（屏幕左上象限）。\n\n如果以下两项同时成立：\n  1. [网页浏览 -&gt; Kiosk 控制面板区域] 被禁用\n  2. [设备 -&gt; 返回键长按动作] 未设为“打开 Kiosk 控制面板”\n则此选项无法被禁用，并将默认为左上角。</string>
+    <string name="web_browsing_kiosk_control_panel_region_validation">你无法禁用此选项，因为：\n  1. [网页浏览 -&gt; Kiosk 控制面板区域] 被禁用\n  2. [设备 -&gt; 返回键长按动作] 未设为“打开 Kiosk 控制面板”</string>
+    <string name="web_browsing_kiosk_control_panel_region_disabled_item">左上角（无法禁用）</string>
+
+    <!-- Override URL Loading Block Action -->
+    <string name="web_browsing_override_url_loading_block_action_info">当 URL 导航（通过 shouldOverrideUrlLoading）匹配黑名单正则时采取的动作。\n\n通常这来自点击网页 HTML 中的链接（&lt;a&gt; 标签）。\n\n可选动作有：\n- 显示拦截页面（显示一个 HTML 拦截页面）\n- 阻止导航（点击链接时不做任何事）\n- 显示 Toast（显示一条包含你自定义拦截消息的 Toast）\n\n此选项对以下情况不生效：\n- JavaScript 导航\n- 自定义 URL 加载，例如来自地址栏、书签、历史记录等\n\n在这些其他情况下，会直接显示拦截页面。</string>
+
+    <!-- Replace History URL on Redirect -->
+    <string name="web_browsing_replace_history_url_on_redirect_info">设为 true 后，如果发生任何页面重定向，会用最终 URL 替换当前历史记录条目，而不是向历史导航栈中添加多条记录。</string>
+
+    <!-- Search Provider URL -->
+    <string name="web_browsing_search_provider_url_info">地址栏中搜索查询使用的 URL。\n\n该 URL 必须包含查询参数，例如\n  %1$s</string>
+    <string name="web_browsing_search_provider_url_validation">无效的搜索提供方 URL。</string>
+
+    <!-- Search Suggestion Engine -->
+    <string name="web_browsing_search_suggestion_engine_info">配置在地址栏输入时提供文本建议（自动补全/提示）的搜索引擎。\n\n例如，搜索“new”时，你可能会得到以下建议：\n- news\n- new recipes\n- new york times</string>
+
+</resources>

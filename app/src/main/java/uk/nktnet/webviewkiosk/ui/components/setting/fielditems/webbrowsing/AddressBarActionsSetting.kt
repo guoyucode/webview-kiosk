@@ -18,13 +18,9 @@ fun AddressBarActionsSetting() {
 
     EnumListSettingFieldItem(
         label = stringResource(R.string.web_browsing_address_bar_actions_title),
-        infoText = """
-            Manage visible actions in the address bar.
-
-            Use the drag handle at the end to reorder the items.
-        """.trimIndent(),
+        infoText = stringResource(R.string.web_browsing_address_bar_actions_info),
         entries = WebviewControlActionOption.entries,
-        getLabel = { it.label },
+        getLabel = { context.getString(it.labelRes) },
         getDefault = { WebviewControlActionOption.getDefaultAddressBarOptions() },
         initialValue = userSettings.addressBarActions,
         settingKey = settingKey,

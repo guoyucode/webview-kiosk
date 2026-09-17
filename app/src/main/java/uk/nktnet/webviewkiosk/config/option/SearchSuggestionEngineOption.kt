@@ -1,10 +1,16 @@
 package uk.nktnet.webviewkiosk.config.option
 
-enum class SearchSuggestionEngineOption(val label: String) {
-    NONE("None"),
-    GOOGLE("Google"),
-    DUCKDUCKGO("DuckDuckGo"),
-    YAHOO("Yahoo");
+import androidx.annotation.StringRes
+import uk.nktnet.webviewkiosk.R
+
+enum class SearchSuggestionEngineOption(
+    val label: String,
+    @StringRes val labelRes: Int,
+) {
+    NONE("None", R.string.search_suggestion_engine_option_none),
+    GOOGLE("Google", R.string.search_suggestion_engine_option_google),
+    DUCKDUCKGO("DuckDuckGo", R.string.search_suggestion_engine_option_duckduckgo),
+    YAHOO("Yahoo", R.string.search_suggestion_engine_option_yahoo);
 
     companion object {
         fun fromString(value: String?): SearchSuggestionEngineOption {

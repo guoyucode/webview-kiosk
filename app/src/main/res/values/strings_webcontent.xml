@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Web Content -->
+    <string name="web_content_allow_local_files_info">Set to true to allow the user to load a local HTML file into the WebView.\n\nThis will be accessible using the 3-dot icon on the right of the address bar.</string>
+    <string name="web_content_home_url_info">The URL that can be returned to by:\n  1. tapping the screen 10 times in quick succession\n  2. using the floating toolbar icon\n  3. using the address bar menu\n\nThis is also controlled by the \"Allow Go Home\" setting under web browsing.</string>
+    <string name="web_content_home_url_placeholder">e.g. %1$s</string>
+    <string name="web_content_home_url_invalid">Invalid Home URL provided.</string>
+    <string name="web_content_home_url_use_current">Use the current URL:</string>
+    <string name="web_content_select_from_history">Select from History</string>
+    <string name="web_content_support_pdf_rendering_info">Set to true to support PDF Rendering using Mozilla\'s PDF.js renderer:\n\n- https://github.com/mozilla/pdf.js\n\nYou will first need to download the renderer by opening the popup menu for this\nsetting and clicking the \"Download PDF.js assets\" button.\n\n---\n\nPDF.js assets and PDF source requests are routed through\n%1$s and handled locally by the app using the\nWebViewAssetLoader API.\n\nFor more details, see:\n\nhttps://developer.android.com/reference/androidx/webkit/WebViewAssetLoader</string>
+    <string name="web_content_pdf_missing_assets">(missing assets)</string>
+    <string name="web_content_pdf_status_true">True %1$s</string>
+    <string name="web_content_pdf_status_false">False %1$s</string>
+    <string name="web_content_pdf_delete_assets">Delete PDF.js assets</string>
+    <string name="web_content_pdf_download_assets">Download PDF.js assets</string>
+    <string name="web_content_pdf_downloading">Downloading PDF.js...</string>
+    <string name="web_content_pdf_requires_assets">PDF rendering cannot be used until PDF.js assets are downloaded.</string>
+    <string name="web_content_regex_filter_info">Specify regular expressions (regex), one per line.\n\nEscaping with backslash (\\) is required for special characters\nin regex like \'.\' and \'?\'.\n\nThese patterns also use partial matching.\nIf you need strict control, anchor your regex with `^` and `$`.\n\nWhitelist patterns take precedence over blacklist patterns.</string>
+    <string name="web_content_website_blacklist_placeholder">e.g.\n    ^.*$\n    ^https://.*\\.?google\\.com/?.*</string>
+    <string name="web_content_website_whitelist_placeholder">e.g.\n    ^https://trusted\\.org/?$\n    ^https://.*\\.trusted\\.org/.*</string>
+    <string name="web_content_regex_filter_invalid">Some lines contain invalid regular expressions.</string>
+    <string name="web_content_website_bookmarks_info">Specify bookmarked URLs one per line. Blank lines will be ignored.\n\nThis is accessible in the address bar. See the relevant setting \"Web Browsing -> Allow Bookmark Access\".\n\nYou can also specify a title for display in the format: \"&lt;URL&gt; | &lt;Title&gt;\".\n\nFor example:\n\n```\n\n%1$s | Webview Kiosk\n\nhttps://duckduckgo.com | DuckDuckGo\n\nhttps://f-droid.org | F-Droid\n\n```</string>
+    <string name="web_content_website_bookmarks_placeholder">e.g.\n\n%1$s | Webview Kiosk\n\nhttps://duckduckgo.com | DuckDuckGo\n\nhttps://f-droid.org | F-Droid</string>
+    <string name="web_content_website_bookmarks_invalid">Some lines contain invalid URLs</string>
+    <string name="web_content_website_bookmarks_append_current">Append the current URL:</string>
+
+    <!-- Web Lifecycle -->
+    <string name="web_lifecycle_dim_screen_on_inactivity_seconds_info">Number of seconds of inactivity before the screen is dimmed.\n\nThis will set the brightness to 0, and will restore the brightness to\nyour device -> brightness setting upon new user interactions.\n\nMinimum: %1$d\n\nTo disable, use the value 0.</string>
+    <string name="web_lifecycle_dim_screen_on_inactivity_placeholder">e.g. 120</string>
+    <string name="web_lifecycle_lock_on_launch_info">When enabled, the app will immediately enter locked/pinned mode on startup,\npreventing exit until unpinned.\n\nOn some devices, you may still be prompted with a confirmation screen.</string>
+    <string name="web_lifecycle_refresh_on_loading_error_interval_seconds_info">Interval in seconds between automatic refresh attempts when a page fails\nto load. This usually indicate the inability to connect to the server,\ne.g. due to no internet connection or the server is offline.\n\nMinimum: %1$d\n\nTo disable, use the value 0.</string>
+    <string name="web_lifecycle_refresh_on_loading_error_placeholder">e.g. 5</string>
+    <string name="web_lifecycle_refresh_on_network_available_info">Select when the page should automatically refresh when network\nconnectivity is restored.\n\n- Always: refresh whenever a network connection is available\n- On Page Error: only refresh if the previous page load failed\n- Never: do not refresh automatically</string>
+    <string name="web_lifecycle_reset_on_inactivity_seconds_info">Number of seconds of inactivity before the app resets to the home URL.\n\nWhen there is 5 seconds left, a warning countdown will be shown on\nthe screen.\n\nUser interactions the screen will reset the timer.\n\nThe navigation history will be cleared when resetting.\n\nMinimum: %1$d\n\nTo disable, use the value 0.</string>
+    <string name="web_lifecycle_reset_on_inactivity_placeholder">e.g. 3600 (for 1 hour)</string>
+    <string name="web_lifecycle_reset_on_launch_info">When enabled, the app will always start fresh at the Home URL when\nclosed and re-opened, as opposed to the last visited URL.\n\nThe navigation history will also be cleared.</string>
+
+</resources>

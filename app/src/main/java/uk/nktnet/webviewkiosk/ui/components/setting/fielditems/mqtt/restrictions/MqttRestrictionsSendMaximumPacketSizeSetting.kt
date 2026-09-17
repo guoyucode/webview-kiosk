@@ -17,10 +17,8 @@ fun MqttRestrictionsSendMaximumPacketSizeSetting() {
 
     NumberSettingFieldItem(
         label = stringResource(R.string.mqtt_restrictions_send_maximum_packet_size_title),
-        infoText = """
-            Maximum size in bytes of MQTT packets the client can send.
-        """.trimIndent(),
-        placeholder = "e.g. 1024",
+        infoText = stringResource(R.string.mqtt_restrictions_send_maximum_packet_size_info),
+        placeholder = stringResource(R.string.mqtt_restrictions_send_maximum_packet_size_placeholder),
         initialValue = userSettings.mqttRestrictionsSendMaximumPacketSize,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

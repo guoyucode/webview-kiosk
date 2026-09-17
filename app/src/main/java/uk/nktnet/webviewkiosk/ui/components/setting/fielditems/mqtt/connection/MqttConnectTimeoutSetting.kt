@@ -18,12 +18,8 @@ fun MqttConnectTimeoutSetting() {
 
     NumberSettingFieldItem(
         label = stringResource(R.string.mqtt_connection_connect_timeout_title),
-        infoText = """
-            The timeout between sending the Connect and receiving the ConnAck message.
-
-            Use 0 to disable the timeout.
-        """.trimIndent(),
-        placeholder = "e.g. 30",
+        infoText = stringResource(R.string.mqtt_connection_connect_timeout_info),
+        placeholder = stringResource(R.string.mqtt_connection_connect_timeout_placeholder),
         initialValue = userSettings.mqttConnectTimeout,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

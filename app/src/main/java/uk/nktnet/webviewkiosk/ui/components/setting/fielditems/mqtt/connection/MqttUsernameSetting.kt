@@ -17,10 +17,8 @@ fun MqttUsernameSetting() {
 
     TextSettingFieldItem(
         label = stringResource(R.string.mqtt_connection_username_title),
-        infoText = """
-            The username used to authenticate with the MQTT broker.
-        """.trimIndent(),
-        placeholder = "e.g. user001",
+        infoText = stringResource(R.string.mqtt_connection_username_info),
+        placeholder = stringResource(R.string.mqtt_connection_username_placeholder),
         initialValue = userSettings.mqttUsername,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

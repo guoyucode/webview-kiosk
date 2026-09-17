@@ -73,11 +73,7 @@ fun AdminRestrictionsChangedScreen(
             )
             Spacer(modifier = Modifier.height(16.dp))
             Text(
-                text = """
-                    Your IT Administrator has applied new configurations.
-
-                    Some settings may have been restricted.
-                """.trimIndent(),
+                text = stringResource(R.string.admin_restrictions_changed_message),
                 style = MaterialTheme.typography.bodyLarge,
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onBackground
@@ -90,7 +86,7 @@ fun AdminRestrictionsChangedScreen(
                     .fillMaxWidth()
                     .height(60.dp),
             ) {
-                Text("I understand.")
+                Text(stringResource(R.string.admin_restrictions_understand))
             }
             Spacer(modifier = Modifier.height(32.dp))
             Row(
@@ -99,7 +95,7 @@ fun AdminRestrictionsChangedScreen(
                 modifier = Modifier.fillMaxWidth(),
             ) {
                 Text(
-                    text = "Returning automatically in ",
+                    text = stringResource(R.string.admin_restrictions_countdown_prefix),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onBackground,
                     fontStyle = FontStyle.Italic,
@@ -117,7 +113,11 @@ fun AdminRestrictionsChangedScreen(
                     )
                 )
                 Text(
-                    text = " second${if (remaining == 1) "" else "s"}.",
+                    text = if (remaining == 1) {
+                        stringResource(R.string.admin_restrictions_countdown_second)
+                    } else {
+                        stringResource(R.string.admin_restrictions_countdown_seconds)
+                    },
                     fontStyle = FontStyle.Italic,
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onBackground

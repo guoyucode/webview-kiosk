@@ -26,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -33,6 +34,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import uk.nktnet.webviewkiosk.R
 import uk.nktnet.webviewkiosk.utils.getDisplayName
 import uk.nktnet.webviewkiosk.utils.getLocalUrl
 import uk.nktnet.webviewkiosk.utils.getWebContentFilesDir
@@ -70,7 +72,10 @@ fun LocalFilesDialog(
                     .fillMaxSize()
                     .padding(16.dp)
             ) {
-                Text("Files", style = MaterialTheme.typography.headlineMedium)
+                Text(
+                    stringResource(R.string.runtime_files_title),
+                    style = MaterialTheme.typography.headlineMedium
+                )
                 Spacer(Modifier.height(16.dp))
 
                 if (filesList.isEmpty()) {
@@ -81,7 +86,7 @@ fun LocalFilesDialog(
                         contentAlignment = Alignment.Center
                     ) {
                         Text(
-                            text = "No local files available.",
+                            text = stringResource(R.string.runtime_no_local_files),
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -134,7 +139,7 @@ fun LocalFilesDialog(
                     horizontalArrangement = Arrangement.End
                 ) {
                     TextButton(onClick = onDismiss) {
-                        Text("Close")
+                        Text(stringResource(R.string.runtime_close))
                     }
                 }
             }

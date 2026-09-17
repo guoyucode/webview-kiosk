@@ -35,6 +35,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import kotlinx.coroutines.launch
@@ -79,10 +80,10 @@ fun ImportSettingsDialog(
                         importText = stream.bufferedReader().use { it.readText() }
                         importError = false
                     }
-                    ToastManager.show(context, "Loaded file successfully.")
+                    ToastManager.show(context, context.getString(R.string.setting_common_loaded_file_success))
                 } catch (e: Exception) {
                     Log.e(Constants.APP_SCHEME, "Loading imported file failed", e)
-                    ToastManager.show(context, "Failed to read file: ${e.message}")
+                    ToastManager.show(context, context.getString(R.string.setting_common_failed_read_file, e.message))
                 }
             }
         }
@@ -101,7 +102,7 @@ fun ImportSettingsDialog(
                     .padding(16.dp)
             ) {
                 Text(
-                    text = "Import Settings",
+                    text = stringResource(R.string.setting_common_import_settings),
                     style = MaterialTheme.typography.titleLarge,
                     modifier = Modifier.padding(bottom = 8.dp)
                 )
@@ -134,9 +135,9 @@ fun ImportSettingsDialog(
                         placeholder = {
                             Text(
                                 if (selectedTab == ImportTab.Base64) {
-                                    "Paste your Base64 config string."
+                                    stringResource(R.string.setting_common_paste_base64)
                                 } else {
-                                    "Paste your JSON string."
+                                    stringResource(R.string.setting_common_paste_json)
                                 }
                             )
                         },
@@ -202,14 +203,14 @@ fun ImportSettingsDialog(
                                     "Failed to launch file picker for import",
                                     e
                                 )
-                                ToastManager.show(context, "Error: ${e.message}")
+                                ToastManager.show(context, context.getString(R.string.setting_common_error_generic, e.message))
                             }
                         },
                         colors = ButtonDefaults.textButtonColors(
                             contentColor = MaterialTheme.colorScheme.tertiary
                         ),
                     ) {
-                        Text("From File")
+                        Text(stringResource(R.string.setting_common_from_file))
                     }
 
                     Row {
@@ -219,7 +220,7 @@ fun ImportSettingsDialog(
                                 contentColor = MaterialTheme.colorScheme.error
                             ),
                         ) {
-                            Text("Cancel")
+                            Text(stringResource(R.string.setting_common_cancel))
                         }
 
                         Spacer(Modifier.width(8.dp))
@@ -233,21 +234,21 @@ fun ImportSettingsDialog(
 
                             if (success) {
                                 updateDeviceSettings(context)
-                                ToastManager.show(context, "Imported settings successfully")
+                                ToastManager.show(context, context.getString(R.string.setting_common_imported_success))
                                 onDismiss()
                             } else {
                                 importError = true
                                 ToastManager.show(
                                     context,
                                     if (selectedTab == ImportTab.Base64) {
-                                        "Failed to import Base64. You may need to switch tabs."
+                                        context.getString(R.string.setting_common_failed_import_base64)
                                     } else {
-                                        "Failed to import JSON. You may need to switch tabs."
+                                        context.getString(R.string.setting_common_failed_import_json)
                                     }
                                 )
                             }
                         }) {
-                            Text("Import")
+                            Text(stringResource(R.string.setting_common_import))
                         }
                     }
                 }

@@ -10,8 +10,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextOverflow
+import uk.nktnet.webviewkiosk.R
 import uk.nktnet.webviewkiosk.ui.components.setting.dialog.GenericSettingFieldDialog
 
 @Composable
@@ -27,9 +29,11 @@ fun CustomSettingFieldItem(
 ) {
     var showDialog by remember { mutableStateOf(false) }
 
+    val blankText = stringResource(R.string.setting_common_blank)
+
     GenericSettingFieldItem(
         label = label,
-        value = value.ifBlank { "(blank)" },
+        value = value.ifBlank { blankText },
         restricted = restricted,
         onClick = { showDialog = true }
     ) { displayValue ->

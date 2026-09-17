@@ -29,6 +29,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import org.json.JSONArray
 import sh.calvin.reorderable.ReorderableColumn
@@ -119,7 +120,7 @@ fun <T : Enum<T>> EnumListSettingFieldItem(
                             onClick = { items = getDefault() },
                             colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
                         ) {
-                            Text("Reset")
+                            Text(stringResource(R.string.setting_common_reset))
                         }
 
                         Box {
@@ -132,7 +133,7 @@ fun <T : Enum<T>> EnumListSettingFieldItem(
                                     contentDescription = "Add"
                                 )
                                 Spacer(modifier = Modifier.width(4.dp))
-                                Text("Add")
+                                Text(stringResource(R.string.setting_common_add))
                             }
                             DropdownMenu(
                                 expanded = addExpanded,

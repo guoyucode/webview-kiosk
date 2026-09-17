@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.input.KeyboardType
@@ -62,7 +63,7 @@ fun TextSettingFieldItem(
             MaterialTheme.typography.bodyMedium
         }
     },
-    saveText: String = "Save",
+    saveText: String = stringResource(R.string.setting_common_save),
     extraContent: (
         @Composable (
             (
@@ -74,6 +75,7 @@ fun TextSettingFieldItem(
 ) {
     val clipboard = LocalClipboard.current
     val scope = rememberCoroutineScope()
+    val blankText = stringResource(R.string.setting_common_blank)
 
     var showDialog by remember { mutableStateOf(false) }
     var value by remember { mutableStateOf(initialValue) }
@@ -97,9 +99,9 @@ fun TextSettingFieldItem(
     ) { v ->
         val description = descriptionFormatter?.invoke(v) ?: run {
             if (isMultiline) {
-                v.split("\n").joinToString(" | ").ifBlank { "(blank)" }
+                v.split("\n").joinToString(" | ").ifBlank { blankText }
             } else {
-                v.ifBlank { "(blank)" }
+                v.ifBlank { blankText }
             }
         }
 
@@ -252,7 +254,7 @@ fun TextSettingFieldItem(
 
                 if (draftError) {
                     Text(
-                        text = validationMessage ?: "Invalid input",
+                        text = validationMessage ?: stringResource(R.string.setting_common_invalid_input),
                         color = MaterialTheme.colorScheme.error,
                         style = MaterialTheme.typography.bodySmall,
                         modifier = Modifier

@@ -78,7 +78,7 @@ fun SettingsHeaderMenu(
                         onDismissRequest = { showMenu = false }
                     ) {
                         DropdownMenuItem(
-                            text = { Text("Import", color = tintColor) },
+                            text = { Text(stringResource(R.string.setting_common_import), color = tintColor) },
                             onClick = {
                                 showMenu = false
                                 showImportDialog = true
@@ -92,7 +92,7 @@ fun SettingsHeaderMenu(
                             }
                         )
                         DropdownMenuItem(
-                            text = { Text("Export", color = tintColor) },
+                            text = { Text(stringResource(R.string.setting_common_export), color = tintColor) },
                             onClick = {
                                 showMenu = false
                                 showExportDialog = true
@@ -108,7 +108,7 @@ fun SettingsHeaderMenu(
                         DropdownMenuItem(
                             text = {
                                 Text(
-                                    "Settings",
+                                    stringResource(R.string.setting_common_menu_system_settings),
                                     color = tintColor
                                 )
                             },
@@ -125,7 +125,7 @@ fun SettingsHeaderMenu(
                             }
                         )
                         DropdownMenuItem(
-                            text = { Text("Launcher", color = tintColor) },
+                            text = { Text(stringResource(R.string.setting_common_menu_launcher), color = tintColor) },
                             onClick = {
                                 showMenu = false
                                 openDefaultLauncherSettings(context)
@@ -139,7 +139,7 @@ fun SettingsHeaderMenu(
                             }
                         )
                         DropdownMenuItem(
-                            text = { Text("Help", color = tintColor) },
+                            text = { Text(stringResource(R.string.setting_common_menu_help), color = tintColor) },
                             onClick = {
                                 showMenu = false
                                 val intent = Intent(Intent.ACTION_VIEW, Constants.DOCUMENTATION_URL.toUri())
@@ -154,7 +154,7 @@ fun SettingsHeaderMenu(
                             }
                         )
                         DropdownMenuItem(
-                            text = { Text("More", color = tintColor) },
+                            text = { Text(stringResource(R.string.setting_common_menu_more), color = tintColor) },
                             onClick = {
                                 showMenu = false
                                 navController.navigate(Screen.SettingsMoreActions.route)

@@ -1,9 +1,15 @@
 package uk.nktnet.webviewkiosk.config.option
 
-enum class FloatingToolbarModeOption(val label: String) {
-    HIDDEN("Hidden"),
-    HIDDEN_WHEN_LOCKED("Hidden When Locked"),
-    SHOWN("Shown");
+import androidx.annotation.StringRes
+import uk.nktnet.webviewkiosk.R
+
+enum class FloatingToolbarModeOption(
+    val label: String,
+    @StringRes val labelRes: Int,
+) {
+    HIDDEN("Hidden", R.string.floating_toolbar_mode_option_hidden),
+    HIDDEN_WHEN_LOCKED("Hidden When Locked", R.string.floating_toolbar_mode_option_hidden_when_locked),
+    SHOWN("Shown", R.string.floating_toolbar_mode_option_shown);
 
     companion object {
         fun fromString(value: String?): FloatingToolbarModeOption {

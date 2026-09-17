@@ -17,12 +17,7 @@ fun LockOnLaunchSetting() {
 
     BooleanSettingFieldItem(
         label = stringResource(R.string.web_lifecycle_lock_on_launch_title),
-        infoText = """
-            When enabled, the app will immediately enter locked/pinned mode on startup,
-            preventing exit until unpinned.
-
-            On some devices, you may still be prompted with a confirmation screen.
-        """.trimIndent(),
+        infoText = stringResource(R.string.web_lifecycle_lock_on_launch_info),
         initialValue = userSettings.lockOnLaunch,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

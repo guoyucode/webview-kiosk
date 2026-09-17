@@ -117,11 +117,12 @@ fun UnifiedPushControlButtons() {
             ) {
                 val status = when {
                     savedDistributor.isNullOrBlank() -> ""
-                    savedDistributor != ackDistributor -> " (pending)"
+                    savedDistributor != ackDistributor ->
+                        stringResource(R.string.unifiedpush_distributor_status_pending)
                     else -> if (endpoint?.temporary ?: false) {
-                        " (ready, temporary)"
+                        stringResource(R.string.unifiedpush_distributor_status_ready_temporary)
                     } else {
-                        " (ready)"
+                        stringResource(R.string.unifiedpush_distributor_status_ready)
                     }
                 }
 
@@ -131,7 +132,7 @@ fun UnifiedPushControlButtons() {
                 ) {
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
-                            text = "Distributor$status",
+                            text = stringResource(R.string.unifiedpush_distributor) + status,
                             style = MaterialTheme.typography.titleSmall.copy(
                                 fontWeight = FontWeight.Bold
                             ),
@@ -140,7 +141,8 @@ fun UnifiedPushControlButtons() {
                         Spacer(Modifier.height(2.dp))
                         SelectionContainer {
                             Text(
-                                text = savedDistributor ?: "None",
+                                text = savedDistributor
+                                    ?: stringResource(R.string.unifiedpush_none),
                                 style = MaterialTheme.typography.bodySmall.copy(
                                     fontFamily = FontFamily.Monospace
                                 ),
@@ -172,17 +174,17 @@ fun UnifiedPushControlButtons() {
                     )
                     Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
                         InfoRow(
-                            label = "Endpoint URL",
+                            label = stringResource(R.string.unifiedpush_endpoint_url),
                             value = endpoint?.url,
                             showValues = showValues,
                         )
                         InfoRow(
-                            label = "Endpoint Public Key",
+                            label = stringResource(R.string.unifiedpush_endpoint_public_key),
                             value = endpoint?.pubKeySet?.pubKey,
                             showValues = showValues,
                         )
                         InfoRow(
-                            label = "Endpoint Auth Secret",
+                            label = stringResource(R.string.unifiedpush_endpoint_auth_secret),
                             value = endpoint?.pubKeySet?.auth,
                             showValues = showValues,
                         )
@@ -198,7 +200,7 @@ fun UnifiedPushControlButtons() {
                                 ),
                                 onClick = { showRedactConfirm = true }
                             ) {
-                                Text("Redact")
+                                Text(stringResource(R.string.unifiedpush_redact))
                             }
 
                             Spacer(modifier = Modifier.weight(1f))
@@ -209,7 +211,7 @@ fun UnifiedPushControlButtons() {
                                 onCheckedChange = { showValuesCheckbox = it }
                             )
                             Text(
-                                text = "Show Values",
+                                text = stringResource(R.string.unifiedpush_show_values),
                                 style = MaterialTheme.typography.bodyMedium,
                                 modifier = Modifier
                                     .clickable(
@@ -236,7 +238,7 @@ fun UnifiedPushControlButtons() {
                     contentColor = MaterialTheme.colorScheme.onErrorContainer
                 )
             ) {
-                Text("Unregister")
+                Text(stringResource(R.string.unifiedpush_unregister))
             }
             Button(
                 onClick = { UnifiedPushManager.register(context) },
@@ -246,7 +248,7 @@ fun UnifiedPushControlButtons() {
                     contentColor = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             ) {
-                Text("Register")
+                Text(stringResource(R.string.unifiedpush_register))
             }
         }
 
@@ -261,30 +263,27 @@ fun UnifiedPushControlButtons() {
                         }
                     ) {
                         Text(
-                            "Unregister",
+                            stringResource(R.string.unifiedpush_unregister),
                             color = MaterialTheme.colorScheme.error
                         )
                     }
                 },
                 dismissButton = {
                     TextButton(onClick = { showUnregisterConfirm = false }) {
-                        Text("Cancel")
+                        Text(stringResource(R.string.unifiedpush_cancel))
                     }
                 },
                 title = {
-                    Text("Unregister")
+                    Text(stringResource(R.string.unifiedpush_unregister))
                 },
                 text = {
                     Text(
                         normaliseInfoText(
-                            """
-                            Are you sure you want to unregister from UnifiedPush for:
-
-                            - DISTRIBUTOR: ${userSettings.unifiedPushDistributor}
-                            - INSTANCE: ${UnifiedPushManager.getInstance(context)}
-
-                            This action cannot be undone.
-                            """.trimIndent()
+                            stringResource(
+                                R.string.unifiedpush_unregister_confirm_message,
+                                userSettings.unifiedPushDistributor,
+                                UnifiedPushManager.getInstance(context)
+                            )
                         )
                     )
                 }
@@ -306,34 +305,25 @@ fun UnifiedPushControlButtons() {
                         }
                     ) {
                         Text(
-                            "Redact",
+                            stringResource(R.string.unifiedpush_redact),
                             color = MaterialTheme.colorScheme.error
                         )
                     }
                 },
                 dismissButton = {
                     TextButton(onClick = { showRedactConfirm = false }) {
-                        Text("Cancel")
+                        Text(stringResource(R.string.unifiedpush_cancel))
                     }
                 },
                 title = {
-                    Text("Redact")
+                    Text(stringResource(R.string.unifiedpush_redact))
                 },
                 text = {
                     Text(normaliseInfoText(
-                        """
-                        Are you sure you want to redact the endpoint?
-                        This action cannot be undone.
-
-                        This will remove the following values stored in ${stringResource(R.string.app_name)}:
-                          - Endpoint URL
-                          - Endpoint Public Key
-                          - Endpoint Auth Secret
-
-                        This will not affect any UnifiedPush functionalities, although it
-                        is recommended that you copy and store these values in a secure
-                        location before redacting them.
-                        """.trimIndent()
+                        stringResource(
+                            R.string.unifiedpush_redact_confirm_message,
+                            stringResource(R.string.app_name)
+                        )
                     ))
                 }
             )
@@ -350,7 +340,7 @@ private fun InfoRow(
     val clipboard = LocalClipboard.current
     val scope = rememberCoroutineScope()
     val displayValue = if (value.isNullOrEmpty()) {
-        "None"
+        stringResource(R.string.unifiedpush_none)
     } else if (!showValues) {
         "*".repeat(value.length)
     } else {

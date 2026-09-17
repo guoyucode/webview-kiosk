@@ -15,12 +15,11 @@ fun DhizukuRequestPermissionOnLaunchSetting() {
     val settingKey = UserSettingsKeys.Device.Owner.Dhizuku.REQUEST_PERMISSION_ON_LAUNCH
 
     BooleanSettingFieldItem(
-        label = "Request Permission on Launch",
-        infoText = """
-            When enabled, if Dhizuku is installed and has not granted
-            ${stringResource(R.string.app_name)} access to Device
-            Owner privileges, prompt the user for permission.
-        """.trimIndent(),
+        label = stringResource(R.string.device_owner_dhizuku_request_permission_on_launch_label),
+        infoText = stringResource(
+            R.string.device_owner_dhizuku_request_permission_on_launch_info,
+            stringResource(R.string.app_name)
+        ),
         initialValue = userSettings.dhizukuRequestPermissionOnLaunch,
         settingKey = settingKey,
         restricted = userSettings.isRestricted(settingKey),

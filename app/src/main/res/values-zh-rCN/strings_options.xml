@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 枚举下拉选项显示标签（config/option/ 下除 MQTT 外的全部枚举；MQTT 枚举在 strings_mqtt_options.xml）。
+         key 规则：<枚举蛇形名>_option_<条目蛇形名>。枚举的 label 字段保留英文原文用于持久化/导出解析，labelRes 仅供显示。 -->
+    <string name="theme_option_system">跟随系统</string>
+    <string name="theme_option_dark">深色</string>
+    <string name="theme_option_light">浅色</string>
+
+    <string name="address_bar_mode_option_hidden">隐藏</string>
+    <string name="address_bar_mode_option_hidden_when_locked">锁定时隐藏</string>
+    <string name="address_bar_mode_option_shown">显示</string>
+
+    <string name="address_bar_position_option_top">顶部</string>
+    <string name="address_bar_position_option_bottom">底部</string>
+
+    <string name="address_bar_size_option_extra_small">特小</string>
+    <string name="address_bar_size_option_small">小</string>
+    <string name="address_bar_size_option_medium">中</string>
+    <string name="address_bar_size_option_large">大</string>
+    <string name="address_bar_size_option_extra_large">特大</string>
+
+    <!-- 语言名在任何语言环境下都保持母语形式 -->
+    <string name="app_language_option_english">English</string>
+    <string name="app_language_option_chinese">中文</string>
+
+    <string name="back_button_hold_action_option_open_kiosk_control_panel">打开 Kiosk 控制面板</string>
+    <string name="back_button_hold_action_option_go_home">回到主页</string>
+    <string name="back_button_hold_action_option_disabled">禁用</string>
+
+    <string name="cache_mode_option_default">默认</string>
+    <string name="cache_mode_option_cache_else_network">优先使用缓存</string>
+    <string name="cache_mode_option_no_cache">不使用缓存</string>
+    <string name="cache_mode_option_cache_only">仅使用缓存</string>
+
+    <string name="device_rotation_option_auto">自动</string>
+    <string name="device_rotation_option_rotation_0">0</string>
+    <string name="device_rotation_option_rotation_90">90</string>
+    <string name="device_rotation_option_rotation_180">180</string>
+    <string name="device_rotation_option_rotation_270">270</string>
+
+    <string name="floating_toolbar_mode_option_hidden">隐藏</string>
+    <string name="floating_toolbar_mode_option_hidden_when_locked">锁定时隐藏</string>
+    <string name="floating_toolbar_mode_option_shown">显示</string>
+
+    <string name="immersive_mode_option_always_on">始终开启</string>
+    <string name="immersive_mode_option_always_off">始终关闭</string>
+    <string name="immersive_mode_option_only_when_locked">仅锁定时</string>
+
+    <string name="kiosk_control_panel_region_option_top_left">左上</string>
+    <string name="kiosk_control_panel_region_option_top_right">右上</string>
+    <string name="kiosk_control_panel_region_option_bottom_left">左下</string>
+    <string name="kiosk_control_panel_region_option_bottom_right">右下</string>
+    <string name="kiosk_control_panel_region_option_top">顶部</string>
+    <string name="kiosk_control_panel_region_option_bottom">底部</string>
+    <string name="kiosk_control_panel_region_option_full">全屏</string>
+    <string name="kiosk_control_panel_region_option_disabled">禁用</string>
+
+    <string name="layout_algorithm_option_normal">正常</string>
+    <string name="layout_algorithm_option_single_column">单列</string>
+    <string name="layout_algorithm_option_narrow_columns">窄列</string>
+    <string name="layout_algorithm_option_text_autosizing">文本自动缩放</string>
+
+    <string name="mixed_content_mode_option_never_allow">始终不允许</string>
+    <string name="mixed_content_mode_option_compatibility_mode">兼容模式</string>
+    <string name="mixed_content_mode_option_always_allow">始终允许</string>
+
+    <string name="over_scroll_mode_option_always">始终</string>
+    <string name="over_scroll_mode_option_if_content_scrolls">内容可滚动时</string>
+    <string name="over_scroll_mode_option_never">从不</string>
+
+    <string name="override_url_loading_block_action_option_show_block_page">显示拦截页面</string>
+    <string name="override_url_loading_block_action_option_prevent_navigation">阻止跳转</string>
+    <string name="override_url_loading_block_action_option_show_toast">显示提示</string>
+
+    <string name="refresh_on_network_available_option_always">始终</string>
+    <string name="refresh_on_network_available_option_on_page_error">页面出错时</string>
+    <string name="refresh_on_network_available_option_never">从不</string>
+
+    <string name="search_suggestion_engine_option_none">无</string>
+    <string name="search_suggestion_engine_option_google">Google</string>
+    <string name="search_suggestion_engine_option_duckduckgo">DuckDuckGo</string>
+    <string name="search_suggestion_engine_option_yahoo">Yahoo</string>
+
+    <string name="ssl_error_mode_option_block">拦截</string>
+    <string name="ssl_error_mode_option_prompt">询问</string>
+    <string name="ssl_error_mode_option_proceed">继续访问</string>
+
+    <string name="unlock_auth_requirement_option_default">默认</string>
+    <string name="unlock_auth_requirement_option_off">关闭</string>
+    <string name="unlock_auth_requirement_option_require">需要验证</string>
+
+    <string name="webview_control_action_option_navigation">导航</string>
+    <string name="webview_control_action_option_back">后退</string>
+    <string name="webview_control_action_option_forward">前进</string>
+    <string name="webview_control_action_option_refresh">刷新</string>
+    <string name="webview_control_action_option_home">主页</string>
+    <string name="webview_control_action_option_history">历史</string>
+    <string name="webview_control_action_option_bookmark">书签</string>
+    <string name="webview_control_action_option_files">文件</string>
+    <string name="webview_control_action_option_find">查找</string>
+    <string name="webview_control_action_option_scroll_top">滚动到顶部</string>
+    <string name="webview_control_action_option_scroll_bot">滚动到底部</string>
+    <string name="webview_control_action_option_apps">应用</string>
+    <string name="webview_control_action_option_settings">设置</string>
+    <string name="webview_control_action_option_lock">锁定</string>
+    <string name="webview_control_action_option_unlock">解锁</string>
+
+    <string name="webview_inset_option_none">无</string>
+    <string name="webview_inset_option_status_bars">状态栏</string>
+    <string name="webview_inset_option_navigation_bars">导航栏</string>
+    <string name="webview_inset_option_system_bars">系统栏</string>
+    <string name="webview_inset_option_display_cutout">挖孔/刘海区域</string>
+    <string name="webview_inset_option_safe_drawing">安全绘制区域</string>
+    <string name="webview_inset_option_safe_gestures">安全手势区域</string>
+    <string name="webview_inset_option_safe_content">安全内容区域</string>
+
+</resources>

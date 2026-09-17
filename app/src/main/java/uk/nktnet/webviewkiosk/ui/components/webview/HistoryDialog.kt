@@ -32,6 +32,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
@@ -58,10 +59,19 @@ private fun formatDatetime(context: Context, timestamp: Long): String {
     val now = System.currentTimeMillis()
     val diff = now - timestamp
     val timeAgo = when {
-        diff < TimeUnit.MINUTES.toMillis(1) -> "Just now"
-        diff < TimeUnit.HOURS.toMillis(1) -> "${TimeUnit.MILLISECONDS.toMinutes(diff)} min ago"
-        diff < TimeUnit.DAYS.toMillis(1) -> "${TimeUnit.MILLISECONDS.toHours(diff)} h ago"
-        else -> "${TimeUnit.MILLISECONDS.toDays(diff)} d ago"
+        diff < TimeUnit.MINUTES.toMillis(1) -> context.getString(R.string.runtime_time_just_now)
+        diff < TimeUnit.HOURS.toMillis(1) -> context.getString(
+            R.string.runtime_time_minutes_ago,
+            TimeUnit.MILLISECONDS.toMinutes(diff)
+        )
+        diff < TimeUnit.DAYS.toMillis(1) -> context.getString(
+            R.string.runtime_time_hours_ago,
+            TimeUnit.MILLISECONDS.toHours(diff)
+        )
+        else -> context.getString(
+            R.string.runtime_time_days_ago,
+            TimeUnit.MILLISECONDS.toDays(diff)
+        )
     }
 
     val dateTime = DateFormat.getMediumDateFormat(context).format(Date(timestamp)) +
@@ -130,7 +140,10 @@ fun HistoryDialog(
             shape = MaterialTheme.shapes.medium,
         ) {
             Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
-                Text("History", style = MaterialTheme.typography.headlineMedium)
+                Text(
+                    stringResource(R.string.runtime_history_title),
+                    style = MaterialTheme.typography.headlineMedium
+                )
                 Spacer(Modifier.height(16.dp))
 
                 LazyColumn(
@@ -204,7 +217,7 @@ fun HistoryDialog(
                                 ) {
                                     Icon(
                                         painter = painterResource(R.drawable.baseline_clear_24),
-                                        contentDescription = "Delete",
+                                        contentDescription = stringResource(R.string.runtime_delete),
                                         tint = if (!isUpdating && !isCurrent)
                                             MaterialTheme.colorScheme.error
                                         else
@@ -234,9 +247,9 @@ fun HistoryDialog(
                             history = systemSettings.historyStack
                             isUpdating = false
                         }
-                    ) { Text("Clear All") }
+                    ) { Text(stringResource(R.string.runtime_clear_all)) }
                     TextButton(onClick = onDismiss) {
-                        Text("Close")
+                        Text(stringResource(R.string.runtime_close))
                     }
                 }
             }
